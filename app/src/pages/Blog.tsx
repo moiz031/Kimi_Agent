@@ -121,13 +121,13 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
               Our Blog
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1f44] mb-6">
-              Insights & <span className="text-[#426dd8]">Resources</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
+              Insights & <span className="text-[#00C7B7]">Resources</span>
             </h1>
-            <p className="text-lg text-[#3b4555]">
+            <p className="text-lg text-[#A8B7B5]">
               Stay updated with the latest digital marketing trends, strategies, and insights 
               from our team of experts.
             </p>
@@ -147,7 +147,7 @@ const Blog = () => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#426dd8] transition-colors"
+                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors"
               />
             </div>
 
@@ -159,8 +159,8 @@ const Blog = () => {
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     activeCategory === category
-                      ? 'bg-[#426dd8] text-white'
-                      : 'bg-gray-100 text-[#3b4555] hover:bg-[#426dd8]/10'
+                      ? 'bg-[#00C7B7] text-white'
+                      : 'bg-gray-100 text-[#A8B7B5] hover:bg-[#00C7B7]/10'
                   }`}
                 >
                   {category}
@@ -172,7 +172,7 @@ const Blog = () => {
       </section>
 
       {/* Featured Post */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -181,11 +181,11 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-2 mb-6">
-              <TrendingUp className="w-5 h-5 text-[#ffc225]" />
-              <span className="font-semibold text-[#0a1f44]">Featured Article</span>
+              <TrendingUp className="w-5 h-5 text-[#06B6D4]" />
+              <span className="font-semibold text-[#0B1214]">Featured Article</span>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 bg-[#f2f7ff] rounded-2xl overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-8 bg-[#EFF6FF] rounded-2xl overflow-hidden">
               <div className="aspect-[16/10] lg:aspect-auto">
                 <img
                   src={featuredPost.image}
@@ -194,16 +194,16 @@ const Blog = () => {
                 />
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <span className="inline-block px-3 py-1 bg-[#426dd8] text-white text-xs font-semibold rounded-full mb-4 w-fit">
+                <span className="inline-block px-3 py-1 bg-[#00C7B7] text-white text-xs font-semibold rounded-full mb-4 w-fit">
                   {featuredPost.category}
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0a1f44] mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0B1214] mb-4">
                   {featuredPost.title}
                 </h2>
-                <p className="text-[#3b4555] mb-6">
+                <p className="text-[#A8B7B5] mb-6">
                   {featuredPost.excerpt}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-[#3b4555] mb-6">
+                <div className="flex items-center gap-4 text-sm text-[#A8B7B5] mb-6">
                   <span className="flex items-center gap-1">
                     <User className="w-4 h-4" />
                     {featuredPost.author}
@@ -219,7 +219,7 @@ const Blog = () => {
                 </div>
                 <Link
                   to={`/blog/${featuredPost.id}`}
-                  className="inline-flex items-center gap-2 text-[#426dd8] font-semibold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[#00C7B7] font-semibold hover:gap-3 transition-all"
                 >
                   Read Article
                   <ArrowRight className="w-4 h-4" />
@@ -231,7 +231,7 @@ const Blog = () => {
       </section>
 
       {/* Blog Grid */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -240,7 +240,7 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <h2 className="text-2xl font-bold text-[#0a1f44]">Latest Articles</h2>
+            <h2 className="text-2xl font-bold text-[#0B1214]">Latest Articles</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -262,16 +262,16 @@ const Blog = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <Tag className="w-4 h-4 text-[#426dd8]" />
-                    <span className="text-xs font-medium text-[#426dd8]">{post.category}</span>
+                    <Tag className="w-4 h-4 text-[#00C7B7]" />
+                    <span className="text-xs font-medium text-[#00C7B7]">{post.category}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a1f44] mb-3 line-clamp-2 group-hover:text-[#426dd8] transition-colors">
+                  <h3 className="text-xl font-bold text-[#0B1214] mb-3 line-clamp-2 group-hover:text-[#00C7B7] transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-[#3b4555] text-sm mb-4 line-clamp-2">
+                  <p className="text-[#A8B7B5] text-sm mb-4 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-xs text-[#3b4555]">
+                  <div className="flex items-center justify-between text-xs text-[#A8B7B5]">
                     <span className="flex items-center gap-1">
                       <User className="w-3 h-3" />
                       {post.author}
@@ -288,14 +288,14 @@ const Blog = () => {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-[#3b4555]">No articles found matching your criteria.</p>
+              <p className="text-[#A8B7B5]">No articles found matching your criteria.</p>
             </div>
           )}
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-[#0a1f44]">
+      <section className="py-20 bg-[#0B1214]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -314,11 +314,11 @@ const Blog = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#426dd8]"
+                className="flex-1 px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#00C7B7]"
               />
               <button
                 type="submit"
-                className="px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors"
+                className="px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
               >
                 Subscribe
               </button>
@@ -331,3 +331,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

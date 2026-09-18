@@ -51,46 +51,54 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#0a1f44] text-white">
+    <footer className="bg-[#0B1214] text-white relative">
+      
+      {/* Top Gradient Accent Line (Teal -> Gold) */}
+      <div className="h-[2px] w-full" style={{ background: 'linear-gradient(90deg, #00C7B7 0%, #D6A84A 100%)' }} />
+
       {/* Main Footer */}
       <div className="container-custom py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-[#426dd8] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">N</span>
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center"
+                   style={{ background: 'linear-gradient(135deg, #D6A84A 0%, #E5C36A 100%)', boxShadow: '0 0 15px rgba(214, 168, 74, 0.3)' }}>
+                <span className="text-[#061112] font-black text-xl">CS</span>
               </div>
-              <span className="font-bold text-xl text-white">NexGen</span>
+              <span className="font-extrabold text-xl tracking-tight text-white">
+                Nex<span className="text-[#00C7B7]">Gen</span>
+              </span>
             </Link>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Transform your digital presence with data-driven marketing strategies 
-              that deliver measurable results. We help businesses grow through 
-              innovative digital solutions.
+            
+            <p className="text-[#A8B7B5] mb-6 leading-relaxed text-sm max-w-sm">
+              Transform your digital presence with data-driven marketing strategies and AI automation engines that deliver measurable enterprise revenue growth.
             </p>
-            <div className="flex gap-3">
+            
+            <div className="flex gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#426dd8] transition-colors"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#101B1D] border border-[#00C7B7]/20 text-[#A8B7B5] hover:text-[#061112] hover:bg-[#00C7B7] hover:border-[#00C7B7] transition-all duration-200"
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Services Column */}
+          {/* Services */}
           <div className="lg:col-span-2">
-            <h4 className="font-semibold text-lg mb-5">Services</h4>
-            <ul className="space-y-3">
+            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Services</h4>
+            <ul className="space-y-2.5">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-[#ffc225] transition-colors text-sm"
+                    className="text-sm text-[#A8B7B5] hover:text-[#00C7B7] transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -99,15 +107,15 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Industries Column */}
+          {/* Industries */}
           <div className="lg:col-span-2">
-            <h4 className="font-semibold text-lg mb-5">Industries</h4>
-            <ul className="space-y-3">
+            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Industries</h4>
+            <ul className="space-y-2.5">
               {footerLinks.industries.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-[#ffc225] transition-colors text-sm"
+                    className="text-sm text-[#A8B7B5] hover:text-[#00C7B7] transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -116,15 +124,15 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Column */}
+          {/* Company */}
           <div className="lg:col-span-2">
-            <h4 className="font-semibold text-lg mb-5">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Company</h4>
+            <ul className="space-y-2.5">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-[#ffc225] transition-colors text-sm"
+                    className="text-sm text-[#A8B7B5] hover:text-[#00C7B7] transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -133,51 +141,52 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter Column */}
+          {/* Newsletter */}
           <div className="lg:col-span-2">
-            <h4 className="font-semibold text-lg mb-5">Stay Updated</h4>
-            <p className="text-gray-400 text-sm mb-4">
-              Subscribe to our newsletter for the latest insights.
+            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Stay Updated</h4>
+            <p className="text-[#A8B7B5] text-xs mb-4">
+              Subscribe to our AI marketing insights newsletter.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-3">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#426dd8] transition-colors text-sm"
+                placeholder="your@email.com"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-[#101B1D] border border-[#00C7B7]/20 text-white placeholder-[#A8B7B5]/60 focus:outline-none focus:border-[#00C7B7] text-xs transition-colors"
               />
               <button
                 type="submit"
-                className="w-full px-4 py-3 bg-[#426dd8] text-white font-semibold rounded-lg hover:bg-[#ffc225] hover:text-[#0a1f44] transition-colors flex items-center justify-center gap-2 text-sm"
+                className="w-full btn-teal py-2.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
               >
-                {subscribed ? 'Subscribed!' : 'Subscribe'}
-                <ArrowRight className="w-4 h-4" />
+                {subscribed ? '✓ Subscribed!' : 'Subscribe'}
+                {!subscribed && <ArrowRight className="w-3.5 h-3.5" />}
               </button>
             </form>
           </div>
+
         </div>
       </div>
 
       {/* Contact Bar */}
-      <div className="border-t border-white/10">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
-              <a href="mailto:info@nexgen.com" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="w-4 h-4" />
+      <div className="border-t border-white/5">
+        <div className="container-custom py-5">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#A8B7B5]">
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              <a href="mailto:info@nexgen.com" className="flex items-center gap-1.5 hover:text-[#00C7B7] transition-colors">
+                <Mail className="w-3.5 h-3.5 text-[#00C7B7]" />
                 info@nexgen.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="w-4 h-4" />
+              <a href="tel:+1234567890" className="flex items-center gap-1.5 hover:text-[#00C7B7] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#00C7B7]" />
                 (123) 456-7890
               </a>
-              <span className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
+              <span className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-[#00C7B7]" />
                 New York, NY 10001
               </span>
             </div>
-            <div className="flex items-center gap-6 text-sm text-gray-400">
+            <div className="flex items-center gap-6">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
@@ -186,9 +195,9 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-white/10">
-        <div className="container-custom py-6">
-          <p className="text-center text-sm text-gray-500">
+      <div className="border-t border-white/5">
+        <div className="container-custom py-4">
+          <p className="text-center text-xs text-[#A8B7B5]/60">
             © {new Date().getFullYear()} NexGen Digital Agency. All rights reserved.
           </p>
         </div>

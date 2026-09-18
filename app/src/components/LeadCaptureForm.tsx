@@ -49,13 +49,13 @@ const LeadCaptureForm = ({
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="text-center p-8"
+        className="text-center p-8 bg-[#101B1D] border border-[#00C7B7]/15 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
       >
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-8 h-8 text-green-600" />
+        <div className="w-16 h-16 bg-[#00C7B7]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-[#00C7B7]" />
         </div>
-        <h3 className="text-2xl font-bold text-[#0a1f44] mb-2">Thank You!</h3>
-        <p className="text-[#3b4555]">
+        <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+        <p className="text-[#A8B7B5]">
           We&apos;ve received your information. Our team will contact you within 24 hours with your custom proposal.
         </p>
       </motion.div>
@@ -66,7 +66,7 @@ const LeadCaptureForm = ({
     return (
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
-          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#A8B7B5]" />
           <input
             type="email"
             name="email"
@@ -74,13 +74,13 @@ const LeadCaptureForm = ({
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#426dd8] focus:ring-2 focus:ring-[#426dd8]/20 outline-none transition-all"
+            className="w-full pl-10 pr-4 py-3 rounded-lg border border-[#00C7B7]/20 bg-[#101B1D] text-white placeholder:text-[#A8B7B5] focus:border-[#00C7B7] focus:ring-2 focus:ring-[#00C7B7]/20 outline-none transition-all"
           />
         </div>
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-6 py-3 bg-[#426dd8] text-white font-semibold rounded-lg hover:bg-[#3a5ec0] transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+          className="px-6 py-3 bg-[#00C7B7] text-[#061112] font-semibold rounded-xl hover:bg-[#14D9C7] transition-all flex items-center justify-center gap-2 disabled:opacity-70"
         >
           {isSubmitting ? (
             <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -105,12 +105,12 @@ const LeadCaptureForm = ({
           value={formData.email}
           onChange={handleChange}
           required
-          className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-[#426dd8] focus:ring-2 focus:ring-[#426dd8]/20 outline-none transition-all"
+          className="flex-1 px-4 py-3 rounded-xl border border-[#00C7B7]/20 bg-[#101B1D] text-white placeholder:text-[#A8B7B5] focus:border-[#00C7B7] focus:ring-2 focus:ring-[#00C7B7]/20 outline-none transition-all"
         />
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-6 py-3 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-[#e5af21] transition-colors disabled:opacity-70"
+          className="px-6 py-3 bg-[#00C7B7] text-[#061112] font-bold rounded-xl hover:bg-[#14D9C7] transition-all disabled:opacity-70"
         >
           {isSubmitting ? 'Sending...' : buttonText}
         </button>
@@ -124,17 +124,17 @@ const LeadCaptureForm = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+      className="bg-[#101B1D] rounded-[2rem] shadow-[0_25px_65px_rgba(0,0,0,0.28)] p-8 border border-[#00C7B7]/15"
     >
       <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-[#0a1f44] mb-2">{title}</h3>
-        <p className="text-[#3b4555]">{subtitle}</p>
+        <h3 className="text-2xl font-bold text-[#0B1214] mb-2">{title}</h3>
+        <p className="text-[#A8B7B5]">{subtitle}</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
-            {showLabels && <label className="block text-sm font-medium text-[#0a1f44] mb-1">Full Name</label>}
+            {showLabels && <label className="block text-sm font-medium text-[#0B1214] mb-1">Full Name</label>}
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -144,12 +144,12 @@ const LeadCaptureForm = ({
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#426dd8] focus:ring-2 focus:ring-[#426dd8]/20 outline-none transition-all"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C7B7] focus:ring-2 focus:ring-[#00C7B7]/20 outline-none transition-all"
               />
             </div>
           </div>
           <div>
-            {showLabels && <label className="block text-sm font-medium text-[#0a1f44] mb-1">Company</label>}
+            {showLabels && <label className="block text-sm font-medium text-[#0B1214] mb-1">Company</label>}
             <div className="relative">
               <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -159,7 +159,7 @@ const LeadCaptureForm = ({
                 value={formData.company}
                 onChange={handleChange}
                 required
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#426dd8] focus:ring-2 focus:ring-[#426dd8]/20 outline-none transition-all"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C7B7] focus:ring-2 focus:ring-[#00C7B7]/20 outline-none transition-all"
               />
             </div>
           </div>
@@ -167,7 +167,7 @@ const LeadCaptureForm = ({
 
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
-            {showLabels && <label className="block text-sm font-medium text-[#0a1f44] mb-1">Email</label>}
+            {showLabels && <label className="block text-sm font-medium text-[#0B1214] mb-1">Email</label>}
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -177,12 +177,12 @@ const LeadCaptureForm = ({
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#426dd8] focus:ring-2 focus:ring-[#426dd8]/20 outline-none transition-all"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C7B7] focus:ring-2 focus:ring-[#00C7B7]/20 outline-none transition-all"
               />
             </div>
           </div>
           <div>
-            {showLabels && <label className="block text-sm font-medium text-[#0a1f44] mb-1">Phone</label>}
+            {showLabels && <label className="block text-sm font-medium text-[#0B1214] mb-1">Phone</label>}
             <div className="relative">
               <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -191,7 +191,7 @@ const LeadCaptureForm = ({
                 placeholder="(555) 123-4567"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#426dd8] focus:ring-2 focus:ring-[#426dd8]/20 outline-none transition-all"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C7B7] focus:ring-2 focus:ring-[#00C7B7]/20 outline-none transition-all"
               />
             </div>
           </div>
@@ -200,7 +200,7 @@ const LeadCaptureForm = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-4 bg-[#426dd8] text-white font-bold rounded-lg hover:bg-[#3a5ec0] transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+          className="w-full py-4 bg-[#00C7B7] text-white font-bold rounded-lg hover:bg-[#14D9C7] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-70"
         >
           {isSubmitting ? (
             <>

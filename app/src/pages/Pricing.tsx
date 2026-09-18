@@ -130,13 +130,13 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
               Pricing Plans
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1f44] mb-6">
-              Transparent <span className="text-[#426dd8]">Pricing</span> for Every Business
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
+              Transparent <span className="text-[#00C7B7]">Pricing</span> for Every Business
             </h1>
-            <p className="text-lg text-[#3b4555] mb-8">
+            <p className="text-lg text-[#A8B7B5] mb-8">
               Choose the plan that fits your needs. All plans include our core features 
               and dedicated support.
             </p>
@@ -147,8 +147,8 @@ const Pricing = () => {
                 onClick={() => setBillingCycle('monthly')}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   billingCycle === 'monthly'
-                    ? 'bg-[#426dd8] text-white'
-                    : 'text-[#3b4555] hover:text-[#426dd8]'
+                    ? 'bg-[#00C7B7] text-white'
+                    : 'text-[#A8B7B5] hover:text-[#00C7B7]'
                 }`}
               >
                 Monthly
@@ -157,12 +157,12 @@ const Pricing = () => {
                 onClick={() => setBillingCycle('yearly')}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                   billingCycle === 'yearly'
-                    ? 'bg-[#426dd8] text-white'
-                    : 'text-[#3b4555] hover:text-[#426dd8]'
+                    ? 'bg-[#00C7B7] text-white'
+                    : 'text-[#A8B7B5] hover:text-[#00C7B7]'
                 }`}
               >
                 Yearly
-                <span className="px-2 py-0.5 bg-[#ffc225] text-[#0a1f44] text-xs rounded-full">
+                <span className="px-2 py-0.5 bg-[#06B6D4] text-[#0B1214] text-xs rounded-full">
                   Save 20%
                 </span>
               </button>
@@ -172,7 +172,7 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -190,13 +190,13 @@ const Pricing = () => {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className={`relative rounded-2xl p-8 ${
                   plan.popular
-                    ? 'bg-[#0a1f44] text-white scale-105 shadow-2xl'
+                    ? 'bg-[#0B1214] text-white scale-105 shadow-2xl'
                     : 'bg-white border border-gray-200'
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="px-4 py-1 bg-[#ffc225] text-[#0a1f44] text-sm font-bold rounded-full">
+                    <span className="px-4 py-1 bg-[#06B6D4] text-[#0B1214] text-sm font-bold rounded-full">
                       Most Popular
                     </span>
                   </div>
@@ -204,14 +204,14 @@ const Pricing = () => {
 
                 <div className="mb-6">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                    plan.popular ? 'bg-white/10' : 'bg-[#426dd8]/10'
+                    plan.popular ? 'bg-white/10' : 'bg-[#00C7B7]/10'
                   }`}>
-                    <plan.icon className={`w-6 h-6 ${plan.popular ? 'text-[#ffc225]' : 'text-[#426dd8]'}`} />
+                    <plan.icon className={`w-6 h-6 ${plan.popular ? 'text-[#06B6D4]' : 'text-[#00C7B7]'}`} />
                   </div>
-                  <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-[#0a1f44]'}`}>
+                  <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-[#0B1214]'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#3b4555]'}`}>
+                  <p className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#A8B7B5]'}`}>
                     {plan.description}
                   </p>
                 </div>
@@ -219,20 +219,20 @@ const Pricing = () => {
                 <div className="mb-6">
                   {plan.monthlyPrice ? (
                     <>
-                      <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-[#0a1f44]'}`}>
+                      <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-[#0B1214]'}`}>
                         ${billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
                       </span>
-                      <span className={plan.popular ? 'text-gray-300' : 'text-[#3b4555]'}>
+                      <span className={plan.popular ? 'text-gray-300' : 'text-[#A8B7B5]'}>
                         /month
                       </span>
                       {billingCycle === 'yearly' && (
-                        <p className="text-sm text-[#ffc225] mt-1">
+                        <p className="text-sm text-[#06B6D4] mt-1">
                           Billed annually (${plan.yearlyPrice! * 12}/year)
                         </p>
                       )}
                     </>
                   ) : (
-                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-[#0a1f44]'}`}>
+                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-[#0B1214]'}`}>
                       Custom
                     </span>
                   )}
@@ -242,9 +242,9 @@ const Pricing = () => {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                        plan.popular ? 'text-[#ffc225]' : 'text-[#426dd8]'
+                        plan.popular ? 'text-[#06B6D4]' : 'text-[#00C7B7]'
                       }`} />
-                      <span className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#3b4555]'}`}>
+                      <span className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#A8B7B5]'}`}>
                         {feature}
                       </span>
                     </li>
@@ -263,10 +263,10 @@ const Pricing = () => {
 
                 <Link
                   to="/contact"
-                  className={`block w-full py-3 rounded-lg font-semibold text-center transition-colors ${
+                  className={`block w-full py-3 rounded-lg font-semibold text-center hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 ${
                     plan.popular
-                      ? 'bg-[#ffc225] text-[#0a1f44] hover:bg-white'
-                      : 'bg-[#426dd8] text-white hover:bg-[#0a1f44]'
+                      ? 'bg-[#06B6D4] text-[#0B1214] hover:bg-white'
+                      : 'bg-[#00C7B7] text-white hover:bg-[#0B1214]'
                   }`}
                 >
                   {plan.cta}
@@ -278,7 +278,7 @@ const Pricing = () => {
       </section>
 
       {/* Add-ons Section */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -287,10 +287,10 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl font-bold text-[#0B1214] mb-4">
               Optional Add-ons
             </h2>
-            <p className="text-[#3b4555]">
+            <p className="text-[#A8B7B5]">
               Enhance your plan with these additional services
             </p>
           </motion.div>
@@ -304,9 +304,9 @@ const Pricing = () => {
           >
             {addOns.map((addon, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-md">
-                <h4 className="font-semibold text-[#0a1f44] mb-2">{addon.name}</h4>
-                <p className="text-[#426dd8] font-bold mb-2">{addon.price}</p>
-                <p className="text-sm text-[#3b4555]">{addon.description}</p>
+                <h4 className="font-semibold text-[#0B1214] mb-2">{addon.name}</h4>
+                <p className="text-[#00C7B7] font-bold mb-2">{addon.price}</p>
+                <p className="text-sm text-[#A8B7B5]">{addon.description}</p>
               </div>
             ))}
           </motion.div>
@@ -314,7 +314,7 @@ const Pricing = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -323,10 +323,10 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl font-bold text-[#0B1214] mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-[#3b4555]">
+            <p className="text-[#A8B7B5]">
               Got questions? We&apos;ve got answers.
             </p>
           </motion.div>
@@ -356,9 +356,9 @@ const Pricing = () => {
                 a: 'Absolutely! Contact us to discuss your specific needs and we\'ll create a tailored solution.',
               },
             ].map((faq, index) => (
-              <div key={index} className="bg-[#f2f7ff] rounded-xl p-6">
-                <h4 className="font-semibold text-[#0a1f44] mb-3">{faq.q}</h4>
-                <p className="text-[#3b4555] text-sm">{faq.a}</p>
+              <div key={index} className="bg-[#EFF6FF] rounded-xl p-6">
+                <h4 className="font-semibold text-[#0B1214] mb-3">{faq.q}</h4>
+                <p className="text-[#A8B7B5] text-sm">{faq.a}</p>
               </div>
             ))}
           </motion.div>
@@ -383,7 +383,7 @@ const Pricing = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Schedule a Call
               <ArrowRight className="w-5 h-5" />
@@ -396,3 +396,4 @@ const Pricing = () => {
 };
 
 export default Pricing;
+

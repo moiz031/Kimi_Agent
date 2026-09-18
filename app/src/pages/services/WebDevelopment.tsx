@@ -63,13 +63,13 @@ const WebDevelopment = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
                 Web Development
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1f44] leading-tight mb-6">
-                Build <span className="text-[#426dd8]">Powerful</span> Digital Experiences
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] leading-tight mb-6">
+                Build <span className="text-[#00C7B7]">Powerful</span> Digital Experiences
               </h1>
-              <p className="text-lg text-[#3b4555] mb-8">
+              <p className="text-lg text-[#A8B7B5] mb-8">
                 Custom websites and web applications built with cutting-edge technologies 
                 to deliver exceptional user experiences and drive business growth.
               </p>
@@ -100,7 +100,7 @@ const WebDevelopment = () => {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -109,10 +109,10 @@ const WebDevelopment = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Why Choose Us
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               Development Excellence
             </h2>
           </motion.div>
@@ -125,12 +125,12 @@ const WebDevelopment = () => {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {features.map((feature, index) => (
-              <div key={index} className="bg-[#f2f7ff] rounded-2xl p-8">
-                <div className="w-14 h-14 bg-[#426dd8]/10 rounded-xl flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-[#426dd8]" />
+              <div key={index} className="bg-[#EFF6FF] rounded-2xl p-8">
+                <div className="w-14 h-14 bg-[#00C7B7]/10 rounded-xl flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-[#00C7B7]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0a1f44] mb-3">{feature.title}</h3>
-                <p className="text-[#3b4555]">{feature.description}</p>
+                <h3 className="text-xl font-bold text-[#0B1214] mb-3">{feature.title}</h3>
+                <p className="text-[#A8B7B5]">{feature.description}</p>
               </div>
             ))}
           </motion.div>
@@ -138,7 +138,7 @@ const WebDevelopment = () => {
       </section>
 
       {/* Services & Tech Stack */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12">
             <motion.div
@@ -147,17 +147,17 @@ const WebDevelopment = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
                 Our Services
               </span>
-              <h2 className="text-3xl font-bold text-[#0a1f44] mb-6">
+              <h2 className="text-3xl font-bold text-[#0B1214] mb-6">
                 Comprehensive Web Solutions
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#426dd8] flex-shrink-0" />
-                    <span className="text-[#3b4555]">{service}</span>
+                    <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0" />
+                    <span className="text-[#A8B7B5]">{service}</span>
                   </div>
                 ))}
               </div>
@@ -169,16 +169,16 @@ const WebDevelopment = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
                 Tech Stack
               </span>
-              <h2 className="text-3xl font-bold text-[#0a1f44] mb-6">
+              <h2 className="text-3xl font-bold text-[#0B1214] mb-6">
                 Technologies We Use
               </h2>
               <div className="grid grid-cols-2 gap-4">
                 {technologies.map((tech, index) => (
                   <div key={index} className="bg-white rounded-lg p-4 text-center shadow-sm">
-                    <span className="font-medium text-[#0a1f44]">{tech}</span>
+                    <span className="font-medium text-[#0B1214]">{tech}</span>
                   </div>
                 ))}
               </div>
@@ -205,7 +205,7 @@ const WebDevelopment = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
@@ -218,3 +218,4 @@ const WebDevelopment = () => {
 };
 
 export default WebDevelopment;
+

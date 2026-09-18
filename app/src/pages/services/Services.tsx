@@ -97,13 +97,13 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
               Our Services
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1f44] mb-6">
-              Comprehensive <span className="text-[#426dd8]">Digital Solutions</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
+              Comprehensive <span className="text-[#00C7B7]">Digital Solutions</span>
             </h1>
-            <p className="text-lg text-[#3b4555]">
+            <p className="text-lg text-[#A8B7B5]">
               From strategy to execution, we offer a full suite of digital marketing services 
               tailored to help your business grow and succeed online.
             </p>
@@ -112,7 +112,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             variants={containerVariants}
@@ -125,28 +125,28 @@ const Services = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-[#f2f7ff] rounded-2xl p-8 group hover:bg-[#0a1f44] transition-colors duration-500"
+                className="bg-[#EFF6FF] rounded-2xl p-8 group hover:bg-[#0B1214] transition-colors duration-500"
               >
-                <div className="w-14 h-14 bg-[#426dd8]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#426dd8] transition-colors">
-                  <service.icon className="w-7 h-7 text-[#426dd8] group-hover:text-white transition-colors" />
+                <div className="w-14 h-14 bg-[#00C7B7]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00C7B7] transition-colors">
+                  <service.icon className="w-7 h-7 text-[#00C7B7] group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0a1f44] mb-3 group-hover:text-white transition-colors">
+                <h3 className="text-xl font-bold text-[#0B1214] mb-3 group-hover:text-white transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-[#3b4555] mb-6 group-hover:text-gray-300 transition-colors">
+                <p className="text-[#A8B7B5] mb-6 group-hover:text-gray-300 transition-colors">
                   {service.description}
                 </p>
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-[#3b4555] group-hover:text-gray-300 transition-colors">
-                      <CheckCircle className="w-4 h-4 text-[#426dd8] group-hover:text-[#ffc225] transition-colors" />
+                    <li key={i} className="flex items-center gap-2 text-sm text-[#A8B7B5] group-hover:text-gray-300 transition-colors">
+                      <CheckCircle className="w-4 h-4 text-[#00C7B7] group-hover:text-[#06B6D4] transition-colors" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Link
                   to={service.link}
-                  className="inline-flex items-center gap-2 text-[#426dd8] font-semibold group-hover:text-[#ffc225] transition-colors"
+                  className="inline-flex items-center gap-2 text-[#00C7B7] font-semibold group-hover:text-[#06B6D4] transition-colors"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -158,7 +158,7 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -167,13 +167,13 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               How We Work
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               Our Approach
             </h2>
-            <p className="text-lg text-[#3b4555] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
               A proven methodology that delivers consistent results
             </p>
           </motion.div>
@@ -192,9 +192,9 @@ const Services = () => {
               { number: '04', title: 'Optimize', description: 'Continuously improve based on data and insights' },
             ].map((step, index) => (
               <div key={index} className="text-center">
-                <div className="text-5xl font-bold text-[#426dd8]/20 mb-4">{step.number}</div>
-                <h3 className="text-xl font-bold text-[#0a1f44] mb-2">{step.title}</h3>
-                <p className="text-[#3b4555]">{step.description}</p>
+                <div className="text-5xl font-bold text-[#00C7B7]/20 mb-4">{step.number}</div>
+                <h3 className="text-xl font-bold text-[#0B1214] mb-2">{step.title}</h3>
+                <p className="text-[#A8B7B5]">{step.description}</p>
               </div>
             ))}
           </motion.div>
@@ -202,7 +202,7 @@ const Services = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -211,13 +211,13 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Industries We Serve
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               Specialized Solutions
             </h2>
-            <p className="text-lg text-[#3b4555] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
               We understand the unique challenges of different industries
             </p>
           </motion.div>
@@ -237,9 +237,9 @@ const Services = () => {
               <Link
                 key={index}
                 to={`/industries/${industry.toLowerCase().replace(' ', '-')}`}
-                className="bg-[#f2f7ff] rounded-xl p-6 text-center hover:bg-[#426dd8] hover:text-white transition-colors group"
+                className="bg-[#EFF6FF] rounded-xl p-6 text-center hover:bg-[#00C7B7] hover:text-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 group"
               >
-                <span className="font-semibold text-[#0a1f44] group-hover:text-white transition-colors">
+                <span className="font-semibold text-[#0B1214] group-hover:text-white transition-colors">
                   {industry}
                 </span>
               </Link>
@@ -266,7 +266,7 @@ const Services = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Schedule a Consultation
               <ArrowRight className="w-5 h-5" />
@@ -279,3 +279,4 @@ const Services = () => {
 };
 
 export default Services;
+

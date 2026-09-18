@@ -112,13 +112,13 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
                 About Us
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1f44] leading-tight mb-6">
-                We&apos;re a Team of Digital <span className="text-[#426dd8]">Experts</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] leading-tight mb-6">
+                We&apos;re a Team of Digital <span className="text-[#00C7B7]">Experts</span>
               </h1>
-              <p className="text-lg text-[#3b4555] mb-8 leading-relaxed">
+              <p className="text-lg text-[#A8B7B5] mb-8 leading-relaxed">
                 Founded in 2014, NexGen Digital Agency has grown from a small startup to a 
                 full-service digital marketing agency. We&apos;ve helped hundreds of businesses 
                 across various industries achieve their digital goals and drive measurable growth.
@@ -147,12 +147,12 @@ const About = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#426dd8] rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#00C7B7] rounded-full flex items-center justify-center">
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-[#0a1f44]">10+</p>
-                    <p className="text-sm text-[#3b4555]">Years of Excellence</p>
+                    <p className="text-2xl font-bold text-[#0B1214]">10+</p>
+                    <p className="text-sm text-[#A8B7B5]">Years of Excellence</p>
                   </div>
                 </div>
               </div>
@@ -162,7 +162,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#0a1f44]">
+      <section className="py-16 bg-[#0B1214]">
         <div className="container-custom">
           <motion.div
             variants={containerVariants}
@@ -177,7 +177,7 @@ const About = () => {
                 variants={itemVariants}
                 className="text-center"
               >
-                <p className="text-4xl lg:text-5xl font-bold text-[#ffc225] mb-2">
+                <p className="text-4xl lg:text-5xl font-bold text-[#06B6D4] mb-2">
                   {achievement.number}
                 </p>
                 <p className="text-gray-400">{achievement.label}</p>
@@ -188,7 +188,7 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -212,13 +212,13 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="order-1 lg:order-2"
             >
-              <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
                 Our Story
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0a1f44] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
                 From Startup to Industry Leader
               </h2>
-              <div className="space-y-4 text-[#3b4555]">
+              <div className="space-y-4 text-[#A8B7B5]">
                 <p>
                   What started as a small team of passionate marketers has evolved into a 
                   full-service digital agency with over 50 experts across multiple disciplines. 
@@ -243,7 +243,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -252,13 +252,13 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Our Values
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               What We Stand For
             </h2>
-            <p className="text-lg text-[#3b4555] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
               Our core values guide everything we do
             </p>
           </motion.div>
@@ -276,11 +276,11 @@ const About = () => {
                 variants={itemVariants}
                 className="bg-white rounded-2xl p-8 text-center card-hover"
               >
-                <div className="w-16 h-16 bg-[#426dd8]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-[#426dd8]" />
+                <div className="w-16 h-16 bg-[#00C7B7]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-8 h-8 text-[#00C7B7]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0a1f44] mb-3">{value.title}</h3>
-                <p className="text-[#3b4555]">{value.description}</p>
+                <h3 className="text-xl font-bold text-[#0B1214] mb-3">{value.title}</h3>
+                <p className="text-[#A8B7B5]">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -288,7 +288,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="section-padding bg-white">
+      <section id="team" className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -297,13 +297,13 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Our Team
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               Meet Our Experts
             </h2>
-            <p className="text-lg text-[#3b4555] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
               The talented people behind our success
             </p>
           </motion.div>
@@ -327,14 +327,14 @@ const About = () => {
                     alt={member.name}
                     className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f44]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1214]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
                       <p className="text-white text-sm">{member.bio}</p>
                     </div>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-[#0a1f44]">{member.name}</h3>
-                <p className="text-[#426dd8] text-sm">{member.role}</p>
+                <h3 className="text-lg font-bold text-[#0B1214]">{member.name}</h3>
+                <p className="text-[#00C7B7] text-sm">{member.role}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -342,7 +342,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -351,13 +351,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
                 Why Choose Us
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0a1f44] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
                 The NexGen Difference
               </h2>
-              <p className="text-[#3b4555] mb-8">
+              <p className="text-[#A8B7B5] mb-8">
                 We combine creativity with data-driven strategies to deliver exceptional results 
                 for our clients. Here&apos;s what sets us apart:
               </p>
@@ -372,8 +372,8 @@ const About = () => {
                   '24/7 support and maintenance',
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#426dd8] flex-shrink-0" />
-                    <span className="text-[#3b4555]">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0" />
+                    <span className="text-[#A8B7B5]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -387,24 +387,24 @@ const About = () => {
               className="grid grid-cols-2 gap-6"
             >
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                <Users className="w-10 h-10 text-[#426dd8] mx-auto mb-4" />
-                <p className="text-3xl font-bold text-[#0a1f44]">50+</p>
-                <p className="text-sm text-[#3b4555]">Team Members</p>
+                <Users className="w-10 h-10 text-[#00C7B7] mx-auto mb-4" />
+                <p className="text-3xl font-bold text-[#0B1214]">50+</p>
+                <p className="text-sm text-[#A8B7B5]">Team Members</p>
               </div>
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg mt-8">
-                <TrendingUp className="w-10 h-10 text-[#426dd8] mx-auto mb-4" />
-                <p className="text-3xl font-bold text-[#0a1f44]">300%</p>
-                <p className="text-sm text-[#3b4555]">Avg. ROI</p>
+                <TrendingUp className="w-10 h-10 text-[#00C7B7] mx-auto mb-4" />
+                <p className="text-3xl font-bold text-[#0B1214]">300%</p>
+                <p className="text-sm text-[#A8B7B5]">Avg. ROI</p>
               </div>
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                <Award className="w-10 h-10 text-[#426dd8] mx-auto mb-4" />
-                <p className="text-3xl font-bold text-[#0a1f44]">25+</p>
-                <p className="text-sm text-[#3b4555]">Industry Awards</p>
+                <Award className="w-10 h-10 text-[#00C7B7] mx-auto mb-4" />
+                <p className="text-3xl font-bold text-[#0B1214]">25+</p>
+                <p className="text-sm text-[#A8B7B5]">Industry Awards</p>
               </div>
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg mt-8">
-                <CheckCircle className="w-10 h-10 text-[#426dd8] mx-auto mb-4" />
-                <p className="text-3xl font-bold text-[#0a1f44]">100%</p>
-                <p className="text-sm text-[#3b4555]">Client Retention</p>
+                <CheckCircle className="w-10 h-10 text-[#00C7B7] mx-auto mb-4" />
+                <p className="text-3xl font-bold text-[#0B1214]">100%</p>
+                <p className="text-sm text-[#A8B7B5]">Client Retention</p>
               </div>
             </motion.div>
           </div>
@@ -429,7 +429,7 @@ const About = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Get in Touch
               <ArrowRight className="w-5 h-5" />
@@ -442,3 +442,4 @@ const About = () => {
 };
 
 export default About;
+

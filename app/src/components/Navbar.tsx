@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,9 +10,7 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -24,7 +22,6 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     {
       name: 'Services',
       path: '/services',
@@ -57,32 +54,33 @@ const Navbar = () => {
         { name: 'Construction', path: '/industries/construction' },
       ],
     },
-    { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Case Studies', path: '/portfolio' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Resources', path: '/blog' },
   ];
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-[#0B1214]/95 backdrop-blur-xl border-b border-[#00C7B7]/15 shadow-2xl'
+          : 'bg-transparent border-b border-white/5'
       }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#426dd8] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">N</span>
+
+          {/* Logo - Matching Reference Gold Logo */}
+          <Link to="/" className="flex items-center gap-3 group" aria-label="NexGen digital agency home">
+            <div className="relative w-10 h-10 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#D6A84A] to-[#E5C36A] shadow-[0_0_18px_rgba(214,168,74,0.28)] transition-transform duration-300 group-hover:scale-105">
+              <span className="text-[#061112] font-black text-lg">N</span>
+              <span className="absolute bottom-1 right-1 block w-2 h-2 rounded-full bg-[#00C7B7] shadow-[0_0_10px_rgba(0,199,183,0.35)]" />
             </div>
-            <span className={`font-bold text-xl transition-colors ${isScrolled ? 'text-[#0a1f44]' : 'text-[#0a1f44]'}`}>
-              NexGen
+            <span className="font-extrabold text-xl tracking-tight text-white">
+              Nex<span className="text-[#00C7B7]">Gen</span>
             </span>
           </Link>
 
@@ -97,30 +95,34 @@ const Navbar = () => {
               >
                 <Link
                   to={link.path}
-                  className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-[#426dd8]/10 ${
-                    isScrolled ? 'text-[#0a1f44]' : 'text-[#0a1f44]'
-                  } ${location.pathname === link.path ? 'text-[#426dd8]' : ''}`}
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    location.pathname === link.path
+                      ? 'text-[#00C7B7] bg-[#00C7B7]/10'
+                      : 'text-[#F7FAF9] hover:text-[#00C7B7] hover:bg-white/5'
+                  }`}
                 >
                   {link.name}
-                  {link.dropdown && <ChevronDown className="w-4 h-4" />}
+                  {link.dropdown && (
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === link.name ? 'rotate-180 text-[#00C7B7]' : 'text-slate-400'}`} />
+                  )}
                 </Link>
 
                 {/* Dropdown Menu */}
                 <AnimatePresence>
                   {link.dropdown && activeDropdown === link.name && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden"
+                      initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 mt-2 w-64 bg-[#101B1D] rounded-2xl overflow-hidden border border-[#00C7B7]/20 shadow-2xl"
                     >
                       <div className="py-2">
                         {link.dropdown.map((item) => (
                           <Link
                             key={item.name}
                             to={item.path}
-                            className="block px-4 py-2.5 text-sm text-[#3b4555] hover:bg-[#f2f7ff] hover:text-[#426dd8] transition-colors"
+                            className="block px-4 py-2.5 text-sm font-medium text-[#A8B7B5] hover:bg-[#00C7B7]/10 hover:text-[#00C7B7] transition-colors"
                           >
                             {item.name}
                           </Link>
@@ -133,24 +135,20 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Right Action: Gold CTA (Matching Reference Image) */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+1234567890" className="flex items-center gap-2 text-sm font-medium text-[#0a1f44]">
-              <Phone className="w-4 h-4 text-[#426dd8]" />
-              (123) 456-7890
-            </a>
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-[#426dd8] text-white text-sm font-semibold rounded-lg hover:bg-[#0a1f44] transition-colors"
+              className="btn-gold text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl flex items-center gap-2"
             >
-              Get Started
+              Get Free Audit
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-[#0a1f44]"
+            className="lg:hidden p-2 text-white rounded-xl hover:bg-white/5 transition-colors"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -164,24 +162,28 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t"
+            className="lg:hidden bg-[#0B1214] border-t border-[#00C7B7]/20"
           >
-            <div className="container-custom py-4">
+            <div className="container-custom py-4 space-y-1">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
                     to={link.path}
-                    className="block py-3 text-[#0a1f44] font-medium"
+                    className={`block py-2.5 px-3 font-medium rounded-lg transition-colors text-sm ${
+                      location.pathname === link.path
+                        ? 'text-[#00C7B7] bg-[#00C7B7]/10'
+                        : 'text-white hover:text-[#00C7B7]'
+                    }`}
                   >
                     {link.name}
                   </Link>
                   {link.dropdown && (
-                    <div className="pl-4 border-l-2 border-[#426dd8]/20 ml-2">
+                    <div className="pl-4 border-l border-[#00C7B7]/20 ml-3 mt-1 mb-2 space-y-1">
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.name}
                           to={item.path}
-                          className="block py-2 text-sm text-[#3b4555]"
+                          className="block py-1.5 text-sm text-[#A8B7B5] hover:text-[#00C7B7]"
                         >
                           {item.name}
                         </Link>
@@ -192,9 +194,9 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="block mt-4 px-6 py-3 bg-[#426dd8] text-white text-center font-semibold rounded-lg"
+                className="block mt-4 px-6 py-3 btn-gold text-center font-bold text-xs uppercase tracking-wider rounded-xl"
               >
-                Get Started
+                Get Free Audit
               </Link>
             </div>
           </motion.div>

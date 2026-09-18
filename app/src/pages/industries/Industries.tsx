@@ -56,13 +56,13 @@ const Industries = () => {
             transition={{ duration: 0.6 }} 
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
               20+ Industries Served
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1f44] mb-6">
-              Specialized Solutions For <span className="text-[#426dd8]">Every Industry</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
+              Specialized Solutions For <span className="text-[#00C7B7]">Every Industry</span>
             </h1>
-            <p className="text-lg text-[#3b4555]">
+            <p className="text-lg text-[#A8B7B5]">
               We understand the unique challenges of different industries and tailor our 
               strategies to deliver measurable results for your business.
             </p>
@@ -71,7 +71,7 @@ const Industries = () => {
       </section>
 
       {/* Industries Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div 
             initial={{ opacity: 0, y: 30 }} 
@@ -86,7 +86,7 @@ const Industries = () => {
                 to={industry.link} 
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
               >
-                <div className="aspect-video overflow-hidden bg-[#f1f1f1]">
+                <div className="aspect-video overflow-hidden bg-[#F1F5F9]">
                   <img 
                     src={industry.image} 
                     alt={industry.name} 
@@ -95,13 +95,13 @@ const Industries = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#426dd8]/10 rounded-lg flex items-center justify-center group-hover:bg-[#426dd8] transition-colors">
-                      <industry.icon className="w-5 h-5 text-[#426dd8] group-hover:text-white transition-colors" />
+                    <div className="w-10 h-10 bg-[#00C7B7]/10 rounded-lg flex items-center justify-center group-hover:bg-[#00C7B7] transition-colors">
+                      <industry.icon className="w-5 h-5 text-[#00C7B7] group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#0a1f44]">{industry.name}</h3>
+                    <h3 className="text-xl font-bold text-[#0B1214]">{industry.name}</h3>
                   </div>
-                  <p className="text-[#3b4555] mb-4">{industry.description}</p>
-                  <span className="inline-flex items-center gap-2 text-[#426dd8] font-semibold group-hover:gap-3 transition-all">
+                  <p className="text-[#A8B7B5] mb-4">{industry.description}</p>
+                  <span className="inline-flex items-center gap-2 text-[#00C7B7] font-semibold group-hover:gap-3 transition-all">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -112,7 +112,7 @@ const Industries = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#0a1f44]">
+      <section className="py-16 bg-[#0B1214]">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <motion.div
@@ -173,7 +173,7 @@ const Industries = () => {
             </p>
             <Link 
               to="/contact" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
@@ -185,3 +185,4 @@ const Industries = () => {
 };
 
 export default Industries;
+

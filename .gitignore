@@ -1,7 +1,9 @@
-node_modules/
-dist/
-.DS_Store
-*.log
+app/node_modules
+app/dist
+app/dist-ssr
+app/.vercel
+.vscode
+.kilo
+.kilocode
+*.local
 .env
-.env.*
-!.env.example

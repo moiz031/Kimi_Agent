@@ -76,9 +76,9 @@ const Insurance = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center overflow-hidden bg-[#0a1f44]">
+      <section className="relative min-h-[600px] flex items-center overflow-hidden bg-[#0B1214]">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#426dd8]/30 to-transparent" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#00C7B7]/30 to-transparent" />
         </div>
         
         <div className="container-custom relative z-10 py-20">
@@ -89,7 +89,7 @@ const Insurance = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-6">
-                <Shield className="w-5 h-5 text-[#ffc225]" />
+                <Shield className="w-5 h-5 text-[#06B6D4]" />
                 <span className="text-sm font-medium text-white">Industry Solutions</span>
               </div>
               
@@ -130,7 +130,7 @@ const Insurance = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#426dd8]">
+      <section className="py-16 bg-[#00C7B7]">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {results.map((stat, index) => (
@@ -151,7 +151,7 @@ const Insurance = () => {
       </section>
 
       {/* Challenges Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -159,13 +159,13 @@ const Insurance = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Challenges We Solve
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-4">
               Insurance Marketing Challenges
             </h2>
-            <p className="text-lg text-[#3b4555] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
               We understand the unique obstacles insurance agencies face
             </p>
           </motion.div>
@@ -178,10 +178,10 @@ const Insurance = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-8 bg-[#f1f1f1] rounded-2xl"
+                className="p-8 bg-[#F1F5F9] rounded-2xl"
               >
-                <h3 className="text-xl font-bold text-[#0a1f44] mb-3">{challenge.title}</h3>
-                <p className="text-[#3b4555]">{challenge.description}</p>
+                <h3 className="text-xl font-bold text-[#0B1214] mb-3">{challenge.title}</h3>
+                <p className="text-[#A8B7B5]">{challenge.description}</p>
               </motion.div>
             ))}
           </div>
@@ -189,7 +189,7 @@ const Insurance = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -197,10 +197,10 @@ const Insurance = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Our Solutions
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-4">
               Marketing Solutions for Insurance Agencies
             </h2>
           </motion.div>
@@ -215,11 +215,11 @@ const Insurance = () => {
                 transition={{ delay: index * 0.1 }}
                 className="p-8 bg-white rounded-2xl shadow-lg"
               >
-                <div className="w-14 h-14 bg-[#426dd8]/10 rounded-xl flex items-center justify-center mb-6">
-                  <solution.icon className="w-7 h-7 text-[#426dd8]" />
+                <div className="w-14 h-14 bg-[#00C7B7]/10 rounded-xl flex items-center justify-center mb-6">
+                  <solution.icon className="w-7 h-7 text-[#00C7B7]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0a1f44] mb-3">{solution.title}</h3>
-                <p className="text-[#3b4555]">{solution.description}</p>
+                <h3 className="text-xl font-bold text-[#0B1214] mb-3">{solution.title}</h3>
+                <p className="text-[#A8B7B5]">{solution.description}</p>
               </motion.div>
             ))}
           </div>
@@ -227,7 +227,7 @@ const Insurance = () => {
       </section>
 
       {/* Services List Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -235,10 +235,10 @@ const Insurance = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0a1f44] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
                 Comprehensive Insurance Marketing Services
               </h2>
-              <p className="text-lg text-[#3b4555] mb-8">
+              <p className="text-lg text-[#A8B7B5] mb-8">
                 From SEO to lead generation, we offer a full suite of digital marketing 
                 services tailored specifically for insurance agencies.
               </p>
@@ -246,8 +246,8 @@ const Insurance = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#426dd8] flex-shrink-0" />
-                    <span className="text-[#0a1f44]">{service}</span>
+                    <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0" />
+                    <span className="text-[#0B1214]">{service}</span>
                   </div>
                 ))}
               </div>
@@ -257,9 +257,9 @@ const Insurance = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-[#f1f1f1] rounded-2xl p-8"
+              className="bg-[#F1F5F9] rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-[#0a1f44] mb-6">
+              <h3 className="text-2xl font-bold text-[#0B1214] mb-6">
                 Why Insurance Agencies Choose Us
               </h3>
               <div className="space-y-4">
@@ -271,8 +271,8 @@ const Insurance = () => {
                   'Focus on high-quality, compliant leads',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <TrendingUp className="w-5 h-5 text-[#426dd8] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#3b4555]">{item}</span>
+                    <TrendingUp className="w-5 h-5 text-[#00C7B7] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#A8B7B5]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -282,7 +282,7 @@ const Insurance = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#0a1f44]">
+      <section className="py-20 bg-[#0B1214]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -298,7 +298,7 @@ const Insurance = () => {
                 leads and grow your book of business. Get a free custom strategy today.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors inline-flex items-center gap-2">
+                <Link to="/contact" className="px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 inline-flex items-center gap-2">
                   Get Free Proposal
                   <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -324,3 +324,4 @@ const Insurance = () => {
 };
 
 export default Insurance;
+

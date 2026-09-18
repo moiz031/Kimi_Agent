@@ -131,13 +131,13 @@ const Careers = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
               Join Our Team
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1f44] mb-6">
-              Build Your <span className="text-[#426dd8]">Career</span> With Us
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
+              Build Your <span className="text-[#00C7B7]">Career</span> With Us
             </h1>
-            <p className="text-lg text-[#3b4555] mb-8">
+            <p className="text-lg text-[#A8B7B5] mb-8">
               We&apos;re always looking for talented individuals who are passionate about 
               digital marketing and want to make a difference.
             </p>
@@ -153,7 +153,7 @@ const Careers = () => {
       </section>
 
       {/* Why Join Us */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -162,13 +162,13 @@ const Careers = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Why Join Us
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               Benefits & Perks
             </h2>
-            <p className="text-lg text-[#3b4555] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
               We take care of our team so they can do their best work
             </p>
           </motion.div>
@@ -183,13 +183,13 @@ const Careers = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-[#f2f7ff] rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
+                className="bg-[#EFF6FF] rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
               >
-                <div className="w-14 h-14 bg-[#426dd8]/10 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-7 h-7 text-[#426dd8]" />
+                <div className="w-14 h-14 bg-[#00C7B7]/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <benefit.icon className="w-7 h-7 text-[#00C7B7]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0a1f44] mb-3">{benefit.title}</h3>
-                <p className="text-[#3b4555]">{benefit.description}</p>
+                <h3 className="text-xl font-bold text-[#0B1214] mb-3">{benefit.title}</h3>
+                <p className="text-[#A8B7B5]">{benefit.description}</p>
               </div>
             ))}
           </motion.div>
@@ -197,7 +197,7 @@ const Careers = () => {
       </section>
 
       {/* Culture Section */}
-      <section className="section-padding bg-[#f1f1f1]">
+      <section className="section-padding section-surface">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -206,13 +206,13 @@ const Careers = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
                 Our Culture
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0a1f44] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
                 Work Hard, Play Hard
               </h2>
-              <div className="space-y-4 text-[#3b4555]">
+              <div className="space-y-4 text-[#A8B7B5]">
                 <p>
                   At NexGen, we believe that the best work comes from people who are 
                   passionate, supported, and empowered. We&apos;ve built a culture that 
@@ -232,8 +232,8 @@ const Careers = () => {
                   'Make a real impact on client success',
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#426dd8] flex-shrink-0" />
-                    <span className="text-[#3b4555]">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0" />
+                    <span className="text-[#A8B7B5]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -256,7 +256,7 @@ const Careers = () => {
       </section>
 
       {/* Job Openings */}
-      <section id="openings" className="section-padding bg-white">
+      <section id="openings" className="section-padding section-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -265,13 +265,13 @@ const Careers = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-4 py-2 bg-[#426dd8]/10 text-[#426dd8] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
               Open Positions
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1f44] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-4">
               Current Opportunities
             </h2>
-            <p className="text-[#3b4555]">
+            <p className="text-[#A8B7B5]">
               Find your perfect role and join our growing team
             </p>
           </motion.div>
@@ -289,8 +289,8 @@ const Careers = () => {
                 onClick={() => setSelectedDepartment(dept)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedDepartment === dept
-                    ? 'bg-[#426dd8] text-white'
-                    : 'bg-gray-100 text-[#3b4555] hover:bg-[#426dd8]/10'
+                    ? 'bg-[#00C7B7] text-white'
+                    : 'bg-gray-100 text-[#A8B7B5] hover:bg-[#00C7B7]/10'
                 }`}
               >
                 {dept}
@@ -309,20 +309,20 @@ const Careers = () => {
             {filteredOpenings.map((job) => (
               <div
                 key={job.id}
-                className="bg-[#f2f7ff] rounded-xl p-6 hover:shadow-lg transition-shadow group"
+                className="bg-[#EFF6FF] rounded-xl p-6 hover:shadow-lg transition-shadow group"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-bold text-[#0a1f44] group-hover:text-[#426dd8] transition-colors">
+                      <h3 className="text-xl font-bold text-[#0B1214] group-hover:text-[#00C7B7] transition-colors">
                         {job.title}
                       </h3>
-                      <span className="px-3 py-1 bg-[#426dd8]/10 text-[#426dd8] text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-[#00C7B7]/10 text-[#00C7B7] text-xs font-medium rounded-full">
                         {job.department}
                       </span>
                     </div>
-                    <p className="text-[#3b4555] text-sm mb-3">{job.description}</p>
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-[#3b4555]">
+                    <p className="text-[#A8B7B5] text-sm mb-3">{job.description}</p>
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-[#A8B7B5]">
                       <span className="flex items-center gap-1">
                         <MapPin className="w-4 h-4" />
                         {job.location}
@@ -352,7 +352,7 @@ const Careers = () => {
           {filteredOpenings.length === 0 && (
             <div className="text-center py-12">
               <Briefcase className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-              <p className="text-[#3b4555]">No open positions in this department.</p>
+              <p className="text-[#A8B7B5]">No open positions in this department.</p>
             </div>
           )}
         </div>
@@ -377,7 +377,7 @@ const Careers = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ffc225] text-[#0a1f44] font-bold rounded-lg hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Send Your Resume
               <ArrowRight className="w-5 h-5" />
@@ -390,3 +390,4 @@ const Careers = () => {
 };
 
 export default Careers;
+
