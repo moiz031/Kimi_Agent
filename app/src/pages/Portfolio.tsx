@@ -826,15 +826,17 @@ const Portfolio = () => {
 
                     {/* Video play overlay */}
                     {project.videoUrl && (
-                      <button
-                        onClick={() => setVideoModalProject(project)}
+                      <a
+                        href={`/portfolio/case-study/${project.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="video-play-btn"
                         aria-label={`Play video for ${project.title}`}
                       >
                         <span className="play-icon-ring">
                           <Play className="w-7 h-7 text-[#061112] fill-[#061112] ml-1" />
                         </span>
-                      </button>
+                      </a>
                     )}
 
                     {/* Edit button */}
@@ -881,21 +883,14 @@ const Portfolio = () => {
 
                     {/* Actions */}
                     <div className="space-y-2">
-                      {project.videoUrl ? (
-                        <button
-                          onClick={() => setVideoModalProject(project)}
-                          className="w-full btn-secondary py-2.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 group-hover:bg-[#00C7B7] group-hover:text-[#061112] group-hover:border-[#00C7B7] transition-all"
-                        >
-                          <Play className="w-4 h-4 fill-current" /> Watch Case Study
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => setSelectedProject(project)}
-                          className="w-full btn-secondary py-2.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 group-hover:bg-[#00C7B7] group-hover:text-[#061112] group-hover:border-[#00C7B7] transition-all"
-                        >
-                          <Eye className="w-4 h-4" /> View Details
-                        </button>
-                      )}
+                      <a
+                        href={`/portfolio/case-study/${project.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full btn-secondary py-2.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 group-hover:bg-[#00C7B7] group-hover:text-[#061112] group-hover:border-[#00C7B7] transition-all"
+                      >
+                        <Eye className="w-4 h-4" /> {project.videoUrl ? 'View Case Study' : 'View Full Details'}
+                      </a>
                       {project.projectLink && (
                         <a
                           href={project.projectLink}
@@ -1037,179 +1032,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════════════
-          5. PROJECT DETAILS MODAL (no video)
-      ═══════════════════════════════════════════════════════════════════════ */}
-      <AnimatePresence>
-        {selectedProject && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
-            onClick={() => setSelectedProject(null)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-[#101B1D] border border-[#00C7B7]/30 rounded-3xl max-w-2xl w-full relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
-            >
-              {/* Modal image header */}
-              <div className="relative h-52 overflow-hidden">
-                <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#101B1D] via-transparent to-transparent" />
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors backdrop-blur-sm"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-                <div className="absolute bottom-4 left-6 right-6 flex gap-2">
-                  <span className="badge-teal">{selectedProject.category}</span>
-                  {selectedProject.featured && <span className="badge-gold flex items-center gap-1"><Star className="w-3 h-3 fill-[#D6A84A]" /> Featured</span>}
-                </div>
-              </div>
-
-              <div className="p-8">
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-1">{selectedProject.title}</h2>
-                <div className="text-sm text-[#00C7B7] font-semibold mb-6">Client: {selectedProject.client}</div>
-
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">The Challenge</h4>
-                    <p className="text-sm text-[#A8B7B5] leading-relaxed">{selectedProject.fullDetails?.challenge || selectedProject.description}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-[#00C7B7] uppercase tracking-wider mb-2">Our Solution</h4>
-                    <p className="text-sm text-[#A8B7B5] leading-relaxed">{selectedProject.fullDetails?.solution || 'Designed and deployed custom digital architectures optimized for conversion.'}</p>
-                  </div>
-
-                  {selectedProject.fullDetails?.timeline && (
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0B1214] border border-[#00C7B7]/15 text-sm">
-                      <span className="text-[#A8B7B5]">Timeline:</span>
-                      <span className="font-semibold text-white">{selectedProject.fullDetails.timeline}</span>
-                    </div>
-                  )}
-
-                  {/* Key Results */}
-                  <div>
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3">Key Results Delivered</h4>
-                    <div className="grid grid-cols-3 gap-3">
-                      {selectedProject.results.map((res, i) => (
-                        <div key={i} className="p-4 rounded-xl bg-[#0B1214] border border-[#00C7B7]/20 text-center">
-                          <div className="text-xl font-black text-[#00C7B7]">{res.value}</div>
-                          <div className="text-xs text-[#A8B7B5] mt-1">{res.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {selectedProject.fullDetails?.testimonial && (
-                    <blockquote className="border-l-2 border-[#00C7B7] pl-4 italic text-sm text-[#A8B7B5]">
-                      "{selectedProject.fullDetails.testimonial}"
-                    </blockquote>
-                  )}
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-3 sm:flex-row sm:justify-end">
-                  {selectedProject.projectLink && (
-                    <a href={selectedProject.projectLink} target="_blank" rel="noreferrer"
-                      className="btn-gold text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4" /> Visit Project
-                    </a>
-                  )}
-                  <button onClick={() => setSelectedProject(null)} className="btn-secondary text-xs font-bold uppercase tracking-wider">Close</button>
-                  <Link to="/contact" className="btn-teal text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                    Start Similar Project <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      {/* ═══════════════════════════════════════════════════════════════════════
-          6. VIDEO MODAL
-      ═══════════════════════════════════════════════════════════════════════ */}
-      <AnimatePresence>
-        {videoModalProject && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/92 backdrop-blur-md"
-            onClick={() => setVideoModalProject(null)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-[#101B1D] border border-[#00C7B7]/30 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl"
-            >
-              {/* Video embed */}
-              <div className="relative aspect-video bg-black">
-                {videoModalProject.videoUrl && isEmbeddableUrl(videoModalProject.videoUrl) ? (
-                  <iframe
-                    src={toEmbedUrl(videoModalProject.videoUrl)}
-                    title={`${videoModalProject.title} case study video`}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                    allowFullScreen
-                  />
-                ) : (
-                  <video
-                    src={videoModalProject.videoUrl}
-                    controls
-                    autoPlay
-                    className="w-full h-full object-contain"
-                  />
-                )}
-                <button
-                  onClick={() => setVideoModalProject(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors backdrop-blur-sm z-10"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Video info bar */}
-              <div className="p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <div>
-                  <div className="flex gap-2 mb-2">
-                    <span className="badge-teal text-[10px]">{videoModalProject.category}</span>
-                    {videoModalProject.featured && <span className="badge-gold text-[10px]">Featured</span>}
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{videoModalProject.title}</h3>
-                  <div className="text-sm text-[#00C7B7] font-semibold">{videoModalProject.client}</div>
-                </div>
-                <div className="flex gap-2 flex-wrap">
-                  {videoModalProject.projectLink && (
-                    <a href={videoModalProject.projectLink} target="_blank" rel="noreferrer" className="btn-gold text-xs font-bold uppercase tracking-wider flex items-center gap-2 py-2.5 px-4">
-                      <ExternalLink className="w-3.5 h-3.5" /> Visit Project
-                    </a>
-                  )}
-                  <button onClick={() => { setVideoModalProject(null); setSelectedProject(videoModalProject); }}
-                    className="btn-secondary text-xs font-bold uppercase tracking-wider py-2.5 px-4 flex items-center gap-2">
-                    <Eye className="w-3.5 h-3.5" /> Full Details
-                  </button>
-                  <Link to="/contact" className="btn-teal text-xs font-bold uppercase tracking-wider py-2.5 px-4 flex items-center gap-2">
-                    Start a Project <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Results bar */}
-              <div className="grid grid-cols-3 gap-0 divide-x divide-[#00C7B7]/10 border-t border-[#00C7B7]/10 px-6 py-4">
-                {videoModalProject.results.map((res, i) => (
-                  <div key={i} className="text-center px-4">
-                    <div className="text-lg font-black text-[#00C7B7]">{res.value}</div>
-                    <div className="text-[11px] text-[#A8B7B5]">{res.label}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      {/* Modals removed — case study details now open in dedicated page at /portfolio/case-study/:id */}
 
     </div>
   );
