@@ -467,3 +467,180 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ─── Uiverse.io Inspired Animated Glow Button (Adapted for Noryxa Color Scheme) ─── */
+.uiverse-btn {
+  --black-700: #101B1D;
+  --border_radius: 9999px;
+  --transtion: 0.3s ease-in-out;
+  --offset: 2px;
+  --active: 0;
+
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transform-origin: center;
+  padding: 0.65rem 1.4rem;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--border_radius);
+  transform: scale(calc(1 + (var(--active, 0) * 0.04)));
+  transition: transform var(--transtion);
+  text-decoration: none;
+}
+
+.uiverse-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-700);
+  border-radius: var(--border_radius);
+  box-shadow: inset 0 0.5px rgba(255, 255, 255, 0.25), inset 0 -1px 2px 0 rgba(0, 0, 0, 0.8),
+    0px 4px 12px -4px rgba(0, 0, 0, calc(1 - var(--active, 0))),
+    0 0 0 calc(var(--active, 0) * 0.25rem) rgba(0, 199, 183, 0.5);
+  transition: all var(--transtion);
+  z-index: 0;
+}
+
+.uiverse-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 199, 183, 0.25);
+  background-image: radial-gradient(
+      at 51% 89%,
+      rgba(20, 217, 199, 0.6) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 100%, rgba(214, 168, 74, 0.4) 0px, transparent 50%),
+    radial-gradient(at 22% 91%, rgba(0, 199, 183, 0.5) 0px, transparent 50%);
+  background-position: top;
+  opacity: var(--active, 0);
+  border-radius: var(--border_radius);
+  transition: opacity var(--transtion);
+  z-index: 2;
+}
+
+.uiverse-btn:is(:hover, :focus-visible) {
+  --active: 1;
+}
+
+.uiverse-btn:active {
+  transform: scale(0.97);
+}
+
+.uiverse-btn .dots_border {
+  --size_border: calc(100% + 2px);
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size_border);
+  height: var(--size_border);
+  background-color: transparent;
+  border-radius: var(--border_radius);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.uiverse-btn .dots_border::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left;
+  width: 100%;
+  height: 2.2rem;
+  background: linear-gradient(90deg, #00C7B7, #D6A84A, #14D9C7);
+  mask: linear-gradient(transparent 0%, white 120%);
+  -webkit-mask: linear-gradient(transparent 0%, white 120%);
+  animation: uiverse_rotate 2.4s linear infinite;
+}
+
+@keyframes uiverse_rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.uiverse-btn .sparkle {
+  position: relative;
+  z-index: 10;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.uiverse-btn .sparkle .path {
+  fill: currentColor;
+  stroke: currentColor;
+  transform-origin: center;
+  color: #D6A84A;
+  transition: color 0.3s ease;
+}
+
+.uiverse-btn:is(:hover, :focus) .sparkle .path {
+  animation: uiverse_path 1.5s linear 0.5s infinite;
+  color: #14D9C7;
+}
+
+.uiverse-btn .sparkle .path:nth-child(1) {
+  --scale_path_1: 1.2;
+}
+.uiverse-btn .sparkle .path:nth-child(2) {
+  --scale_path_2: 1.2;
+}
+.uiverse-btn .sparkle .path:nth-child(3) {
+  --scale_path_3: 1.2;
+}
+
+@keyframes uiverse_path {
+  0%,
+  34%,
+  71%,
+  100% {
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(var(--scale_path_1, 1));
+  }
+  49% {
+    transform: scale(var(--scale_path_2, 1));
+  }
+  83% {
+    transform: scale(var(--scale_path_3, 1));
+  }
+}
+
+.uiverse-btn .text_button {
+  position: relative;
+  z-index: 10;
+  background-image: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+

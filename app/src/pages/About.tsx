@@ -119,7 +119,7 @@ const About = () => {
                 We&apos;re a Team of Digital <span className="text-[#00C7B7]">Experts</span>
               </h1>
               <p className="text-lg text-[#A8B7B5] mb-8 leading-relaxed">
-                Founded in 2014, NexGen Digital Agency has grown from a small startup to a 
+                Founded in 2014, Noryxa Digital Agency has grown from a small startup to a 
                 full-service digital marketing agency. We&apos;ve helped hundreds of businesses 
                 across various industries achieve their digital goals and drive measurable growth.
               </p>
@@ -355,7 +355,7 @@ const About = () => {
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
-                The NexGen Difference
+                The Noryxa Difference
               </h2>
               <p className="text-[#A8B7B5] mb-8">
                 We combine creativity with data-driven strategies to deliver exceptional results 

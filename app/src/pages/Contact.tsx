@@ -40,8 +40,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'info@nexgen.com',
-      link: 'mailto:info@nexgen.com',
+      content: 'info@noryxa.com',
+      link: 'mailto:info@noryxa.com',
     },
     {
       icon: Phone,

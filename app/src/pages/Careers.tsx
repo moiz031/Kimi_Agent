@@ -214,7 +214,7 @@ const Careers = () => {
               </h2>
               <div className="space-y-4 text-[#A8B7B5]">
                 <p>
-                  At NexGen, we believe that the best work comes from people who are 
+                  At Noryxa, we believe that the best work comes from people who are 
                   passionate, supported, and empowered. We&apos;ve built a culture that 
                   values creativity, collaboration, and continuous learning.
                 </p>

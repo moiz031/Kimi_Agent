@@ -63,12 +63,12 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                   style={{ background: 'linear-gradient(135deg, #D6A84A 0%, #E5C36A 100%)', boxShadow: '0 0 15px rgba(214, 168, 74, 0.3)' }}>
-                <span className="text-[#061112] font-black text-xl">CS</span>
+              <div className="relative w-10 h-10 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#D6A84A] to-[#E5C36A] shadow-[0_0_18px_rgba(214,168,74,0.28)] transition-transform duration-300 group-hover:scale-105">
+                <span className="text-[#061112] font-black text-lg">N</span>
+                <span className="absolute bottom-1 right-1 block w-2 h-2 rounded-full bg-[#00C7B7] shadow-[0_0_10px_rgba(0,199,183,0.35)]" />
               </div>
               <span className="font-extrabold text-xl tracking-tight text-white">
-                Nex<span className="text-[#00C7B7]">Gen</span>
+                Nory<span className="text-[#00C7B7]">xa</span>
               </span>
             </Link>
             
@@ -173,9 +173,9 @@ const Footer = () => {
         <div className="container-custom py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#A8B7B5]">
             <div className="flex flex-wrap items-center justify-center gap-6">
-              <a href="mailto:info@nexgen.com" className="flex items-center gap-1.5 hover:text-[#00C7B7] transition-colors">
+              <a href="mailto:info@noryxa.com" className="flex items-center gap-1.5 hover:text-[#00C7B7] transition-colors">
                 <Mail className="w-3.5 h-3.5 text-[#00C7B7]" />
-                info@nexgen.com
+                info@noryxa.com
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-1.5 hover:text-[#00C7B7] transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#00C7B7]" />
@@ -198,7 +198,7 @@ const Footer = () => {
       <div className="border-t border-white/5">
         <div className="container-custom py-4">
           <p className="text-center text-xs text-[#A8B7B5]/60">
-            © {new Date().getFullYear()} NexGen Digital Agency. All rights reserved.
+            © {new Date().getFullYear()} Noryxa Digital Agency. All rights reserved.
           </p>
         </div>
       </div>

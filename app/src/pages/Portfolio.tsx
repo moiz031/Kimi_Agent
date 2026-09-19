@@ -115,25 +115,6 @@ const createAutomaticCover = (title: string, category: string, id: number) => {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 };
 
-// ─── Video URL Converter ────────────────────────────────────────────────────────
-const toEmbedUrl = (url: string): string => {
-  if (!url) return '';
-  // YouTube
-  const ytMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
-  if (ytMatch) return `https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1&rel=0`;
-  // Vimeo
-  const vimeoMatch = url.match(/vimeo\.com\/(\d+)/);
-  if (vimeoMatch) return `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1`;
-  return url;
-};
-
-const isEmbeddableUrl = (url: string) =>
-  url.includes('youtube.com/embed') ||
-  url.includes('youtu.be') ||
-  url.includes('youtube.com/watch') ||
-  url.includes('vimeo.com') ||
-  url.includes('player.vimeo.com');
-
 // ─── Stat Card ─────────────────────────────────────────────────────────────────
 const StatCard = ({ value, label, color = '#00C7B7' }: { value: string; label: string; color?: string }) => (
   <div className="text-center px-4 py-3">
@@ -146,8 +127,6 @@ const StatCard = ({ value, label, color = '#00C7B7' }: { value: string; label: s
 const Portfolio = () => {
   // Projects
   const [activeFilter, setActiveFilter] = useState('All');
-  const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
-  const [videoModalProject, setVideoModalProject] = useState<PortfolioProject | null>(null);
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
   const [showAdmin, setShowAdmin] = useState(false);
   const [adminTab, setAdminTab] = useState<AdminTab>('projects');
@@ -253,7 +232,6 @@ const Portfolio = () => {
     setEditingProjectId(project.id);
     setAdminTab('projects');
     setShowAdmin(true);
-    setSelectedProject(null);
     setTimeout(() => editorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   };
 
