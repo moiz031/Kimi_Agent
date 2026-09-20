@@ -65,13 +65,13 @@ const DigitalMarketing = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
                 Digital Marketing
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] leading-tight mb-6">
-                Drive Growth With <span className="text-[#00C7B7]">Strategic</span> Digital Marketing
+                Drive Growth With <span className="text-[#12AAD1]">Strategic</span> Digital Marketing
               </h1>
-              <p className="text-lg text-[#A8B7B5] mb-8">
+              <p className="text-lg text-[#A3B0B7] mb-8">
                 Comprehensive digital marketing solutions that connect your brand with the right 
                 audience, drive qualified traffic, and deliver measurable results.
               </p>
@@ -131,13 +131,13 @@ const DigitalMarketing = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-4">
               What We Offer
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               Our Digital Marketing Services
             </h2>
-            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A3B0B7] max-w-2xl mx-auto">
               A comprehensive suite of services designed to drive growth
             </p>
           </motion.div>
@@ -151,11 +151,11 @@ const DigitalMarketing = () => {
           >
             {features.map((feature, index) => (
               <div key={index} className="bg-[#EFF6FF] rounded-2xl p-8">
-                <div className="w-14 h-14 bg-[#00C7B7]/10 rounded-xl flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-[#00C7B7]" />
+                <div className="w-14 h-14 bg-[#12AAD1]/10 rounded-xl flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-[#12AAD1]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0B1214] mb-3">{feature.title}</h3>
-                <p className="text-[#A8B7B5]">{feature.description}</p>
+                <p className="text-[#A3B0B7]">{feature.description}</p>
               </div>
             ))}
           </motion.div>
@@ -185,13 +185,13 @@ const DigitalMarketing = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
                 Full-Service Solutions
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
                 Everything You Need to Succeed Online
               </h2>
-              <p className="text-[#A8B7B5] mb-8">
+              <p className="text-[#A3B0B7] mb-8">
                 Our comprehensive digital marketing services cover every aspect of your 
                 online presence, ensuring a cohesive and effective strategy.
               </p>
@@ -199,8 +199,8 @@ const DigitalMarketing = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0" />
-                    <span className="text-[#A8B7B5]">{service}</span>
+                    <CheckCircle className="w-5 h-5 text-[#12AAD1] flex-shrink-0" />
+                    <span className="text-[#A3B0B7]">{service}</span>
                   </div>
                 ))}
               </div>
@@ -219,7 +219,7 @@ const DigitalMarketing = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-4">
               Our Process
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
@@ -242,11 +242,11 @@ const DigitalMarketing = () => {
               { step: '05', title: 'Optimize', desc: 'Continuous improvement' },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[#00C7B7] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#12AAD1] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold">{item.step}</span>
                 </div>
                 <h4 className="font-bold text-[#0B1214] mb-1">{item.title}</h4>
-                <p className="text-sm text-[#A8B7B5]">{item.desc}</p>
+                <p className="text-sm text-[#A3B0B7]">{item.desc}</p>
               </div>
             ))}
           </motion.div>

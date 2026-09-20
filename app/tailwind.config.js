@@ -5,25 +5,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        border: "rgba(0, 199, 183, 0.14)",
-        input: "rgba(0, 199, 183, 0.2)",
-        ring: "#00C7B7",
+        border: "rgba(18, 170, 209, 0.14)",
+        input: "rgba(18, 170, 209, 0.2)",
+        ring: "#12AAD1",
         background: "#0B1214",
         foreground: "#F7FAF9",
 
         // Reference Palette Tokens
         'slate-dark': '#0B1214',
         'slate-card': '#101B1D',
-        'teal-primary': '#00C7B7',
-        'teal-bright': '#14D9C7',
-        'teal-deep': '#063A3A',
-        'gold-accent': '#D6A84A',
-        'gold-soft': '#E5C36A',
+        'teal-primary': '#12AAD1',
+        'teal-bright': '#3DD6F0',
+        'teal-deep': '#052F3D',
+        'chrome-accent': '#CBD1D8',
+        'gold-accent': '#CBD1D8',
+        'chrome-soft': '#EDEFF2',
+        'gold-soft': '#EDEFF2',
         'white-soft': '#F7FAF9',
-        'text-muted-slate': '#A8B7B5',
+        'text-muted-slate': '#A3B0B7',
 
         primary: {
-          DEFAULT: "#00C7B7",
+          DEFAULT: "#12AAD1",
           foreground: "#061112",
         },
         secondary: {
@@ -31,16 +33,16 @@ module.exports = {
           foreground: "#F7FAF9",
         },
         accent: {
-          DEFAULT: "#D6A84A",
+          DEFAULT: "#CBD1D8",
           foreground: "#061112",
         },
         muted: {
           DEFAULT: "#101B1D",
-          foreground: "#A8B7B5",
+          foreground: "#A3B0B7",
         },
       },
       backgroundImage: {
-        'tech-grid': 'radial-gradient(circle at top left, rgba(0, 199, 183, 0.12), transparent 36%), radial-gradient(circle at 80% 20%, rgba(214, 168, 74, 0.08), transparent 20%)',
+        'tech-grid': 'radial-gradient(circle at top left, rgba(18, 170, 209, 0.12), transparent 36%), radial-gradient(circle at 80% 20%, rgba(203, 209, 216, 0.08), transparent 20%)',
       },
 
       borderRadius: {
@@ -51,8 +53,8 @@ module.exports = {
         xs: "calc(var(--radius) - 6px)",
       },
       boxShadow: {
-        'glow-teal': '0 0 25px rgba(0, 199, 183, 0.25)',
-        'glow-gold': '0 0 25px rgba(214, 168, 74, 0.25)',
+        'glow-teal': '0 0 25px rgba(18, 170, 209, 0.25)',
+        'glow-chrome': '0 0 25px rgba(203, 209, 216, 0.25)',
         'card-dark': '0 10px 30px rgba(0, 0, 0, 0.35)',
       },
       keyframes: {

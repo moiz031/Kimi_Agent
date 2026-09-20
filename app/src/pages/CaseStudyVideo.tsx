@@ -110,16 +110,16 @@ export default function CaseStudyVideo() {
     return (
       <main className="min-h-screen bg-[#0B1214] flex flex-col items-center justify-center px-6 py-32 text-[#F7FAF9]">
         <div className="text-center max-w-lg">
-          <div className="w-20 h-20 rounded-full bg-[#00C7B7]/10 border border-[#00C7B7]/25 flex items-center justify-center mx-auto mb-8">
-            <Target className="w-9 h-9 text-[#00C7B7]" />
+          <div className="w-20 h-20 rounded-full bg-[#12AAD1]/10 border border-[#12AAD1]/25 flex items-center justify-center mx-auto mb-8">
+            <Target className="w-9 h-9 text-[#12AAD1]" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-4">Case Study Not Found</h1>
-          <p className="text-[#A8B7B5] mb-8">
+          <p className="text-[#A3B0B7] mb-8">
             The project you're looking for might have been removed or doesn't exist.
           </p>
           <Link
             to="/portfolio"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#00C7B7] to-[#14D9C7] text-[#061112] font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#12AAD1] to-[#3DD6F0] text-[#061112] font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Portfolio
           </Link>
@@ -138,7 +138,7 @@ export default function CaseStudyVideo() {
       <section className="relative overflow-hidden">
         {/* Background image with heavy overlay */}
         <div className="absolute inset-0">
-          <img src={project.image} alt="" className="w-full h-full object-cover" />
+          <img loading="lazy" src={project.image} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B1214]/90 via-[#0B1214]/80 to-[#0B1214]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1214] via-transparent to-[#0B1214]/70" />
         </div>
@@ -148,7 +148,7 @@ export default function CaseStudyVideo() {
           <motion.div {...fadeUp} transition={{ duration: 0.5 }}>
             <Link
               to="/portfolio"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#00C7B7] hover:text-white transition-colors mb-10"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#12AAD1] hover:text-white transition-colors mb-10"
             >
               <ArrowLeft className="w-4 h-4" /> Back to Portfolio
             </Link>
@@ -157,12 +157,12 @@ export default function CaseStudyVideo() {
           {/* Title area */}
           <motion.div variants={stagger} initial="initial" animate="animate" className="max-w-3xl">
             <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.1 }} className="flex flex-wrap gap-2 mb-5">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full bg-[#00C7B7]/15 text-[#00C7B7] border border-[#00C7B7]/25">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full bg-[#12AAD1]/15 text-[#12AAD1] border border-[#12AAD1]/25">
                 {project.category}
               </span>
               {project.featured && (
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full bg-[#D6A84A]/15 text-[#D6A84A] border border-[#D6A84A]/25">
-                  <Star className="w-3 h-3 fill-[#D6A84A]" /> Featured
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full bg-[#CBD1D8]/15 text-[#CBD1D8] border border-[#CBD1D8]/25">
+                  <Star className="w-3 h-3 fill-[#CBD1D8]" /> Featured
                 </span>
               )}
             </motion.div>
@@ -178,12 +178,12 @@ export default function CaseStudyVideo() {
             <motion.p
               {...fadeUp}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg sm:text-xl text-[#A8B7B5] leading-relaxed mb-3"
+              className="text-lg sm:text-xl text-[#A3B0B7] leading-relaxed mb-3"
             >
               {project.description}
             </motion.p>
 
-            <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.25 }} className="text-sm font-semibold text-[#00C7B7]">
+            <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.25 }} className="text-sm font-semibold text-[#12AAD1]">
               Client: {project.client}
             </motion.div>
           </motion.div>
@@ -199,15 +199,15 @@ export default function CaseStudyVideo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="grid grid-cols-3 rounded-2xl border border-[#00C7B7]/25 bg-[#101B1D]/90 backdrop-blur-md overflow-hidden shadow-xl"
+            className="grid grid-cols-3 rounded-2xl border border-[#12AAD1]/25 bg-[#101B1D]/90 backdrop-blur-md overflow-hidden shadow-xl"
           >
             {project.results.map((res, i) => (
               <div
                 key={i}
-                className={`p-6 sm:p-8 text-center ${i < project.results.length - 1 ? 'border-r border-[#00C7B7]/10' : ''}`}
+                className={`p-6 sm:p-8 text-center ${i < project.results.length - 1 ? 'border-r border-[#12AAD1]/10' : ''}`}
               >
-                <div className="text-2xl sm:text-4xl font-black text-[#00C7B7] mb-1">{res.value}</div>
-                <div className="text-[11px] sm:text-xs text-[#A8B7B5] uppercase tracking-wider font-semibold">{res.label}</div>
+                <div className="text-2xl sm:text-4xl font-black text-[#12AAD1] mb-1">{res.value}</div>
+                <div className="text-[11px] sm:text-xs text-[#A3B0B7] uppercase tracking-wider font-semibold">{res.label}</div>
               </div>
             ))}
           </motion.div>
@@ -227,17 +227,17 @@ export default function CaseStudyVideo() {
           >
             {/* Section label */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-[#00C7B7]/10 border border-[#00C7B7]/25 flex items-center justify-center">
-                <Play className="w-5 h-5 text-[#00C7B7] fill-[#00C7B7]" />
+              <div className="w-10 h-10 rounded-xl bg-[#12AAD1]/10 border border-[#12AAD1]/25 flex items-center justify-center">
+                <Play className="w-5 h-5 text-[#12AAD1] fill-[#12AAD1]" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white">Project Proof Video</h2>
-                <p className="text-xs text-[#A8B7B5]">Watch the full case study walkthrough</p>
+                <p className="text-xs text-[#A3B0B7]">Watch the full case study walkthrough</p>
               </div>
             </div>
 
             {/* Video player container */}
-            <div className="rounded-2xl overflow-hidden border border-[#00C7B7]/25 bg-black shadow-2xl shadow-[#00C7B7]/5">
+            <div className="rounded-2xl overflow-hidden border border-[#12AAD1]/25 bg-black shadow-2xl shadow-[#12AAD1]/5">
               {embedUrl ? (
                 <iframe
                   src={embedUrl}
@@ -293,7 +293,7 @@ export default function CaseStudyVideo() {
               </div>
               <h3 className="text-lg font-bold text-white uppercase tracking-wide">The Challenge</h3>
             </div>
-            <p className="text-[#A8B7B5] leading-relaxed">
+            <p className="text-[#A3B0B7] leading-relaxed">
               {project.fullDetails?.challenge || project.description}
             </p>
           </motion.div>
@@ -304,15 +304,15 @@ export default function CaseStudyVideo() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl border border-[#00C7B7]/20 bg-[#101B1D] p-8"
+            className="rounded-2xl border border-[#12AAD1]/20 bg-[#101B1D] p-8"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-xl bg-[#00C7B7]/10 border border-[#00C7B7]/25 flex items-center justify-center">
-                <Lightbulb className="w-5 h-5 text-[#00C7B7]" />
+              <div className="w-11 h-11 rounded-xl bg-[#12AAD1]/10 border border-[#12AAD1]/25 flex items-center justify-center">
+                <Lightbulb className="w-5 h-5 text-[#12AAD1]" />
               </div>
-              <h3 className="text-lg font-bold text-[#00C7B7] uppercase tracking-wide">Our Solution</h3>
+              <h3 className="text-lg font-bold text-[#12AAD1] uppercase tracking-wide">Our Solution</h3>
             </div>
-            <p className="text-[#A8B7B5] leading-relaxed">
+            <p className="text-[#A3B0B7] leading-relaxed">
               {project.fullDetails?.solution || 'Designed and deployed custom digital architectures optimized for conversion and growth.'}
             </p>
           </motion.div>
@@ -335,11 +335,11 @@ export default function CaseStudyVideo() {
               {/* Timeline */}
               {project.fullDetails?.timeline && (
                 <div className="flex items-center gap-4 min-w-fit">
-                  <div className="w-12 h-12 rounded-xl bg-[#D6A84A]/10 border border-[#D6A84A]/25 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5 text-[#D6A84A]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#CBD1D8]/10 border border-[#CBD1D8]/25 flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5 text-[#CBD1D8]" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold text-[#A8B7B5] uppercase tracking-widest mb-0.5">Timeline</div>
+                    <div className="text-[10px] font-bold text-[#A3B0B7] uppercase tracking-widest mb-0.5">Timeline</div>
                     <div className="text-2xl font-extrabold text-white">{project.fullDetails.timeline}</div>
                   </div>
                 </div>
@@ -353,11 +353,11 @@ export default function CaseStudyVideo() {
               {/* Deliverables */}
               {project.fullDetails?.deliverables && (
                 <div className="flex-1">
-                  <div className="text-[10px] font-bold text-[#A8B7B5] uppercase tracking-widest mb-4">Key Deliverables</div>
+                  <div className="text-[10px] font-bold text-[#A3B0B7] uppercase tracking-widest mb-4">Key Deliverables</div>
                   <div className="grid grid-cols-2 gap-3">
                     {project.fullDetails.deliverables.map((item, i) => (
                       <div key={i} className="flex items-center gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-[#00C7B7] shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-[#12AAD1] shrink-0" />
                         <span className="text-sm text-[#E5EDEC]">{item}</span>
                       </div>
                     ))}
@@ -379,19 +379,19 @@ export default function CaseStudyVideo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-2xl border border-[#D6A84A]/20 bg-gradient-to-br from-[#101B1D] to-[#15201A] p-8 sm:p-10"
+            className="rounded-2xl border border-[#CBD1D8]/20 bg-gradient-to-br from-[#101B1D] to-[#15201A] p-8 sm:p-10"
           >
-            <Quote className="w-10 h-10 text-[#D6A84A]/30 mb-4" />
+            <Quote className="w-10 h-10 text-[#CBD1D8]/30 mb-4" />
             <blockquote className="text-lg sm:text-xl text-[#E5EDEC] italic leading-relaxed mb-6">
               "{project.fullDetails.testimonial}"
             </blockquote>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#D6A84A]/15 flex items-center justify-center">
-                <Star className="w-5 h-5 text-[#D6A84A] fill-[#D6A84A]" />
+              <div className="w-10 h-10 rounded-full bg-[#CBD1D8]/15 flex items-center justify-center">
+                <Star className="w-5 h-5 text-[#CBD1D8] fill-[#CBD1D8]" />
               </div>
               <div>
                 <div className="text-sm font-bold text-white">{project.client}</div>
-                <div className="text-xs text-[#A8B7B5]">Verified Client</div>
+                <div className="text-xs text-[#A3B0B7]">Verified Client</div>
               </div>
             </div>
           </motion.div>
@@ -407,13 +407,13 @@ export default function CaseStudyVideo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl border border-[#00C7B7]/20 bg-gradient-to-r from-[#101B1D] to-[#0D1A1E] p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6"
+          className="rounded-2xl border border-[#12AAD1]/20 bg-gradient-to-r from-[#101B1D] to-[#0D1A1E] p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6"
         >
           <div>
             <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2">
               Want Similar Results?
             </h3>
-            <p className="text-sm text-[#A8B7B5]">
+            <p className="text-sm text-[#A3B0B7]">
               Let our team build something powerful for your brand.
             </p>
           </div>
@@ -423,14 +423,14 @@ export default function CaseStudyVideo() {
                 href={project.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#D6A84A]/50 text-[#D6A84A] font-bold text-xs uppercase tracking-wider hover:bg-[#D6A84A]/10 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#CBD1D8]/50 text-[#CBD1D8] font-bold text-xs uppercase tracking-wider hover:bg-[#CBD1D8]/10 transition-colors"
               >
                 <ExternalLink className="w-4 h-4" /> Visit Live Project
               </a>
             )}
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#00C7B7] to-[#14D9C7] text-[#061112] font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#12AAD1] to-[#3DD6F0] text-[#061112] font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all"
             >
               <Zap className="w-4 h-4" /> Start Your Project <ArrowRight className="w-4 h-4" />
             </Link>
@@ -450,7 +450,7 @@ export default function CaseStudyVideo() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <TrendingUp className="w-5 h-5 text-[#00C7B7]" />
+              <TrendingUp className="w-5 h-5 text-[#12AAD1]" />
               <h2 className="text-2xl font-extrabold text-white">Related Projects</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -458,7 +458,7 @@ export default function CaseStudyVideo() {
                 <Link
                   key={rp.id}
                   to={`/portfolio/case-study/${rp.id}`}
-                  className="group rounded-2xl overflow-hidden border border-white/10 bg-[#101B1D] hover:border-[#00C7B7]/30 transition-colors"
+                  className="group rounded-2xl overflow-hidden border border-white/10 bg-[#101B1D] hover:border-[#12AAD1]/30 transition-colors"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
@@ -469,11 +469,11 @@ export default function CaseStudyVideo() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#101B1D] via-transparent to-transparent" />
                   </div>
                   <div className="p-5">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#00C7B7]">{rp.category}</span>
-                    <h4 className="text-base font-bold text-white mt-1 group-hover:text-[#00C7B7] transition-colors leading-snug">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#12AAD1]">{rp.category}</span>
+                    <h4 className="text-base font-bold text-white mt-1 group-hover:text-[#12AAD1] transition-colors leading-snug">
                       {rp.title}
                     </h4>
-                    <p className="text-xs text-[#A8B7B5] mt-2 line-clamp-2">{rp.description}</p>
+                    <p className="text-xs text-[#A3B0B7] mt-2 line-clamp-2">{rp.description}</p>
                   </div>
                 </Link>
               ))}

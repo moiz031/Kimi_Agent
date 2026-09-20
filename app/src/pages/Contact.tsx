@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Facebook, Twitter, Instagram, Linkedin, Youtube, AlertCircle } from 'lucide-react';
+import FAQAccordion from '../components/FAQAccordion';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +13,9 @@ const Contact = () => {
     service: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -20,11 +24,31 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
+    setIsSubmitting(true);
+    setErrorMsg('');
+
+    try {
+      // Initialize EmailJS (replace with your actual public key when ready)
+      emailjs.init("YOUR_PUBLIC_KEY");
+      
+      // We are sending a structured email to your address
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your Service ID
+        'YOUR_TEMPLATE_ID', // Replace with your Template ID
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          to_email: 'noryxadigital@gmail.com'
+        }
+      );
+      
+      setIsSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -33,26 +57,31 @@ const Contact = () => {
         service: '',
         message: '',
       });
-    }, 3000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setErrorMsg('Failed to send message. Please try emailing us directly at noryxadigital@gmail.com.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'info@noryxa.com',
-      link: 'mailto:info@noryxa.com',
+      content: 'noryxadigital@gmail.com',
+      link: 'mailto:noryxadigital@gmail.com',
     },
     {
       icon: Phone,
       title: 'Call Us',
-      content: '(123) 456-7890',
-      link: 'tel:+1234567890',
+      content: '+92 330 9999149',
+      link: 'tel:+923309999149',
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: '123 Digital Street, New York, NY 10001',
+      content: 'Pakistan',
       link: '#',
     },
     {
@@ -95,13 +124,13 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
               Contact Us
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
-              Let&apos;s Start a <span className="text-[#00C7B7]">Conversation</span>
+              Let&apos;s Start a <span className="text-[#12AAD1]">Conversation</span>
             </h1>
-            <p className="text-lg text-[#A8B7B5]">
+            <p className="text-lg text-[#A3B0B7]">
               Have a project in mind? We&apos;d love to hear from you. Send us a message 
               and we&apos;ll respond as soon as possible.
             </p>
@@ -125,11 +154,11 @@ const Contact = () => {
                 href={info.link}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow group"
               >
-                <div className="w-12 h-12 bg-[#00C7B7]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#00C7B7] transition-colors">
-                  <info.icon className="w-6 h-6 text-[#00C7B7] group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 bg-[#12AAD1]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#12AAD1] transition-colors">
+                  <info.icon className="w-6 h-6 text-[#12AAD1] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="font-semibold text-[#0B1214] mb-1">{info.title}</h3>
-                <p className="text-sm text-[#A8B7B5]">{info.content}</p>
+                <p className="text-sm text-[#A3B0B7]">{info.content}</p>
               </a>
             ))}
           </motion.div>
@@ -150,7 +179,7 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-[#0B1214] mb-6">
                 Send Us a Message
               </h2>
-              <p className="text-[#A8B7B5] mb-8">
+              <p className="text-[#A3B0B7] mb-8">
                 Fill out the form below and we&apos;ll get back to you within 24 hours.
               </p>
 
@@ -181,7 +210,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -195,7 +224,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -211,7 +240,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
                         placeholder="(123) 456-7890"
                       />
                     </div>
@@ -224,7 +253,7 @@ const Contact = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
                         placeholder="Your Company"
                       />
                     </div>
@@ -238,7 +267,7 @@ const Contact = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -259,18 +288,30 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors resize-none"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors resize-none"
                       placeholder="Tell us about your project..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full btn-primary"
+                    disabled={isSubmitting}
+                    className="w-full btn-primary flex items-center justify-center gap-2 group"
                   >
-                    Send Message
-                    <Send className="w-5 h-5" />
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : 'group-hover:translate-x-1'} transition-transform`} />
                   </button>
+
+                  {errorMsg && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center gap-2"
+                    >
+                      <AlertCircle className="w-4 h-4" />
+                      {errorMsg}
+                    </motion.div>
+                  )}
                 </form>
               )}
             </motion.div>
@@ -286,9 +327,9 @@ const Contact = () => {
               {/* Map Placeholder */}
               <div className="surface-panel h-80 flex items-center justify-center">
                 <div className="text-center">
-                  <MapPin className="w-12 h-12 text-[#00C7B7] mx-auto mb-4" />
-                  <p className="text-[#A8B7B5]">Interactive Map</p>
-                  <p className="text-sm text-[#A8B7B5]">123 Digital Street, New York, NY 10001</p>
+                  <MapPin className="w-12 h-12 text-[#12AAD1] mx-auto mb-4" />
+                  <p className="text-[#A3B0B7]">Interactive Map</p>
+                  <p className="text-sm text-[#A3B0B7]">123 Digital Street, New York, NY 10001</p>
                 </div>
               </div>
 
@@ -297,7 +338,7 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-white mb-4">
                   Connect With Us
                 </h3>
-                <p className="text-[#A8B7B5] mb-6">
+                <p className="text-[#A3B0B7] mb-6">
                   Follow us on social media for the latest updates, insights, and digital marketing tips.
                 </p>
                 <div className="flex gap-3">
@@ -306,32 +347,16 @@ const Contact = () => {
                       key={index}
                       href={social.href}
                       aria-label={social.label}
-                      className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:bg-[#00C7B7] hover:text-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 group"
+                      className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:bg-[#12AAD1] hover:text-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 group"
                     >
-                      <social.icon className="w-5 h-5 text-[#00C7B7] group-hover:text-white transition-colors" />
+                      <social.icon className="w-5 h-5 text-[#12AAD1] group-hover:text-white transition-colors" />
                     </a>
                   ))}
                 </div>
               </div>
 
-              {/* FAQ Teaser */}
-              <div className="surface-panel p-8">
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Frequently Asked Questions
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    'How long does it take to see results?',
-                    'What industries do you work with?',
-                    'How much do your services cost?',
-                  ].map((question, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#A8B7B5]">{question}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              {/* FAQ Accordion */}
+              <FAQAccordion />
             </motion.div>
           </div>
         </div>
@@ -354,7 +379,7 @@ const Contact = () => {
               Schedule a free consultation call with one of our experts.
             </p>
             <a
-              href="tel:+1234567890"
+              href="tel:+923309999149"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               <Phone className="w-5 h-5" />

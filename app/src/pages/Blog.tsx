@@ -121,13 +121,13 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
               Our Blog
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
-              Insights & <span className="text-[#00C7B7]">Resources</span>
+              Insights & <span className="text-[#12AAD1]">Resources</span>
             </h1>
-            <p className="text-lg text-[#A8B7B5]">
+            <p className="text-lg text-[#A3B0B7]">
               Stay updated with the latest digital marketing trends, strategies, and insights 
               from our team of experts.
             </p>
@@ -147,7 +147,7 @@ const Blog = () => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#00C7B7] transition-colors"
+                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
               />
             </div>
 
@@ -159,8 +159,8 @@ const Blog = () => {
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     activeCategory === category
-                      ? 'bg-[#00C7B7] text-white'
-                      : 'bg-gray-100 text-[#A8B7B5] hover:bg-[#00C7B7]/10'
+                      ? 'bg-[#12AAD1] text-white'
+                      : 'bg-gray-100 text-[#A3B0B7] hover:bg-[#12AAD1]/10'
                   }`}
                 >
                   {category}
@@ -194,16 +194,16 @@ const Blog = () => {
                 />
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <span className="inline-block px-3 py-1 bg-[#00C7B7] text-white text-xs font-semibold rounded-full mb-4 w-fit">
+                <span className="inline-block px-3 py-1 bg-[#12AAD1] text-white text-xs font-semibold rounded-full mb-4 w-fit">
                   {featuredPost.category}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0B1214] mb-4">
                   {featuredPost.title}
                 </h2>
-                <p className="text-[#A8B7B5] mb-6">
+                <p className="text-[#A3B0B7] mb-6">
                   {featuredPost.excerpt}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-[#A8B7B5] mb-6">
+                <div className="flex items-center gap-4 text-sm text-[#A3B0B7] mb-6">
                   <span className="flex items-center gap-1">
                     <User className="w-4 h-4" />
                     {featuredPost.author}
@@ -219,7 +219,7 @@ const Blog = () => {
                 </div>
                 <Link
                   to={`/blog/${featuredPost.id}`}
-                  className="inline-flex items-center gap-2 text-[#00C7B7] font-semibold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[#12AAD1] font-semibold hover:gap-3 transition-all"
                 >
                   Read Article
                   <ArrowRight className="w-4 h-4" />
@@ -262,16 +262,16 @@ const Blog = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <Tag className="w-4 h-4 text-[#00C7B7]" />
-                    <span className="text-xs font-medium text-[#00C7B7]">{post.category}</span>
+                    <Tag className="w-4 h-4 text-[#12AAD1]" />
+                    <span className="text-xs font-medium text-[#12AAD1]">{post.category}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#0B1214] mb-3 line-clamp-2 group-hover:text-[#00C7B7] transition-colors">
+                  <h3 className="text-xl font-bold text-[#0B1214] mb-3 line-clamp-2 group-hover:text-[#12AAD1] transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-[#A8B7B5] text-sm mb-4 line-clamp-2">
+                  <p className="text-[#A3B0B7] text-sm mb-4 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-xs text-[#A8B7B5]">
+                  <div className="flex items-center justify-between text-xs text-[#A3B0B7]">
                     <span className="flex items-center gap-1">
                       <User className="w-3 h-3" />
                       {post.author}
@@ -288,7 +288,7 @@ const Blog = () => {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-[#A8B7B5]">No articles found matching your criteria.</p>
+              <p className="text-[#A3B0B7]">No articles found matching your criteria.</p>
             </div>
           )}
         </div>
@@ -314,7 +314,7 @@ const Blog = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#00C7B7]"
+                className="flex-1 px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#12AAD1]"
               />
               <button
                 type="submit"

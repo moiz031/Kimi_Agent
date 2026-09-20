@@ -4,6 +4,10 @@ import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Preloader from './components/Preloader';
+import CustomCursor from './components/CustomCursor';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
+import ExitIntentPopup from './components/ExitIntentPopup';
 
 // Main Pages
 import Home from './pages/Home';
@@ -55,7 +59,7 @@ function ScrollProgressBar() {
   return (
     <motion.div
       style={{ scaleX, transformOrigin: '0%' }}
-      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#00C7B7] via-[#D6A84A] to-[#14D9C7] z-[9999] origin-left"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#12AAD1] via-[#CBD1D8] to-[#3DD6F0] z-[9999] origin-left"
     />
   );
 }
@@ -115,7 +119,11 @@ function AppShell() {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[#0B1214] text-[#F7FAF9]">
+    <div className="min-h-screen bg-[#0B1214] text-[#F7FAF9] cursor-default lg:cursor-none">
+      <Preloader />
+      <CustomCursor />
+      <FloatingWhatsApp />
+      <ExitIntentPopup />
       <LenisProvider />
       <ScrollProgressBar />
       <Navbar />

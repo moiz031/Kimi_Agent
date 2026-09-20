@@ -55,7 +55,7 @@ const TechnologySection = () => {
     <section className="py-20 bg-[#0B1214] relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#00C7B7]/20 rounded-full filter blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#12AAD1]/20 rounded-full filter blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#06B6D4]/10 rounded-full filter blur-3xl" />
       </div>
 
@@ -77,7 +77,7 @@ const TechnologySection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/20 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/20 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
               <Cpu className="w-4 h-4 inline mr-2" />
               Proprietary Technology
             </span>
@@ -115,7 +115,7 @@ const TechnologySection = () => {
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00C7B7] to-[#06B6D4] border-2 border-[#0B1214] flex items-center justify-center text-white text-xs font-bold"
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-[#12AAD1] to-[#06B6D4] border-2 border-[#0B1214] flex items-center justify-center text-white text-xs font-bold"
                   >
                     {i}K+
                   </div>
@@ -144,8 +144,8 @@ const TechnologySection = () => {
                 transition={{ delay: index * 0.1 }}
                 className="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group"
               >
-                <div className="w-12 h-12 bg-[#00C7B7]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#00C7B7] transition-colors">
-                  <feature.icon className="w-6 h-6 text-[#00C7B7] group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 bg-[#12AAD1]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#12AAD1] transition-colors">
+                  <feature.icon className="w-6 h-6 text-[#12AAD1] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-sm text-gray-400">{feature.description}</p>
@@ -162,14 +162,14 @@ const TechnologySection = () => {
           className="mt-16 text-center"
         >
           <div className="inline-flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-            <Globe className="w-8 h-8 text-[#00C7B7]" />
+            <Globe className="w-8 h-8 text-[#12AAD1]" />
             <div className="text-left">
               <p className="text-white font-semibold">Want to see our platform in action?</p>
               <p className="text-gray-400 text-sm">Schedule a free demo with our team</p>
             </div>
             <a
               href="/contact"
-              className="px-6 py-3 bg-[#00C7B7] text-white font-semibold rounded-lg hover:bg-[#14D9C7] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              className="px-6 py-3 bg-[#12AAD1] text-white font-semibold rounded-lg hover:bg-[#3DD6F0] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Request Demo
             </a>

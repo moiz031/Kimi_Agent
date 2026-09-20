@@ -27,13 +27,13 @@ const RealEstate = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">Real Estate Marketing</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] leading-tight mb-6">Sell More <span className="text-[#00C7B7]">Properties</span> Faster</h1>
-              <p className="text-lg text-[#A8B7B5] mb-8">Digital marketing strategies that help real estate agents and brokers generate qualified leads and close more deals.</p>
+              <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">Real Estate Marketing</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] leading-tight mb-6">Sell More <span className="text-[#12AAD1]">Properties</span> Faster</h1>
+              <p className="text-lg text-[#A3B0B7] mb-8">Digital marketing strategies that help real estate agents and brokers generate qualified leads and close more deals.</p>
               <Link to="/contact" className="btn-primary">Get More Leads <ArrowRight className="w-5 h-5" /></Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-              <img src="/niche-realestate.jpg" alt="Real Estate Marketing" className="rounded-2xl shadow-2xl" />
+              <img loading="lazy" src="/niche-realestate.jpg" alt="Real Estate Marketing" className="rounded-2xl shadow-2xl" />
             </motion.div>
           </div>
         </div>
@@ -60,8 +60,8 @@ const RealEstate = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <div key={index} className="bg-[#EFF6FF] rounded-xl p-6 flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0" />
-                <span className="text-[#A8B7B5] font-medium">{service}</span>
+                <CheckCircle className="w-5 h-5 text-[#12AAD1] flex-shrink-0" />
+                <span className="text-[#A3B0B7] font-medium">{service}</span>
               </div>
             ))}
           </motion.div>

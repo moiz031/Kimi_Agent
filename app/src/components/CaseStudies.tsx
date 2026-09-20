@@ -1,151 +1,260 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Users, DollarSign, Target } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, Shield } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import TestimonialCarousel from './TestimonialCarousel';
 
-const caseStudies = [
+gsap.registerPlugin(ScrollTrigger);
+
+const projectSpotlights = [
   {
     id: 1,
-    client: 'TechVentures Inc.',
-    industry: 'Technology',
-    service: 'SEO & Content Marketing',
+    title: 'Enterprise SaaS Platform & Design System',
+    industry: 'Technology & Cloud',
+    service: 'Full-Stack Web Engineering',
     image: '/portfolio-saas.jpg',
-    results: [
-      { icon: TrendingUp, value: '+427%', label: 'Organic Traffic' },
-      { icon: Target, value: '+68%', label: 'Conversion Rate' },
+    features: [
+      'Sub-second Core Web Vitals & TTFB',
+      'Modular Tailwind & Component Architecture',
+      'End-to-End Type Safety with TypeScript',
+      'Reactive Analytics & Data Visualizations',
     ],
-    testimonial: 'Noryxa transformed our digital presence completely. Our organic traffic skyrocketed within 6 months.',
-    author: 'Sarah Mitchell, CEO',
-    color: 'from-blue-500 to-blue-700',
+    stack: ['Vite', 'React 19', 'Tailwind', 'Framer Motion'],
+    metric: '99/100',
+    metricLabel: 'Performance Target',
   },
   {
     id: 2,
-    client: 'MedCare Plus',
-    industry: 'Healthcare',
-    service: 'PPC & Landing Pages',
-    image: '/portfolio-healthcare.jpg',
-    results: [
-      { icon: DollarSign, value: '$2.4M', label: 'Revenue Generated' },
-      { icon: Users, value: '-45%', label: 'Cost Per Lead' },
+    title: 'Next-Gen E-Commerce Architecture',
+    industry: 'Retail & Consumer Brands',
+    service: 'Headless Storefront',
+    image: '/portfolio-ecommerce.jpg',
+    features: [
+      'Edge-Cached Product Catalogs',
+      'Instant Search & Faceted Filtering',
+      'Custom Stripe Checkout Pipeline',
+      'Automated Stock & Order Synchronization',
     ],
-    testimonial: 'The ROI we\'ve seen from our PPC campaigns has been incredible. Best investment we\'ve made.',
-    author: 'Dr. James Wilson, Director',
-    color: 'from-green-500 to-green-700',
+    stack: ['Next.js', 'PostgreSQL', 'Stripe', 'Tailwind'],
+    metric: '< 1.2s',
+    metricLabel: 'Average Page Load',
   },
   {
     id: 3,
-    client: 'BuildRight Construction',
-    industry: 'Construction',
-    service: 'Web Design & Local SEO',
-    image: '/portfolio-construction.jpg',
-    results: [
-      { icon: TrendingUp, value: '+312%', label: 'Lead Generation' },
-      { icon: Target, value: '#1', label: 'Local Rankings' },
+    title: 'HIPAA-Aligned Telehealth Web Portal',
+    industry: 'Healthcare & Wellness',
+    service: 'Web App & Workflow Automation',
+    image: '/niche-healthcare.jpg',
+    features: [
+      'Encrypted Patient Intake Flows',
+      'Automated SMS & Calendar Confirmation Sync',
+      'Accessible WCAG AA Compliant UI',
+      'Secure Provider Dashboard Architecture',
     ],
-    testimonial: 'Our new website and local SEO strategy brought in more qualified leads than ever before.',
-    author: 'Mike Thompson, Owner',
-    color: 'from-orange-500 to-orange-700',
+    stack: ['React', 'Node.js', 'Twilio API', 'Supabase'],
+    metric: '100%',
+    metricLabel: 'WCAG Accessible',
   },
   {
     id: 4,
-    client: 'E-Shop Plus',
-    industry: 'E-commerce',
-    service: 'Digital Marketing',
-    image: '/portfolio-ecommerce.jpg',
-    results: [
-      { icon: DollarSign, value: '+380%', label: 'Online Sales' },
-      { icon: Users, value: '+250%', label: 'New Customers' },
+    title: 'Commercial Construction & Infrastructure Portal',
+    industry: 'Infrastructure & Engineering',
+    service: 'High-Conversion Architecture',
+    image: '/niche-realestate.jpg',
+    features: [
+      'Interactive Bid Estimation Calculator',
+      'High-Resolution Lazy-Loaded Portfolio Gallery',
+      'Automated Lead Qualification Routing',
+      'Local Search Engine Schema Architecture',
     ],
-    testimonial: 'Our online sales have never been better. Noryxa delivered beyond our expectations.',
-    author: 'Emily Chen, Marketing Director',
-    color: 'from-purple-500 to-purple-700',
+    stack: ['React', 'TypeScript', 'Tailwind', 'GSAP'],
+    metric: '24/7',
+    metricLabel: 'Automated Pipeline',
   },
 ];
 
 const CaseStudies = () => {
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const pin = triggerRef.current;
+      const scrollSection = sectionRef.current;
+      if (!pin || !scrollSection) return;
+
+      const mm = gsap.matchMedia();
+
+      mm.add('(min-width: 768px)', () => {
+        const totalScroll = scrollSection.scrollWidth - window.innerWidth + 120;
+        gsap.to(scrollSection, {
+          x: () => -totalScroll,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: pin,
+            pin: true,
+            scrub: 1,
+            start: 'top top',
+            end: () => `+=${totalScroll}`,
+            invalidateOnRefresh: true,
+          },
+        });
+      });
+
+      return () => mm.revert();
+    },
+    { scope: triggerRef }
+  );
+
   return (
-    <section className="py-20 section-surface">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
-            Success Stories
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
-            Client Success Stories
-          </h2>
-          <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
-            Real results from real clients. See how we&apos;ve helped businesses like yours achieve remarkable growth.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {caseStudies.map((study, index) => (
-            <motion.div
-              key={study.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="surface-panel overflow-hidden"
-            >
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={study.image}
-                  alt={study.client}
-                  className="w-full h-full object-cover"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-r ${study.color} opacity-60`} />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full mb-2">
-                    {study.industry}
-                  </span>
-                  <h3 className="text-xl font-bold text-white">{study.client}</h3>
-                  <p className="text-white/80 text-sm">{study.service}</p>
-                </div>
+    <div className="bg-[#0B1214] text-white">
+      {/* Pinned GSAP Scroll Section */}
+      <div ref={triggerRef} className="overflow-hidden">
+        <div className="min-h-screen flex flex-col justify-center py-16">
+          {/* Header */}
+          <div className="container-custom mb-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12AAD1]/10 border border-[#12AAD1]/20 text-[#12AAD1] text-xs font-semibold uppercase tracking-wider mb-3">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Engineering Showcases
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+                  Featured Project Architectures
+                </h2>
+                <p className="text-sm sm:text-base text-[#A3B0B7] mt-2 max-w-xl">
+                  Scroll horizontally to explore our production-grade web builds, automated pipelines, and digital growth engines.
+                </p>
               </div>
 
-              {/* Results */}
-              <div className="p-6">
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  {study.results.map((result, idx) => (
-                    <div key={idx} className="text-center p-4 bg-[#101B1D] border border-[#00C7B7]/10 rounded-xl">
-                      <result.icon className="w-6 h-6 text-[#00C7B7] mx-auto mb-2" />
-                      <div className="text-2xl font-bold text-white">{result.value}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Testimonial */}
-                <blockquote className="text-[#A8B7B5] italic mb-4 border-l-4 border-[#00C7B7] pl-4">
-                  &ldquo;{study.testimonial}&rdquo;
-                </blockquote>
-                <p className="text-sm text-[#0B1214] font-semibold">— {study.author}</p>
+              <div className="hidden md:flex items-center gap-2 text-xs text-[#CBD1D8] uppercase tracking-widest font-mono">
+                <span>Scroll Down to Pan</span>
+                <ArrowRight className="w-4 h-4 text-[#12AAD1]" />
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Link
-            to="/portfolio"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C7B7] text-white font-semibold rounded-lg hover:bg-[#14D9C7] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+          {/* Horizontal Row (Animated with GSAP ScrollTrigger) */}
+          <div
+            ref={sectionRef}
+            className="flex flex-col md:flex-row flex-nowrap gap-6 md:gap-8 px-4 sm:px-6 md:px-12 w-full md:w-max"
           >
-            View All Case Studies
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </motion.div>
+            {projectSpotlights.map((project) => (
+              <div
+                key={project.id}
+                className="w-full md:w-[460px] lg:w-[500px] shrink-0 rounded-2xl bg-[#101B1D] border border-[#CBD1D8]/20 hover:border-[#12AAD1]/50 transition-all duration-300 overflow-hidden flex flex-col shadow-2xl group"
+              >
+                {/* Image & Header */}
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#101B1D] via-[#101B1D]/40 to-transparent" />
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="px-3 py-1 bg-[#0B1214]/80 backdrop-blur-md rounded-full border border-white/10 text-[11px] font-semibold text-[#CBD1D8]">
+                      {project.industry}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="text-xs font-semibold text-[#12AAD1] uppercase tracking-wider block mb-1">
+                      {project.service}
+                    </span>
+                    <h3 className="text-xl font-bold text-white leading-snug">
+                      {project.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Body Details */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div className="space-y-2.5 mb-6">
+                    {project.features.map((feat, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs text-[#CBD1D8]">
+                        <CheckCircle2 className="w-4 h-4 text-[#12AAD1] shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div>
+                    {/* Key Metric & Tech Stack */}
+                    <div className="flex items-center justify-between p-3.5 rounded-xl bg-[#0B1214] border border-white/5 mb-4">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wider text-[#A3B0B7]">
+                          {project.metricLabel}
+                        </div>
+                        <div className="text-lg font-bold text-white">{project.metric}</div>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5 justify-end">
+                        {project.stack.map((tech, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-0.5 rounded bg-[#12AAD1]/10 border border-[#12AAD1]/20 text-[10px] font-mono text-[#12AAD1]"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Link
+                      to="/portfolio"
+                      className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#CBD1D8]/10 hover:bg-[#12AAD1] hover:text-[#061112] text-white font-semibold text-xs transition-all duration-200"
+                    >
+                      <span>Explore Technical Details</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Link with Magnetic Spring CTA */}
+          <div className="container-custom mt-12 text-center">
+            <motion.div
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              className="inline-block"
+            >
+              <Link
+                to="/portfolio"
+                className="btn-teal inline-flex items-center gap-2 hover:shadow-glow-teal"
+              >
+                <span>View Full Architecture Portfolio</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </div>
-    </section>
+
+      {/* Client Partnership Principles Section */}
+      <div className="py-24 border-t border-white/5 bg-[#0B1214]">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#CBD1D8]/10 border border-[#CBD1D8]/20 text-[#CBD1D8] text-xs font-semibold uppercase tracking-wider mb-3">
+              <Shield className="w-3.5 h-3.5 text-[#CBD1D8]" />
+              Collaboration Principles
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              How We Build &amp; Partner
+            </h2>
+            <p className="text-base text-[#A3B0B7] max-w-xl mx-auto">
+              Our working commitments ensure transparency, direct communication, and uncompromised code quality.
+            </p>
+          </div>
+
+          <TestimonialCarousel />
+        </div>
+      </div>
+    </div>
   );
 };
 

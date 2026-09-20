@@ -56,13 +56,13 @@ const Industries = () => {
             transition={{ duration: 0.6 }} 
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
               20+ Industries Served
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
-              Specialized Solutions For <span className="text-[#00C7B7]">Every Industry</span>
+              Specialized Solutions For <span className="text-[#12AAD1]">Every Industry</span>
             </h1>
-            <p className="text-lg text-[#A8B7B5]">
+            <p className="text-lg text-[#A3B0B7]">
               We understand the unique challenges of different industries and tailor our 
               strategies to deliver measurable results for your business.
             </p>
@@ -87,7 +87,7 @@ const Industries = () => {
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
               >
                 <div className="aspect-video overflow-hidden bg-[#F1F5F9]">
-                  <img 
+                  <img loading="lazy" 
                     src={industry.image} 
                     alt={industry.name} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
@@ -95,13 +95,13 @@ const Industries = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#00C7B7]/10 rounded-lg flex items-center justify-center group-hover:bg-[#00C7B7] transition-colors">
-                      <industry.icon className="w-5 h-5 text-[#00C7B7] group-hover:text-white transition-colors" />
+                    <div className="w-10 h-10 bg-[#12AAD1]/10 rounded-lg flex items-center justify-center group-hover:bg-[#12AAD1] transition-colors">
+                      <industry.icon className="w-5 h-5 text-[#12AAD1] group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-xl font-bold text-[#0B1214]">{industry.name}</h3>
                   </div>
-                  <p className="text-[#A8B7B5] mb-4">{industry.description}</p>
-                  <span className="inline-flex items-center gap-2 text-[#00C7B7] font-semibold group-hover:gap-3 transition-all">
+                  <p className="text-[#A3B0B7] mb-4">{industry.description}</p>
+                  <span className="inline-flex items-center gap-2 text-[#12AAD1] font-semibold group-hover:gap-3 transition-all">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>

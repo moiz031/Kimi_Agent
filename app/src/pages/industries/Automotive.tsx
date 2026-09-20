@@ -79,7 +79,7 @@ const Automotive = () => {
       {/* Hero Section */}
       <section className="relative min-h-[600px] flex items-center overflow-hidden bg-[#0B1214]">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#00C7B7]/30 to-transparent" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#12AAD1]/30 to-transparent" />
         </div>
         
         <div className="container-custom relative z-10 py-20">
@@ -131,7 +131,7 @@ const Automotive = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#00C7B7]">
+      <section className="py-16 bg-[#12AAD1]">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {results.map((stat, index) => (
@@ -160,13 +160,13 @@ const Automotive = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-4">
               Challenges We Solve
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-4">
               Automotive Marketing Challenges
             </h2>
-            <p className="text-lg text-[#A8B7B5] max-w-2xl mx-auto">
+            <p className="text-lg text-[#A3B0B7] max-w-2xl mx-auto">
               We understand the unique obstacles automotive businesses face in the digital landscape
             </p>
           </motion.div>
@@ -182,7 +182,7 @@ const Automotive = () => {
                 className="p-8 bg-[#F1F5F9] rounded-2xl"
               >
                 <h3 className="text-xl font-bold text-[#0B1214] mb-3">{challenge.title}</h3>
-                <p className="text-[#A8B7B5]">{challenge.description}</p>
+                <p className="text-[#A3B0B7]">{challenge.description}</p>
               </motion.div>
             ))}
           </div>
@@ -198,7 +198,7 @@ const Automotive = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#00C7B7]/10 text-[#00C7B7] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-4">
               Our Solutions
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-4">
@@ -216,11 +216,11 @@ const Automotive = () => {
                 transition={{ delay: index * 0.1 }}
                 className="p-8 bg-white rounded-2xl shadow-lg"
               >
-                <div className="w-14 h-14 bg-[#00C7B7]/10 rounded-xl flex items-center justify-center mb-6">
-                  <solution.icon className="w-7 h-7 text-[#00C7B7]" />
+                <div className="w-14 h-14 bg-[#12AAD1]/10 rounded-xl flex items-center justify-center mb-6">
+                  <solution.icon className="w-7 h-7 text-[#12AAD1]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0B1214] mb-3">{solution.title}</h3>
-                <p className="text-[#A8B7B5]">{solution.description}</p>
+                <p className="text-[#A3B0B7]">{solution.description}</p>
               </motion.div>
             ))}
           </div>
@@ -239,7 +239,7 @@ const Automotive = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
                 Comprehensive Automotive Marketing Services
               </h2>
-              <p className="text-lg text-[#A8B7B5] mb-8">
+              <p className="text-lg text-[#A3B0B7] mb-8">
                 From SEO to PPC, we offer a full suite of digital marketing services tailored 
                 specifically for the automotive industry.
               </p>
@@ -247,7 +247,7 @@ const Automotive = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#00C7B7] flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#12AAD1] flex-shrink-0" />
                     <span className="text-[#0B1214]">{service}</span>
                   </div>
                 ))}
@@ -272,8 +272,8 @@ const Automotive = () => {
                   'Transparent reporting and analytics',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <TrendingUp className="w-5 h-5 text-[#00C7B7] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#A8B7B5]">{item}</span>
+                    <TrendingUp className="w-5 h-5 text-[#12AAD1] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#A3B0B7]">{item}</span>
                   </div>
                 ))}
               </div>
