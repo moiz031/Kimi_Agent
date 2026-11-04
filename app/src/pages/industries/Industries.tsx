@@ -56,13 +56,13 @@ const Industries = () => {
             transition={{ duration: 0.6 }} 
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-6">
               20+ Industries Served
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
-              Specialized Solutions For <span className="text-[#12AAD1]">Every Industry</span>
+              Specialized Solutions For <span className="text-[#1CA88C]">Every Industry</span>
             </h1>
-            <p className="text-lg text-[#A3B0B7]">
+            <p className="text-lg text-[#64748B]">
               We understand the unique challenges of different industries and tailor our 
               strategies to deliver measurable results for your business.
             </p>
@@ -95,13 +95,13 @@ const Industries = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#12AAD1]/10 rounded-lg flex items-center justify-center group-hover:bg-[#12AAD1] transition-colors">
-                      <industry.icon className="w-5 h-5 text-[#12AAD1] group-hover:text-white transition-colors" />
+                    <div className="w-10 h-10 bg-[#1CA88C]/10 rounded-lg flex items-center justify-center group-hover:bg-[#1CA88C] transition-colors">
+                      <industry.icon className="w-5 h-5 text-[#1CA88C] group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-xl font-bold text-[#0B1214]">{industry.name}</h3>
                   </div>
-                  <p className="text-[#A3B0B7] mb-4">{industry.description}</p>
-                  <span className="inline-flex items-center gap-2 text-[#12AAD1] font-semibold group-hover:gap-3 transition-all">
+                  <p className="text-[#64748B] mb-4">{industry.description}</p>
+                  <span className="inline-flex items-center gap-2 text-[#1CA88C] font-semibold group-hover:gap-3 transition-all">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -112,7 +112,7 @@ const Industries = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#0B1214]">
+      <section className="py-16 bg-[#FAF9F6]">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <motion.div
@@ -164,7 +164,7 @@ const Industries = () => {
             transition={{ duration: 0.6 }} 
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Don&apos;t See Your Industry?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">

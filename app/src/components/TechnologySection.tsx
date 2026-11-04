@@ -52,10 +52,10 @@ const stats = [
 
 const TechnologySection = () => {
   return (
-    <section className="py-20 bg-[#0B1214] relative overflow-hidden">
+    <section className="py-20 bg-[#0B1518] text-white relative overflow-hidden border-y border-[#1CA88C]/20">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#12AAD1]/20 rounded-full filter blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#1CA88C]/20 rounded-full filter blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#06B6D4]/10 rounded-full filter blur-3xl" />
       </div>
 
@@ -77,16 +77,16 @@ const TechnologySection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-2 bg-[#12AAD1]/20 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#1CA88C]/20 text-[#1CA88C] text-sm font-semibold rounded-full mb-6">
               <Cpu className="w-4 h-4 inline mr-2" />
               Proprietary Technology
             </span>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Noryxa Analytics Platform™
+              Mentinox Analytics Platform™ — <span className="font-editorial text-[#20C997] font-normal">Proprietary AI Engine</span>
             </h2>
             
-            <p className="text-lg text-gray-400 mb-8">
+            <p className="text-lg text-slate-300 mb-8">
               Our proprietary marketing technology platform combines AI, machine learning, and 
               advanced analytics to deliver insights worth over $2 million—available exclusively 
               to our clients at no additional cost.
@@ -100,7 +100,7 @@ const TechnologySection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center p-4 bg-white/5 rounded-xl border border-white/10"
+                  className="text-center p-4 bg-white/5 rounded-xl border border-slate-200"
                 >
                   <div className="text-2xl md:text-3xl font-bold text-[#06B6D4] mb-1">
                     {stat.value}
@@ -115,7 +115,7 @@ const TechnologySection = () => {
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-[#12AAD1] to-[#06B6D4] border-2 border-[#0B1214] flex items-center justify-center text-white text-xs font-bold"
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1CA88C] to-[#06B6D4] border-2 border-[#0B1214] flex items-center justify-center text-white text-xs font-bold"
                   >
                     {i}K+
                   </div>
@@ -142,12 +142,12 @@ const TechnologySection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group"
+                className="p-6 bg-white/5 rounded-2xl border border-slate-200 hover:bg-white/10 transition-colors group"
               >
-                <div className="w-12 h-12 bg-[#12AAD1]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#12AAD1] transition-colors">
-                  <feature.icon className="w-6 h-6 text-[#12AAD1] group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 bg-[#1CA88C]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#1CA88C] transition-colors">
+                  <feature.icon className="w-6 h-6 text-[#1CA88C] group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{feature.title}</h3>
                 <p className="text-sm text-gray-400">{feature.description}</p>
               </motion.div>
             ))}
@@ -161,15 +161,15 @@ const TechnologySection = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-            <Globe className="w-8 h-8 text-[#12AAD1]" />
+          <div className="inline-flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-slate-200">
+            <Globe className="w-8 h-8 text-[#1CA88C]" />
             <div className="text-left">
               <p className="text-white font-semibold">Want to see our platform in action?</p>
               <p className="text-gray-400 text-sm">Schedule a free demo with our team</p>
             </div>
             <a
               href="/contact"
-              className="px-6 py-3 bg-[#12AAD1] text-white font-semibold rounded-lg hover:bg-[#3DD6F0] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              className="px-6 py-3 bg-[#1CA88C] text-white font-semibold rounded-lg hover:bg-[#20C997] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Request Demo
             </a>

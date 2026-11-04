@@ -5,9 +5,9 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
-import CustomCursor from './components/CustomCursor';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ExitIntentPopup from './components/ExitIntentPopup';
+import { ThemeProvider } from './context/ThemeContext';
 
 // Main Pages
 import Home from './pages/Home';
@@ -59,16 +59,16 @@ function ScrollProgressBar() {
   return (
     <motion.div
       style={{ scaleX, transformOrigin: '0%' }}
-      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#12AAD1] via-[#CBD1D8] to-[#3DD6F0] z-[9999] origin-left"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#1CA88C] via-[#20C997] to-[#1CA88C] z-[9999] origin-left"
     />
   );
 }
 
 // ─── Page Transition Wrapper ──────────────────────────────────────────────────
 const pageVariants = {
-  initial: { opacity: 0, y: 15 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const } },
-  exit: { opacity: 0, y: -10, transition: { duration: 0.25, ease: [0.7, 0, 0.84, 0] as const } },
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const } },
+  exit: { opacity: 0, y: -8, transition: { duration: 0.2, ease: [0.7, 0, 0.84, 0] as const } },
 };
 
 function PageTransition({ children }: { children: React.ReactNode }) {
@@ -92,7 +92,7 @@ function PageTransition({ children }: { children: React.ReactNode }) {
 function LenisProvider() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.3,
+      duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
@@ -113,15 +113,13 @@ function LenisProvider() {
 function AppShell() {
   const location = useLocation();
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[#0B1214] text-[#F7FAF9] cursor-default lg:cursor-none">
+    <div className="min-h-screen bg-[#FAF9F6] dark:bg-[#071013] text-[#111827] dark:text-[#F1F5F9] cursor-default transition-colors duration-300">
       <Preloader />
-      <CustomCursor />
       <FloatingWhatsApp />
       <ExitIntentPopup />
       <LenisProvider />
@@ -182,9 +180,11 @@ function AppShell() {
 
 function App() {
   return (
-    <Router>
-      <AppShell />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <AppShell />
+      </Router>
+    </ThemeProvider>
   );
 }
 

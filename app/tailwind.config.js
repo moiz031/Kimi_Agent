@@ -5,44 +5,44 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        border: "rgba(18, 170, 209, 0.14)",
-        input: "rgba(18, 170, 209, 0.2)",
-        ring: "#12AAD1",
-        background: "#0B1214",
-        foreground: "#F7FAF9",
+        border: "rgba(226, 232, 240, 0.9)",
+        input: "rgba(226, 232, 240, 0.9)",
+        ring: "#1CA88C",
+        background: "#FAF9F6",
+        foreground: "#111827",
 
-        // Reference Palette Tokens
-        'slate-dark': '#0B1214',
-        'slate-card': '#101B1D',
-        'teal-primary': '#12AAD1',
-        'teal-bright': '#3DD6F0',
-        'teal-deep': '#052F3D',
-        'chrome-accent': '#CBD1D8',
-        'gold-accent': '#CBD1D8',
-        'chrome-soft': '#EDEFF2',
-        'gold-soft': '#EDEFF2',
-        'white-soft': '#F7FAF9',
-        'text-muted-slate': '#A3B0B7',
+        // Reference Palette Tokens (Mentinox Light Brand Scheme)
+        'slate-dark': '#FAF9F6',
+        'slate-card': '#FFFFFF',
+        'teal-primary': '#1CA88C',
+        'teal-bright': '#20C997',
+        'teal-deep': '#0F766E',
+        'chrome-accent': '#64748B',
+        'gold-accent': '#1CA88C',
+        'chrome-soft': '#F1F5F9',
+        'gold-soft': '#E6F8F3',
+        'white-soft': '#111827',
+        'text-muted-slate': '#64748B',
 
         primary: {
-          DEFAULT: "#12AAD1",
-          foreground: "#061112",
+          DEFAULT: "#1CA88C",
+          foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#101B1D",
-          foreground: "#F7FAF9",
+          DEFAULT: "#FFFFFF",
+          foreground: "#111827",
         },
         accent: {
-          DEFAULT: "#CBD1D8",
-          foreground: "#061112",
+          DEFAULT: "#F1F5F9",
+          foreground: "#111827",
         },
         muted: {
-          DEFAULT: "#101B1D",
-          foreground: "#A3B0B7",
+          DEFAULT: "#F8FAFC",
+          foreground: "#64748B",
         },
       },
       backgroundImage: {
-        'tech-grid': 'radial-gradient(circle at top left, rgba(18, 170, 209, 0.12), transparent 36%), radial-gradient(circle at 80% 20%, rgba(203, 209, 216, 0.08), transparent 20%)',
+        'tech-grid': 'radial-gradient(circle at top left, rgba(28, 168, 140, 0.08), transparent 36%), radial-gradient(circle at 80% 20%, rgba(100, 116, 139, 0.05), transparent 20%)',
       },
 
       borderRadius: {
@@ -53,9 +53,10 @@ module.exports = {
         xs: "calc(var(--radius) - 6px)",
       },
       boxShadow: {
-        'glow-teal': '0 0 25px rgba(18, 170, 209, 0.25)',
-        'glow-chrome': '0 0 25px rgba(203, 209, 216, 0.25)',
-        'card-dark': '0 10px 30px rgba(0, 0, 0, 0.35)',
+        'glow-teal': '0 0 25px rgba(28, 168, 140, 0.25)',
+        'glow-chrome': '0 0 25px rgba(100, 116, 139, 0.15)',
+        'card-dark': '0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03)',
+        'card-light': '0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03)',
       },
       keyframes: {
         "accordion-down": {

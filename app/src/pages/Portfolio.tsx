@@ -90,7 +90,7 @@ const defaultTeamForm: NewTeamForm = {
 };
 
 const automaticCoverThemes = [
-  ['#071B2A', '#12AAD1', '#1B75BB'],
+  ['#071B2A', '#1CA88C', '#1B75BB'],
   ['#24112D', '#D95DCE', '#7A4DFF'],
   ['#2A1808', '#F0A94C', '#D85B31'],
   ['#10271F', '#54D6A5', '#159A7A'],
@@ -116,10 +116,10 @@ const createAutomaticCover = (title: string, category: string, id: number) => {
 };
 
 // ─── Stat Card ─────────────────────────────────────────────────────────────────
-const StatCard = ({ value, label, color = '#12AAD1' }: { value: string; label: string; color?: string }) => (
+const StatCard = ({ value, label, color = '#1CA88C' }: { value: string; label: string; color?: string }) => (
   <div className="text-center px-4 py-3">
     <div className="text-2xl sm:text-3xl font-black" style={{ color }}>{value}</div>
-    <div className="text-xs text-[#A3B0B7] mt-0.5">{label}</div>
+    <div className="text-xs text-[#64748B] mt-0.5">{label}</div>
   </div>
 );
 
@@ -302,7 +302,7 @@ const Portfolio = () => {
 
   // ─── JSX ────────────────────────────────────────────────────────────────────
   return (
-    <div className="bg-[#0B1214] text-[#F7FAF9] pt-24 pb-20 min-h-screen">
+    <div className="bg-[#FAF9F6] text-[#111827] pt-24 pb-20 min-h-screen">
 
       {/* ═══════════════════════════════════════════════════════════════════════
           1. AGENCY HERO
@@ -310,7 +310,7 @@ const Portfolio = () => {
       <section className="relative py-20 overflow-hidden agency-hero-bg">
         {/* Decorative orbs */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(18, 170, 209,0.12) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(60, 184, 150,0.12) 0%, transparent 70%)', filter: 'blur(40px)' }} />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(203, 209, 216,0.10) 0%, transparent 70%)', filter: 'blur(40px)' }} />
 
@@ -322,9 +322,9 @@ const Portfolio = () => {
             transition={{ duration: 0.5 }}
             className="flex justify-center mb-10"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#12AAD1]/10 border border-[#12AAD1]/25">
-              <Sparkles className="w-4 h-4 text-[#12AAD1]" />
-              <span className="text-xs font-bold uppercase tracking-widest text-[#12AAD1]">Engineering Portfolio & Case Studies</span>
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1CA88C]/10 border border-[#1CA88C]/25">
+              <Sparkles className="w-4 h-4 text-[#1CA88C]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#1CA88C]">Engineering Portfolio & Case Studies</span>
             </div>
           </motion.div>
 
@@ -335,15 +335,15 @@ const Portfolio = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-center max-w-4xl mx-auto mb-14"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-white leading-[1.12] mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-slate-900 leading-[1.12] mb-6 tracking-tight">
               Transformative Digital{' '}
-              <span className="text-[#12AAD1] relative inline-block">
+              <span className="text-[#1CA88C] relative inline-block">
                 Case Studies
-                <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-[#12AAD1] to-[#CBD1D8] opacity-70" />
+                <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-[#1CA88C] to-[#CBD1D8] opacity-70" />
               </span>{' '}
               &amp; Results
             </h1>
-            <p className="text-base sm:text-lg text-[#A3B0B7] max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-[#64748B] max-w-2xl mx-auto leading-relaxed">
               Explore our portfolio of high-impact web builds, performance marketing campaigns, and AI automation engines engineered for global industry leaders.
             </p>
           </motion.div>
@@ -353,12 +353,12 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="flex flex-wrap justify-center gap-0 divide-x divide-[#12AAD1]/15 bg-[#101B1D] border border-[#12AAD1]/15 rounded-2xl px-4 py-2 max-w-3xl mx-auto mb-14"
+            className="flex flex-wrap justify-center gap-0 divide-x divide-[#1CA88C]/15 bg-white border border-[#1CA88C]/15 rounded-2xl px-4 py-2 max-w-3xl mx-auto mb-14"
           >
-            <StatCard value="2025" label="Founded" color="#12AAD1" />
+            <StatCard value="2025" label="Founded" color="#1CA88C" />
             <StatCard value="10+" label="Core Capabilities" color="#CBD1D8" />
             <StatCard value="100%" label="Code Ownership" color="#FFFFFF" />
-            <StatCard value="< 2hr" label="Response SLA" color="#12AAD1" />
+            <StatCard value="< 2hr" label="Response SLA" color="#1CA88C" />
           </motion.div>
 
           {/* ── Trust badges row ── */}
@@ -374,8 +374,8 @@ const Portfolio = () => {
               { icon: <Zap className="w-4 h-4" />, text: 'AI-Powered Workflows' },
               { icon: <Shield className="w-4 h-4" />, text: '100% Asset Ownership' },
             ].map((badge, i) => (
-              <div key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#101B1D] border border-[#12AAD1]/15 text-xs font-semibold text-[#A3B0B7]">
-                <span className="text-[#12AAD1]">{badge.icon}</span>
+              <div key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#1CA88C]/15 text-xs font-semibold text-[#64748B]">
+                <span className="text-[#1CA88C]">{badge.icon}</span>
                 {badge.text}
               </div>
             ))}
@@ -390,10 +390,10 @@ const Portfolio = () => {
         <div className="container-custom">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 mb-6">
             <div>
-              <h2 className="text-2xl font-extrabold text-white flex items-center gap-2">
-                <Settings className="w-5 h-5 text-[#12AAD1]" /> Portfolio Manager
+              <h2 className="text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                <Settings className="w-5 h-5 text-[#1CA88C]" /> Portfolio Manager
               </h2>
-              <p className="text-[#A3B0B7] text-sm mt-1">Add projects, edit team details, and keep this page current — no code required.</p>
+              <p className="text-[#64748B] text-sm mt-1">Add projects, edit team details, and keep this page current — no code required.</p>
             </div>
             <button
               onClick={() => setShowAdmin((c) => !c)}
@@ -415,15 +415,15 @@ const Portfolio = () => {
                 className="overflow-hidden"
               >
                 {/* ── Admin Tabs ── */}
-                <div className="flex gap-2 mb-6 border-b border-[#12AAD1]/15 pb-4">
+                <div className="flex gap-2 mb-6 border-b border-[#1CA88C]/15 pb-4">
                   {(['projects', 'team'] as AdminTab[]).map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setAdminTab(tab)}
                       className={`px-5 py-2.5 rounded-xl text-sm font-semibold capitalize transition-all duration-200 ${
                         adminTab === tab
-                          ? 'bg-[#12AAD1] text-[#061112]'
-                          : 'text-[#A3B0B7] hover:text-white hover:bg-white/5'
+                          ? 'bg-[#1CA88C] text-[#061112]'
+                          : 'text-[#64748B] hover:text-white hover:bg-white/5'
                       }`}
                     >
                       {tab === 'projects' ? '📁 Projects' : '👥 Team Members'}
@@ -436,15 +436,15 @@ const Portfolio = () => {
                   <div className="surface-panel p-6">
                     <div className="mb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                       <div>
-                        <h3 className="text-lg font-bold text-white">
+                        <h3 className="text-lg font-bold text-slate-900">
                           {editingProjectId !== null ? '✏️ Edit Project' : '+ Add New Project'}
                         </h3>
-                        <p className="text-sm text-[#A3B0B7]">
+                        <p className="text-sm text-[#64748B]">
                           {editingProjectId !== null ? 'Update details then save changes.' : 'Fill in details below. Leave cover empty for an auto-generated cover.'}
                         </p>
                       </div>
                       {editingProjectId !== null && (
-                        <span className="text-xs font-semibold text-[#12AAD1] bg-[#12AAD1]/10 px-3 py-1 rounded-full border border-[#12AAD1]/20">Editing existing</span>
+                        <span className="text-xs font-semibold text-[#1CA88C] bg-[#1CA88C]/10 px-3 py-1 rounded-full border border-[#1CA88C]/20">Editing existing</span>
                       )}
                     </div>
 
@@ -454,22 +454,22 @@ const Portfolio = () => {
                         { label: 'Client Name', field: 'client', placeholder: 'Enter client name' },
                       ].map(({ label, field, placeholder }) => (
                         <div key={field} className="space-y-2">
-                          <label className="text-sm font-semibold text-[#F7FAF9]">{label}</label>
+                          <label className="text-sm font-semibold text-[#111827]">{label}</label>
                           <input
                             value={(newProject as unknown as Record<string, string>)[field] as string}
                             onChange={(e) => updateNewProject(field, e.target.value)}
                             placeholder={placeholder}
-                            className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                            className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                           />
                         </div>
                       ))}
 
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Category</label>
+                        <label className="text-sm font-semibold text-[#111827]">Category</label>
                         <select
                           value={newProject.category}
                           onChange={(e) => updateNewProject('category', e.target.value)}
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white focus:border-[#12AAD1] focus:outline-none transition-colors"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white focus:border-[#1CA88C] focus:outline-none transition-colors"
                         >
                           {['Web Design', 'Marketing', 'Branding', 'SEO', 'Social Media', 'E-Commerce', 'AI Automation'].map((opt) => (
                             <option key={opt}>{opt}</option>
@@ -478,87 +478,87 @@ const Portfolio = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Cover Image URL <span className="text-[#5E7B7A] font-normal">(optional)</span></label>
+                        <label className="text-sm font-semibold text-[#111827]">Cover Image URL <span className="text-[#5E7B7A] font-normal">(optional)</span></label>
                         <input
                           value={newProject.image}
                           onChange={(e) => updateNewProject('image', e.target.value)}
                           placeholder="https://example.com/cover.jpg"
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                         />
-                        <label className="inline-flex w-fit cursor-pointer items-center gap-2 text-xs font-semibold text-[#12AAD1] hover:text-white transition-colors">
+                        <label className="inline-flex w-fit cursor-pointer items-center gap-2 text-xs font-semibold text-[#1CA88C] hover:text-white transition-colors">
                           <Upload className="h-4 w-4" /> Upload cover image
                           <input type="file" accept="image/*" onChange={handleCoverUpload} className="hidden" />
                         </label>
-                        <p className="text-xs text-[#A3B0B7]">Leave empty for an auto-generated cover based on title &amp; category.</p>
+                        <p className="text-xs text-[#64748B]">Leave empty for an auto-generated cover based on title &amp; category.</p>
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Project Link</label>
+                        <label className="text-sm font-semibold text-[#111827]">Project Link</label>
                         <input
                           value={newProject.projectLink}
                           onChange={(e) => updateNewProject('projectLink', e.target.value)}
                           placeholder="https://yourproject.com"
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Case Study Video URL</label>
+                        <label className="text-sm font-semibold text-[#111827]">Case Study Video URL</label>
                         <input
                           value={newProject.videoUrl}
                           onChange={(e) => updateNewProject('videoUrl', e.target.value)}
                           placeholder="YouTube / Vimeo / hosted MP4 URL"
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                         />
-                        <p className="text-xs text-[#A3B0B7]">Paste a YouTube, Vimeo, or direct MP4 link — no duration limit.</p>
+                        <p className="text-xs text-[#64748B]">Paste a YouTube, Vimeo, or direct MP4 link — no duration limit.</p>
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Timeline</label>
+                        <label className="text-sm font-semibold text-[#111827]">Timeline</label>
                         <input
                           value={newProject.timeline}
                           onChange={(e) => updateNewProject('timeline', e.target.value)}
                           placeholder="e.g. 3 Months"
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Short Description</label>
+                        <label className="text-sm font-semibold text-[#111827]">Short Description</label>
                         <textarea
                           value={newProject.description}
                           onChange={(e) => updateNewProject('description', e.target.value)}
                           rows={3}
                           placeholder="Summarize the project"
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors resize-none"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors resize-none"
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Challenge</label>
+                        <label className="text-sm font-semibold text-[#111827]">Challenge</label>
                         <textarea
                           value={newProject.challenge}
                           onChange={(e) => updateNewProject('challenge', e.target.value)}
                           rows={3}
                           placeholder="Describe the client problem"
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors resize-none"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors resize-none"
                         />
                       </div>
 
                       <div className="space-y-2 lg:col-span-2">
-                        <label className="text-sm font-semibold text-[#F7FAF9]">Solution</label>
+                        <label className="text-sm font-semibold text-[#111827]">Solution</label>
                         <textarea
                           value={newProject.solution}
                           onChange={(e) => updateNewProject('solution', e.target.value)}
                           rows={3}
                           placeholder="Describe your solution approach"
-                          className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors resize-none"
+                          className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors resize-none"
                         />
                       </div>
                     </div>
 
                     {/* Cover Preview */}
-                    <div className="mt-4 overflow-hidden rounded-xl border border-white/10 bg-[#0B1214] flex items-center gap-4">
+                    <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-[#FAF9F6] flex items-center gap-4">
                       <img
                         src={newProject.image || createAutomaticCover(newProject.title, newProject.category, editingProjectId ?? (projects.reduce((max, p) => Math.max(max, p.id), 0) + 1))}
                         alt="Project cover preview"
@@ -566,7 +566,7 @@ const Portfolio = () => {
                       />
                       <div className="p-4">
                         <div className="text-sm font-semibold text-white">Cover Preview</div>
-                        <p className="mt-1 text-xs text-[#A3B0B7]">
+                        <p className="mt-1 text-xs text-[#64748B]">
                           {newProject.image ? 'Using your custom image.' : 'A unique project-specific cover will be saved automatically.'}
                         </p>
                       </div>
@@ -574,7 +574,7 @@ const Portfolio = () => {
 
                     {/* Results Metrics */}
                     <div className="mt-4">
-                      <label className="text-sm font-semibold text-[#F7FAF9] block mb-3">Key Results (3 metrics)</label>
+                      <label className="text-sm font-semibold text-[#111827] block mb-3">Key Results (3 metrics)</label>
                       <div className="grid gap-3 sm:grid-cols-3">
                         {newProject.results.map((item, index) => (
                           <div key={index} className="space-y-2">
@@ -582,13 +582,13 @@ const Portfolio = () => {
                               value={item.label}
                               onChange={(e) => updateResult(index, 'label', e.target.value)}
                               placeholder="Metric name"
-                              className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                              className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                             />
                             <input
                               value={item.value}
                               onChange={(e) => updateResult(index, 'value', e.target.value)}
                               placeholder="Value (e.g. +340%)"
-                              className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                              className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                             />
                           </div>
                         ))}
@@ -597,12 +597,12 @@ const Portfolio = () => {
 
                     {/* Actions */}
                     <div className="flex flex-col gap-3 mt-6 sm:flex-row sm:items-center sm:justify-between">
-                      <label className="inline-flex items-center gap-2 text-sm text-[#F7FAF9]">
+                      <label className="inline-flex items-center gap-2 text-sm text-[#111827]">
                         <input
                           type="checkbox"
                           checked={newProject.featured}
                           onChange={(e) => updateNewProject('featured', e.target.checked)}
-                          className="accent-[#12AAD1] rounded"
+                          className="accent-[#1CA88C] rounded"
                         />
                         <Star className="w-4 h-4 text-[#CBD1D8]" /> Mark as Featured
                       </label>
@@ -622,7 +622,7 @@ const Portfolio = () => {
                 {adminTab === 'team' && (
                   <div className="space-y-4">
                     <div className="flex items-center justify-between mb-4">
-                      <p className="text-sm text-[#A3B0B7]">Manage team members shown on the portfolio page.</p>
+                      <p className="text-sm text-[#64748B]">Manage team members shown on the portfolio page.</p>
                       <button
                         onClick={() => { resetTeamForm(); setShowTeamEditor((c) => !c); }}
                         className="btn-teal flex items-center gap-2 py-2 px-4 text-sm"
@@ -641,7 +641,7 @@ const Portfolio = () => {
                           exit={{ opacity: 0, height: 0 }}
                           className="surface-panel p-6 overflow-hidden"
                         >
-                          <h3 className="text-lg font-bold text-white mb-4">
+                          <h3 className="text-lg font-bold text-slate-900 mb-4">
                             {editingTeamId !== null ? '✏️ Edit Team Member' : '+ Add Team Member'}
                           </h3>
                           <div className="grid gap-4 lg:grid-cols-2">
@@ -652,46 +652,46 @@ const Portfolio = () => {
                               { label: 'Twitter / X URL', field: 'twitter', placeholder: 'https://twitter.com/...' },
                             ].map(({ label, field, placeholder }) => (
                               <div key={field} className="space-y-2">
-                                <label className="text-sm font-semibold text-[#F7FAF9]">{label}</label>
+                                <label className="text-sm font-semibold text-[#111827]">{label}</label>
                                 <input
                                   value={(newTeam as unknown as Record<string, string>)[field] as string}
                                   onChange={(e) => updateTeamField(field, e.target.value)}
                                   placeholder={placeholder}
-                                  className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                                  className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                                 />
                               </div>
                             ))}
 
                             <div className="space-y-2 lg:col-span-2">
-                              <label className="text-sm font-semibold text-[#F7FAF9]">Short Bio</label>
+                              <label className="text-sm font-semibold text-[#111827]">Short Bio</label>
                               <textarea
                                 value={newTeam.bio}
                                 onChange={(e) => updateTeamField('bio', e.target.value)}
                                 rows={2}
                                 placeholder="Brief description of expertise..."
-                                className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors resize-none"
+                                className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors resize-none"
                               />
                             </div>
 
                             <div className="space-y-2 lg:col-span-2">
-                              <label className="text-sm font-semibold text-[#F7FAF9]">Specialties <span className="text-[#5E7B7A] font-normal">(comma separated)</span></label>
+                              <label className="text-sm font-semibold text-[#111827]">Specialties <span className="text-[#5E7B7A] font-normal">(comma separated)</span></label>
                               <input
                                 value={newTeam.specialties}
                                 onChange={(e) => updateTeamField('specialties', e.target.value)}
                                 placeholder="e.g. SEO, Content Strategy, Analytics"
-                                className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                                className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                               />
                             </div>
 
                             <div className="space-y-2">
-                              <label className="text-sm font-semibold text-[#F7FAF9]">Photo URL</label>
+                              <label className="text-sm font-semibold text-[#111827]">Photo URL</label>
                               <input
                                 value={newTeam.photo}
                                 onChange={(e) => updateTeamField('photo', e.target.value)}
                                 placeholder="https://example.com/photo.jpg"
-                                className="w-full rounded-xl border border-white/10 bg-[#0B1214] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#12AAD1] focus:outline-none transition-colors"
+                                className="w-full rounded-xl border border-slate-200 bg-[#FAF9F6] px-4 py-3 text-sm text-white placeholder:text-[#5E7B7A] focus:border-[#1CA88C] focus:outline-none transition-colors"
                               />
-                              <label className="inline-flex w-fit cursor-pointer items-center gap-2 text-xs font-semibold text-[#12AAD1] hover:text-white transition-colors">
+                              <label className="inline-flex w-fit cursor-pointer items-center gap-2 text-xs font-semibold text-[#1CA88C] hover:text-white transition-colors">
                                 <Upload className="h-4 w-4" /> Upload photo
                                 <input type="file" accept="image/*" onChange={handleTeamPhotoUpload} className="hidden" />
                               </label>
@@ -699,8 +699,8 @@ const Portfolio = () => {
 
                             {newTeam.photo && (
                               <div className="flex items-center gap-4">
-                                <img loading="lazy" src={newTeam.photo} alt="Preview" className="w-20 h-20 rounded-xl object-cover border border-[#12AAD1]/20" />
-                                <div className="text-xs text-[#A3B0B7]">Photo preview</div>
+                                <img loading="lazy" src={newTeam.photo} alt="Preview" className="w-20 h-20 rounded-xl object-cover border border-[#1CA88C]/20" />
+                                <div className="text-xs text-[#64748B]">Photo preview</div>
                               </div>
                             )}
                           </div>
@@ -720,16 +720,16 @@ const Portfolio = () => {
                       {teamMembers.map((member) => (
                         <div key={member.id} className="surface-panel p-4 flex flex-col gap-3">
                           <div className="flex items-center gap-3">
-                            <img loading="lazy" src={member.photo} alt={member.name} className="w-12 h-12 rounded-full object-cover border border-[#12AAD1]/20 flex-shrink-0" />
+                            <img loading="lazy" src={member.photo} alt={member.name} className="w-12 h-12 rounded-full object-cover border border-[#1CA88C]/20 flex-shrink-0" />
                             <div>
                               <div className="text-sm font-bold text-white">{member.name}</div>
-                              <div className="text-xs text-[#12AAD1]">{member.role}</div>
+                              <div className="text-xs text-[#1CA88C]">{member.role}</div>
                             </div>
                           </div>
                           <div className="flex gap-2">
                             <button
                               onClick={() => editTeamMember(member)}
-                              className="flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-semibold text-[#12AAD1] border border-[#12AAD1]/25 hover:bg-[#12AAD1]/10 transition-colors"
+                              className="flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-semibold text-[#1CA88C] border border-[#1CA88C]/25 hover:bg-[#1CA88C]/10 transition-colors"
                             >
                               <Pencil className="w-3 h-3" /> Edit
                             </button>
@@ -757,8 +757,8 @@ const Portfolio = () => {
       <section className="py-16">
         <div className="container-custom">
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Our Work</h2>
-            <p className="text-[#A3B0B7] max-w-xl mx-auto text-sm">Filter by category to explore our portfolio of real client results.</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">Our Work</h2>
+            <p className="text-[#64748B] max-w-xl mx-auto text-sm">Filter by category to explore our portfolio of real client results.</p>
           </div>
 
           {/* Filter Pills */}
@@ -769,8 +769,8 @@ const Portfolio = () => {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
                   activeFilter === filter
-                    ? 'bg-[#12AAD1] text-[#061112] shadow-lg shadow-[#12AAD1]/20 scale-105'
-                    : 'bg-[#101B1D] text-[#A3B0B7] hover:text-white hover:bg-white/5 border border-[#12AAD1]/15'
+                    ? 'bg-[#1CA88C] text-[#061112] shadow-lg shadow-[#1CA88C]/20 scale-105'
+                    : 'bg-white text-[#64748B] hover:text-white hover:bg-white/5 border border-[#1CA88C]/15'
                 }`}
               >
                 {filter}
@@ -790,11 +790,11 @@ const Portfolio = () => {
                   exit={{ opacity: 0, scale: 0.92 }}
                   transition={{ duration: 0.4 }}
                   className={`card-dark overflow-hidden group flex flex-col ${
-                    project.featured ? 'border-[#CBD1D8]/30' : 'border-[#12AAD1]/15'
+                    project.featured ? 'border-[#CBD1D8]/30' : 'border-[#1CA88C]/15'
                   }`}
                 >
                   {/* ── Image / Video Thumbnail ── */}
-                  <div className="relative h-56 overflow-hidden bg-[#0B1214]">
+                  <div className="relative h-56 overflow-hidden bg-[#FAF9F6]">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -820,7 +820,7 @@ const Portfolio = () => {
                     {/* Edit button */}
                     <button
                       onClick={() => editProject(project)}
-                      className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-xl border border-[#12AAD1]/50 bg-[#061112]/90 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-[#12AAD1] transition-colors hover:bg-[#12AAD1] hover:text-[#061112] opacity-0 group-hover:opacity-100"
+                      className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-xl border border-[#1CA88C]/50 bg-slate-900/90 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-[#1CA88C] transition-colors hover:bg-[#1CA88C] hover:text-[#061112] opacity-0 group-hover:opacity-100"
                     >
                       <Pencil className="h-3 w-3" /> Edit
                     </button>
@@ -843,18 +843,18 @@ const Portfolio = () => {
 
                   {/* ── Card Body ── */}
                   <div className="p-6 flex flex-col flex-1">
-                    <div className="text-xs font-semibold text-[#12AAD1] mb-1">{project.client}</div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#12AAD1] transition-colors leading-snug">
+                    <div className="text-xs font-semibold text-[#1CA88C] mb-1">{project.client}</div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#1CA88C] transition-colors leading-snug">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-[#A3B0B7] mb-5 leading-relaxed flex-1">{project.description}</p>
+                    <p className="text-xs text-[#64748B] mb-5 leading-relaxed flex-1">{project.description}</p>
 
                     {/* Results Strip */}
-                    <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-[#0B1214] border border-white/5 mb-5">
+                    <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-[#FAF9F6] border border-slate-200 mb-5">
                       {project.results.map((res, i) => (
                         <div key={i} className="text-center">
-                          <div className="text-sm font-black text-[#12AAD1]">{res.value}</div>
-                          <div className="text-[10px] text-[#A3B0B7] truncate">{res.label}</div>
+                          <div className="text-sm font-black text-[#1CA88C]">{res.value}</div>
+                          <div className="text-[10px] text-[#64748B] truncate">{res.label}</div>
                         </div>
                       ))}
                     </div>
@@ -865,7 +865,7 @@ const Portfolio = () => {
                         href={`/portfolio/case-study/${project.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full btn-secondary py-2.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 group-hover:bg-[#12AAD1] group-hover:text-[#061112] group-hover:border-[#12AAD1] transition-all"
+                        className="w-full btn-secondary py-2.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 group-hover:bg-[#1CA88C] group-hover:text-[#061112] group-hover:border-[#1CA88C] transition-all"
                       >
                         <Eye className="w-4 h-4" /> {project.videoUrl ? 'View Case Study' : 'View Full Details'}
                       </a>
@@ -895,8 +895,8 @@ const Portfolio = () => {
           </motion.div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-20 text-[#A3B0B7]">
-              <Sparkles className="w-10 h-10 mx-auto mb-4 text-[#12AAD1]/40" />
+            <div className="text-center py-20 text-[#64748B]">
+              <Sparkles className="w-10 h-10 mx-auto mb-4 text-[#1CA88C]/40" />
               <p className="text-lg font-semibold">No projects in this category yet.</p>
               <p className="text-sm mt-1">Use the Portfolio Manager above to add your first project.</p>
             </div>
@@ -910,7 +910,7 @@ const Portfolio = () => {
       <section className="py-20 relative overflow-hidden">
         {/* Section background orbs */}
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(18, 170, 209,0.08) 0%, transparent 60%)' }} />
+          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(60, 184, 150,0.08) 0%, transparent 60%)' }} />
 
         <div className="container-custom relative z-10">
           {/* Header */}
@@ -925,10 +925,10 @@ const Portfolio = () => {
               <Users className="w-4 h-4 text-[#CBD1D8]" />
               <span className="text-xs font-bold uppercase tracking-widest text-[#CBD1D8]">The People Behind the Results</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
-              Meet Our <span className="text-[#12AAD1]">Expert Team</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
+              Meet Our <span className="text-[#1CA88C]">Expert Team</span>
             </h2>
-            <p className="text-[#A3B0B7] max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="text-[#64748B] max-w-2xl mx-auto text-base leading-relaxed">
               A diverse team of strategists, creatives, and engineers united by one mission — delivering transformative digital growth for our clients.
             </p>
           </motion.div>
@@ -958,13 +958,13 @@ const Portfolio = () => {
                   <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full bg-[#061112]/80 border border-[#12AAD1]/30 flex items-center justify-center text-[#12AAD1] hover:bg-[#12AAD1] hover:text-[#061112] transition-colors">
+                        className="w-8 h-8 rounded-full bg-slate-900/80 border border-[#1CA88C]/30 flex items-center justify-center text-[#1CA88C] hover:bg-[#1CA88C] hover:text-[#061112] transition-colors">
                         <Linkedin className="w-3.5 h-3.5" />
                       </a>
                     )}
                     {member.twitter && (
                       <a href={member.twitter} target="_blank" rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full bg-[#061112]/80 border border-[#12AAD1]/30 flex items-center justify-center text-[#12AAD1] hover:bg-[#12AAD1] hover:text-[#061112] transition-colors">
+                        className="w-8 h-8 rounded-full bg-slate-900/80 border border-[#1CA88C]/30 flex items-center justify-center text-[#1CA88C] hover:bg-[#1CA88C] hover:text-[#061112] transition-colors">
                         <Twitter className="w-3.5 h-3.5" />
                       </a>
                     )}
@@ -972,19 +972,19 @@ const Portfolio = () => {
 
                   {/* Name + Role on photo */}
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#12AAD1] mb-0.5">{member.role}</div>
-                    <h3 className="text-base font-bold text-white leading-tight">{member.name}</h3>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#1CA88C] mb-0.5">{member.role}</div>
+                    <h3 className="text-base font-bold text-slate-900 leading-tight">{member.name}</h3>
                   </div>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-5">
-                  <p className="text-xs text-[#A3B0B7] leading-relaxed mb-4">{member.bio}</p>
+                  <p className="text-xs text-[#64748B] leading-relaxed mb-4">{member.bio}</p>
 
                   {/* Specialties */}
                   <div className="flex flex-wrap gap-1.5">
                     {member.specialties.slice(0, 3).map((spec, i) => (
-                      <span key={i} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[#12AAD1]/8 text-[#12AAD1] border border-[#12AAD1]/15">
+                      <span key={i} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[#1CA88C]/8 text-[#1CA88C] border border-[#1CA88C]/15">
                         {spec}
                       </span>
                     ))}
@@ -1002,7 +1002,7 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mt-14"
           >
-            <p className="text-[#A3B0B7] mb-5">Ready to work with a team that delivers real results?</p>
+            <p className="text-[#64748B] mb-5">Ready to work with a team that delivers real results?</p>
             <Link to="/contact" className="btn-teal inline-flex items-center gap-2">
               Start Your Project <ArrowRight className="w-4 h-4" />
             </Link>

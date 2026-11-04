@@ -1,208 +1,169 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 3000);
-    }
-  };
-
   const footerLinks = {
     services: [
-      { name: 'Digital Marketing', path: '/services/digital-marketing' },
-      { name: 'Web Development', path: '/services/web-development' },
-      { name: 'SEO Services', path: '/services/seo' },
-      { name: 'Graphic Design', path: '/services/graphic-design' },
+      { name: 'UI/UX Design', path: '/services/graphic-design' },
+      { name: 'Web Engineering', path: '/services/web-development' },
+      { name: 'SEO & Search GEO', path: '/services/seo' },
       { name: 'AI Automation', path: '/services/ai-automation' },
-      { name: 'Social Media', path: '/services/social-media' },
+      { name: 'Digital Marketing', path: '/services/digital-marketing' },
+      { name: 'PPC Advertising', path: '/services/ppc-advertising' },
     ],
-    industries: [
-      { name: 'Healthcare', path: '/industries/healthcare' },
-      { name: 'Real Estate', path: '/industries/real-estate' },
-      { name: 'E-Commerce', path: '/industries/ecommerce' },
-      { name: 'Law Firms', path: '/industries/law-firms' },
-      { name: 'Restaurants', path: '/industries/restaurants' },
-      { name: 'Fitness', path: '/industries/fitness' },
+    work: [
+      { name: 'Featured Works', path: '/portfolio' },
+      { name: 'Case Studies', path: '/portfolio' },
+      { name: 'Client Testimonials', path: '/portfolio' },
+      { name: 'Agency Architecture', path: '/about' },
     ],
-    company: [
-      { name: 'About Us', path: '/about' },
-      { name: 'Our Team', path: '/about#team' },
-      { name: 'Careers', path: '/careers' },
-      { name: 'Portfolio', path: '/portfolio' },
-      { name: 'Blog', path: '/blog' },
-      { name: 'Contact', path: '/contact' },
+    about: [
+      { name: 'Our Story', path: '/about' },
+      { name: 'Careers (Hiring)', path: '/careers' },
+      { name: 'Pricing Tiers', path: '/pricing' },
+      { name: 'Contact Us', path: '/contact' },
+    ],
+    resources: [
+      { name: 'Blog & Insights', path: '/blog' },
+      { name: 'Technical Docs', path: '/blog' },
+      { name: 'Industry Benchmarks', path: '/about' },
     ],
   };
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
+    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+    { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
   ];
 
   return (
-    <footer className="bg-[#0B1214] text-white relative">
-      
-      {/* Top Gradient Accent Line (Teal -> Gold) */}
-      <div className="h-[2px] w-full" style={{ background: 'linear-gradient(90deg, #12AAD1 0%, #CBD1D8 100%)' }} />
-
-      {/* Main Footer */}
+    <footer className="bg-[#E8EFE9] dark:bg-[#060D0F] text-slate-800 dark:text-slate-300 relative border-t border-slate-200/80 dark:border-white/5 transition-colors">
       <div className="container-custom py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
-
-          {/* Brand Column */}
-          <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center gap-2 mb-6 group">
+        
+        {/* Top Newsletter & Brand Banner */}
+        <div className="grid lg:grid-cols-12 gap-8 items-center pb-14 border-b border-slate-300/60 dark:border-white/10 mb-14">
+          <div className="lg:col-span-6">
+            <Link to="/" className="flex items-center gap-2 mb-4 group">
               <img
                 src="/logo.png"
-                alt="Noryxa Agency Logo"
+                alt="Mentinox Solutions Logo"
                 className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
+              Turning ambitious visions into intelligent digital realities with high-performance web engineering, bespoke AI systems, and scalable growth architectures.
+            </p>
+          </div>
 
-            <p className="text-[#12AAD1] font-semibold text-xs uppercase tracking-[0.2em] mb-4">
-              WE BUILD • WE AUTOMATE • WE GROW
-            </p>
-            
-            <p className="text-[#A3B0B7] mb-6 leading-relaxed text-sm max-w-sm">
-              Transform your digital presence with data-driven marketing strategies and AI automation engines that deliver measurable enterprise revenue growth.
-            </p>
-            
+          <div className="lg:col-span-6 flex flex-col sm:flex-row items-center gap-3">
+            <div className="w-full relative">
+              <input
+                type="email"
+                placeholder="Subscribe to our weekly digest"
+                className="w-full px-5 py-3.5 rounded-full bg-white dark:bg-[#101D21] border border-slate-300/80 dark:border-white/10 text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 outline-none focus:border-[#1CA88C]"
+              />
+            </div>
+            <button className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#0B3B2C] hover:bg-[#124B38] text-white text-xs font-bold whitespace-nowrap shadow-md transition-all">
+              Subscribe Now
+            </button>
+          </div>
+        </div>
+
+        {/* 4 Column Navigation Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14">
+          <div>
+            <h4 className="font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              Services
+            </h4>
+            <ul className="space-y-2.5 text-xs">
+              {footerLinks.services.map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-slate-600 dark:text-slate-400 hover:text-[#0B3B2C] dark:hover:text-[#20C997] transition-colors">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              Work
+            </h4>
+            <ul className="space-y-2.5 text-xs">
+              {footerLinks.work.map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-slate-600 dark:text-slate-400 hover:text-[#0B3B2C] dark:hover:text-[#20C997] transition-colors">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              About
+            </h4>
+            <ul className="space-y-2.5 text-xs">
+              {footerLinks.about.map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-slate-600 dark:text-slate-400 hover:text-[#0B3B2C] dark:hover:text-[#20C997] transition-colors">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              Connect
+            </h4>
+            <div className="space-y-3 text-xs mb-5">
+              <a href="mailto:mentinoxsolutions@gmail.com" className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-[#0B3B2C] dark:hover:text-[#20C997]">
+                <Mail className="w-3.5 h-3.5 text-[#1CA88C]" />
+                mentinoxsolutions@gmail.com
+              </a>
+              <a href="tel:+923309999149" className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-[#0B3B2C] dark:hover:text-[#20C997]">
+                <Phone className="w-3.5 h-3.5 text-[#1CA88C]" />
+                +92 330 9999149 (WhatsApp)
+              </a>
+              <a href="tel:+923215204240" className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-[#0B3B2C] dark:hover:text-[#20C997]">
+                <Phone className="w-3.5 h-3.5 text-[#1CA88C]" />
+                +92 321 5204240 (Direct)
+              </a>
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <MapPin className="w-3.5 h-3.5 text-[#1CA88C]" />
+                Pakistan (Global Remote)
+              </div>
+            </div>
+
             <div className="flex gap-2">
-              {socialLinks.map((social) => (
+              {socialLinks.map((s, idx) => (
                 <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#101B1D] border border-[#12AAD1]/20 text-[#A3B0B7] hover:text-[#061112] hover:bg-[#12AAD1] hover:border-[#12AAD1] transition-all duration-200"
+                  key={idx}
+                  href={s.href}
+                  aria-label={s.label}
+                  className="w-8 h-8 rounded-full bg-white dark:bg-[#101D21] border border-slate-300/80 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#0B3B2C] transition-all"
                 >
-                  <social.icon className="w-4 h-4" />
+                  <s.icon className="w-3.5 h-3.5" />
                 </a>
               ))}
             </div>
           </div>
-
-          {/* Services */}
-          <div className="lg:col-span-2">
-            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Services</h4>
-            <ul className="space-y-2.5">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-[#A3B0B7] hover:text-[#12AAD1] transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Industries */}
-          <div className="lg:col-span-2">
-            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Industries</h4>
-            <ul className="space-y-2.5">
-              {footerLinks.industries.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-[#A3B0B7] hover:text-[#12AAD1] transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div className="lg:col-span-2">
-            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Company</h4>
-            <ul className="space-y-2.5">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-[#A3B0B7] hover:text-[#12AAD1] transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="lg:col-span-2">
-            <h4 className="font-bold text-base mb-5 text-white uppercase tracking-wider text-xs">Stay Updated</h4>
-            <p className="text-[#A3B0B7] text-xs mb-4">
-              Subscribe to our AI marketing insights newsletter.
-            </p>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-[#101B1D] border border-[#12AAD1]/20 text-white placeholder-[#A3B0B7]/60 focus:outline-none focus:border-[#12AAD1] text-xs transition-colors"
-              />
-              <button
-                type="submit"
-                className="w-full btn-teal py-2.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
-              >
-                {subscribed ? '✓ Subscribed!' : 'Subscribe'}
-                {!subscribed && <ArrowRight className="w-3.5 h-3.5" />}
-              </button>
-            </form>
-          </div>
-
         </div>
-      </div>
 
-      {/* Contact Bar */}
-      <div className="border-t border-white/5">
-        <div className="container-custom py-5">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#A3B0B7]">
-            <div className="flex flex-wrap items-center justify-center gap-6">
-              <a href="mailto:noryxadigital@gmail.com" className="flex items-center gap-1.5 hover:text-[#12AAD1] transition-colors">
-                <Mail className="w-3.5 h-3.5 text-[#12AAD1]" />
-                noryxadigital@gmail.com
-              </a>
-              <a href="tel:+923309999149" className="flex items-center gap-1.5 hover:text-[#12AAD1] transition-colors">
-                <Phone className="w-3.5 h-3.5 text-[#12AAD1]" />
-                +92 330 9999149
-              </a>
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#12AAD1]" />
-                Pakistan
-              </span>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            </div>
+        {/* Bottom Legal Copyright */}
+        <div className="pt-8 border-t border-slate-300/60 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} Mentinox Solutions. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link to="/privacy" className="hover:text-slate-800 dark:hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-slate-800 dark:hover:text-slate-300 transition-colors">Terms of Service</Link>
           </div>
         </div>
-      </div>
 
-      {/* Copyright */}
-      <div className="border-t border-white/5">
-        <div className="container-custom py-4">
-          <p className="text-center text-xs text-[#A3B0B7]/60">
-            © {new Date().getFullYear()} Noryxa Digital Agency. All rights reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );

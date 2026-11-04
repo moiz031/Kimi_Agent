@@ -130,13 +130,13 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-6">
               Pricing Plans
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
-              Transparent <span className="text-[#12AAD1]">Pricing</span> for Every Business
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+              Pricing plan — <span className="font-editorial text-[#1CA88C] font-normal">for all business</span>
             </h1>
-            <p className="text-lg text-[#A3B0B7] mb-8">
+            <p className="text-lg text-[#64748B] mb-8">
               Choose the plan that fits your needs. All plans include our core features 
               and dedicated support.
             </p>
@@ -147,8 +147,8 @@ const Pricing = () => {
                 onClick={() => setBillingCycle('monthly')}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   billingCycle === 'monthly'
-                    ? 'bg-[#12AAD1] text-white'
-                    : 'text-[#A3B0B7] hover:text-[#12AAD1]'
+                    ? 'bg-[#1CA88C] text-white'
+                    : 'text-[#64748B] hover:text-[#1CA88C]'
                 }`}
               >
                 Monthly
@@ -157,12 +157,12 @@ const Pricing = () => {
                 onClick={() => setBillingCycle('yearly')}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                   billingCycle === 'yearly'
-                    ? 'bg-[#12AAD1] text-white'
-                    : 'text-[#A3B0B7] hover:text-[#12AAD1]'
+                    ? 'bg-[#1CA88C] text-white'
+                    : 'text-[#64748B] hover:text-[#1CA88C]'
                 }`}
               >
                 Yearly
-                <span className="px-2 py-0.5 bg-[#06B6D4] text-[#0B1214] text-xs rounded-full">
+                <span className="px-2 py-0.5 bg-[#06B6D4] text-slate-900 text-xs rounded-full">
                   Save 20%
                 </span>
               </button>
@@ -190,13 +190,13 @@ const Pricing = () => {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className={`relative rounded-2xl p-8 ${
                   plan.popular
-                    ? 'bg-[#0B1214] text-white scale-105 shadow-2xl'
+                    ? 'bg-[#FAF9F6] text-white scale-105 shadow-2xl'
                     : 'bg-white border border-gray-200'
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="px-4 py-1 bg-[#06B6D4] text-[#0B1214] text-sm font-bold rounded-full">
+                    <span className="px-4 py-1 bg-[#06B6D4] text-slate-900 text-sm font-bold rounded-full">
                       Most Popular
                     </span>
                   </div>
@@ -204,14 +204,14 @@ const Pricing = () => {
 
                 <div className="mb-6">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                    plan.popular ? 'bg-white/10' : 'bg-[#12AAD1]/10'
+                    plan.popular ? 'bg-white/10' : 'bg-[#1CA88C]/10'
                   }`}>
-                    <plan.icon className={`w-6 h-6 ${plan.popular ? 'text-[#06B6D4]' : 'text-[#12AAD1]'}`} />
+                    <plan.icon className={`w-6 h-6 ${plan.popular ? 'text-[#06B6D4]' : 'text-[#1CA88C]'}`} />
                   </div>
-                  <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-[#0B1214]'}`}>
+                  <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#A3B0B7]'}`}>
+                  <p className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#64748B]'}`}>
                     {plan.description}
                   </p>
                 </div>
@@ -219,10 +219,10 @@ const Pricing = () => {
                 <div className="mb-6">
                   {plan.monthlyPrice ? (
                     <>
-                      <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-[#0B1214]'}`}>
+                      <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
                         ${billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
                       </span>
-                      <span className={plan.popular ? 'text-gray-300' : 'text-[#A3B0B7]'}>
+                      <span className={plan.popular ? 'text-gray-300' : 'text-[#64748B]'}>
                         /month
                       </span>
                       {billingCycle === 'yearly' && (
@@ -232,7 +232,7 @@ const Pricing = () => {
                       )}
                     </>
                   ) : (
-                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-[#0B1214]'}`}>
+                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
                       Custom
                     </span>
                   )}
@@ -242,9 +242,9 @@ const Pricing = () => {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                        plan.popular ? 'text-[#06B6D4]' : 'text-[#12AAD1]'
+                        plan.popular ? 'text-[#06B6D4]' : 'text-[#1CA88C]'
                       }`} />
-                      <span className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#A3B0B7]'}`}>
+                      <span className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-[#64748B]'}`}>
                         {feature}
                       </span>
                     </li>
@@ -265,8 +265,8 @@ const Pricing = () => {
                   to="/contact"
                   className={`block w-full py-3 rounded-lg font-semibold text-center hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 ${
                     plan.popular
-                      ? 'bg-[#06B6D4] text-[#0B1214] hover:bg-white'
-                      : 'bg-[#12AAD1] text-white hover:bg-[#0B1214]'
+                      ? 'bg-[#06B6D4] text-slate-900 hover:bg-white'
+                      : 'bg-[#1CA88C] text-white hover:bg-[#FAF9F6]'
                   }`}
                 >
                   {plan.cta}
@@ -287,10 +287,10 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-[#0B1214] mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Optional Add-ons
             </h2>
-            <p className="text-[#A3B0B7]">
+            <p className="text-[#64748B]">
               Enhance your plan with these additional services
             </p>
           </motion.div>
@@ -304,9 +304,9 @@ const Pricing = () => {
           >
             {addOns.map((addon, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-md">
-                <h4 className="font-semibold text-[#0B1214] mb-2">{addon.name}</h4>
-                <p className="text-[#12AAD1] font-bold mb-2">{addon.price}</p>
-                <p className="text-sm text-[#A3B0B7]">{addon.description}</p>
+                <h4 className="font-semibold text-slate-900 mb-2">{addon.name}</h4>
+                <p className="text-[#1CA88C] font-bold mb-2">{addon.price}</p>
+                <p className="text-sm text-[#64748B]">{addon.description}</p>
               </div>
             ))}
           </motion.div>
@@ -323,10 +323,10 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-[#0B1214] mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-[#A3B0B7]">
+            <p className="text-[#64748B]">
               Got questions? We&apos;ve got answers.
             </p>
           </motion.div>
@@ -357,8 +357,8 @@ const Pricing = () => {
               },
             ].map((faq, index) => (
               <div key={index} className="bg-[#EFF6FF] rounded-xl p-6">
-                <h4 className="font-semibold text-[#0B1214] mb-3">{faq.q}</h4>
-                <p className="text-[#A3B0B7] text-sm">{faq.a}</p>
+                <h4 className="font-semibold text-slate-900 mb-3">{faq.q}</h4>
+                <p className="text-[#64748B] text-sm">{faq.a}</p>
               </div>
             ))}
           </motion.div>
@@ -375,7 +375,7 @@ const Pricing = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Still Have Questions?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
@@ -383,7 +383,7 @@ const Pricing = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-slate-900 font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Schedule a Call
               <ArrowRight className="w-5 h-5" />

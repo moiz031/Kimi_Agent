@@ -30,24 +30,24 @@ const FAQAccordion = () => {
 
   return (
     <div className="surface-panel p-8">
-      <h3 className="text-xl font-bold text-white mb-6">
+      <h3 className="text-xl font-bold text-slate-900 mb-6">
         Frequently Asked Questions
       </h3>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index} className="border-b border-[#12AAD1]/10 pb-4 last:border-0 last:pb-0">
+          <div key={index} className="border-b border-[#1CA88C]/10 pb-4 last:border-0 last:pb-0">
             <button
               onClick={() => toggleAccordion(index)}
               className="w-full flex justify-between items-center text-left focus:outline-none group"
             >
-              <span className={`font-medium transition-colors ${activeIndex === index ? 'text-[#12AAD1]' : 'text-white group-hover:text-[#12AAD1]/80'}`}>
+              <span className={`font-medium transition-colors ${activeIndex === index ? 'text-[#1CA88C]' : 'text-white group-hover:text-[#1CA88C]/80'}`}>
                 {faq.question}
               </span>
               <motion.div
                 animate={{ rotate: activeIndex === index ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown className={`w-5 h-5 ${activeIndex === index ? 'text-[#12AAD1]' : 'text-[#A3B0B7]'}`} />
+                <ChevronDown className={`w-5 h-5 ${activeIndex === index ? 'text-[#1CA88C]' : 'text-[#64748B]'}`} />
               </motion.div>
             </button>
             <AnimatePresence initial={false}>
@@ -59,7 +59,7 @@ const FAQAccordion = () => {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <p className="pt-3 text-sm text-[#A3B0B7] leading-relaxed">
+                  <p className="pt-3 text-sm text-[#64748B] leading-relaxed">
                     {faq.answer}
                   </p>
                 </motion.div>

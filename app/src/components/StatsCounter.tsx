@@ -91,11 +91,11 @@ const StatsCounter = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-20 relative overflow-hidden bg-[#0B1214] border-t border-white/5">
+    <section ref={ref} className="py-20 relative overflow-hidden bg-[#FAF9F6] border-t border-slate-200">
       
       {/* Ambient Glow Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-15" style={{ background: 'radial-gradient(circle, #12AAD1, transparent)', filter: 'blur(100px)' }} />
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-15" style={{ background: 'radial-gradient(circle, #1CA88C, transparent)', filter: 'blur(100px)' }} />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #CBD1D8, transparent)', filter: 'blur(100px)' }} />
       </div>
 
@@ -109,10 +109,10 @@ const StatsCounter = () => {
           <span className="badge-teal mb-4">
             Defensible Standards
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
             Transparent Agency Standards
           </h2>
-          <p className="text-base sm:text-lg text-[#A3B0B7] max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#64748B] max-w-2xl mx-auto">
             We operate with honest commitments, modern engineering, and complete client asset ownership.
           </p>
         </motion.div>
@@ -125,14 +125,14 @@ const StatsCounter = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
-              className={`p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group bg-[#101B1D] ${
-                stat.isChrome ? 'border border-[#CBD1D8]/30 hover:border-[#CBD1D8]/60' : 'border border-[#12AAD1]/20 hover:border-[#12AAD1]/50'
+              className={`p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group bg-white ${
+                stat.isChrome ? 'border border-[#CBD1D8]/30 hover:border-[#CBD1D8]/60' : 'border border-[#1CA88C]/20 hover:border-[#1CA88C]/50'
               }`}
             >
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${
-                stat.isChrome ? 'bg-[#CBD1D8]/10 border border-[#CBD1D8]/30' : 'bg-[#12AAD1]/10 border border-[#12AAD1]/25'
+                stat.isChrome ? 'bg-[#CBD1D8]/10 border border-[#CBD1D8]/30' : 'bg-[#1CA88C]/10 border border-[#1CA88C]/25'
               }`}>
-                <stat.icon className={`w-6 h-6 ${stat.isChrome ? 'text-[#CBD1D8]' : 'text-[#12AAD1]'}`} />
+                <stat.icon className={`w-6 h-6 ${stat.isChrome ? 'text-[#CBD1D8]' : 'text-[#1CA88C]'}`} />
               </div>
 
               <div className={`text-3xl sm:text-4xl font-black mb-1.5 ${stat.isChrome ? 'text-[#CBD1D8]' : 'text-white'}`}>
@@ -145,7 +145,7 @@ const StatsCounter = () => {
               </div>
 
               <div className="text-white font-semibold mb-1 text-sm">{stat.label}</div>
-              <div className="text-xs text-[#A3B0B7]">{stat.description}</div>
+              <div className="text-xs text-[#64748B]">{stat.description}</div>
             </motion.div>
           ))}
         </div>

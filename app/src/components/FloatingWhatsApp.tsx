@@ -17,7 +17,7 @@ const FloatingWhatsApp = () => {
       <MessageCircle className="w-7 h-7 relative z-10" />
       
       {/* Tooltip */}
-      <div className="absolute right-full mr-4 bg-[#101B1D] text-white text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#12AAD1]/20 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-lg">
+      <div className="absolute right-full mr-4 bg-[#0B1518] text-white text-xs font-semibold px-3.5 py-2 rounded-lg border border-[#1CA88C]/20 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-lg">
         Chat with us!
       </div>
     </motion.a>

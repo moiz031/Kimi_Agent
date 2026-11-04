@@ -8,7 +8,7 @@ const principles = [
     tag: 'Engineering Philosophy',
     content: 'We eliminate account managers and junior hand-offs. Your team collaborates directly with principal frontend engineers and growth strategists from day one.',
     author: 'Principal Technical Lead',
-    role: 'Noryxa Engineering Standard',
+    role: 'Mentinox Engineering Standard',
     image: '/team-developer.jpg'
   },
   {
@@ -16,7 +16,7 @@ const principles = [
     tag: 'Delivery Commitment',
     content: 'Every sprint produces testable staging environments and verified Core Web Vitals. We measure progress in working code and tangible results, not slide decks.',
     author: 'Operations Director',
-    role: 'Noryxa Delivery Standard',
+    role: 'Mentinox Delivery Standard',
     image: '/team-strategy.jpg'
   },
   {
@@ -24,7 +24,7 @@ const principles = [
     tag: 'Ownership Guarantee',
     content: 'All source code, design systems, and platform credentials transfer entirely to your organization upon deployment. We build on open, standardized architectures with zero lock-in.',
     author: 'Client Solutions Partner',
-    role: 'Noryxa Integrity Standard',
+    role: 'Mentinox Integrity Standard',
     image: '/team-ceo.jpg'
   }
 ];
@@ -81,7 +81,7 @@ const TestimonialCarousel = () => {
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[#12AAD1]/10 z-0 pointer-events-none">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[#1CA88C]/10 z-0 pointer-events-none">
         <Quote className="w-40 h-40" />
       </div>
 
@@ -97,11 +97,11 @@ const TestimonialCarousel = () => {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="absolute w-full px-4 text-center"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#12AAD1]/10 border border-[#12AAD1]/20 text-[#12AAD1] text-xs font-semibold uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1CA88C]/10 border border-[#1CA88C]/20 text-[#1CA88C] text-xs font-semibold uppercase tracking-wider mb-6">
               {principles[currentIndex].tag}
             </div>
             
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">
               {principles[currentIndex].title}
             </h3>
 
@@ -113,10 +113,10 @@ const TestimonialCarousel = () => {
               <img loading="lazy" 
                 src={principles[currentIndex].image} 
                 alt={principles[currentIndex].author}
-                className="w-14 h-14 rounded-full object-cover mb-2 border-2 border-[#12AAD1]"
+                className="w-14 h-14 rounded-full object-cover mb-2 border-2 border-[#1CA88C]"
               />
-              <h4 className="text-base font-bold text-white">{principles[currentIndex].author}</h4>
-              <p className="text-[#12AAD1] text-xs font-semibold uppercase tracking-wider">{principles[currentIndex].role}</p>
+              <h4 className="text-base font-bold text-slate-900">{principles[currentIndex].author}</h4>
+              <p className="text-[#1CA88C] text-xs font-semibold uppercase tracking-wider">{principles[currentIndex].role}</p>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -125,7 +125,7 @@ const TestimonialCarousel = () => {
       <div className="flex justify-center items-center gap-6 mt-8 relative z-20">
         <button 
           onClick={handlePrev}
-          className="p-3 rounded-full bg-[#101B1D] border border-[#12AAD1]/20 text-white hover:bg-[#12AAD1] hover:border-[#12AAD1] transition-all"
+          className="p-3 rounded-full bg-white border border-[#1CA88C]/20 text-white hover:bg-[#1CA88C] hover:border-[#1CA88C] transition-all"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -139,14 +139,14 @@ const TestimonialCarousel = () => {
                 setCurrentIndex(i);
               }}
               className={`w-3 h-3 rounded-full transition-all ${
-                i === currentIndex ? 'bg-[#12AAD1] scale-125' : 'bg-[#A3B0B7]/30 hover:bg-[#A3B0B7]/60'
+                i === currentIndex ? 'bg-[#1CA88C] scale-125' : 'bg-[#A3B0B7]/30 hover:bg-[#A3B0B7]/60'
               }`}
             />
           ))}
         </div>
         <button 
           onClick={handleNext}
-          className="p-3 rounded-full bg-[#101B1D] border border-[#12AAD1]/20 text-white hover:bg-[#12AAD1] hover:border-[#12AAD1] transition-all"
+          className="p-3 rounded-full bg-white border border-[#1CA88C]/20 text-white hover:bg-[#1CA88C] hover:border-[#1CA88C] transition-all"
         >
           <ChevronRight className="w-5 h-5" />
         </button>

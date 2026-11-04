@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Facebook, Twitter, Instagram, Linkedin, Youtube, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Facebook, Twitter, Instagram, Linkedin, Youtube, AlertCircle, MessageCircle } from 'lucide-react';
 import FAQAccordion from '../components/FAQAccordion';
 import emailjs from '@emailjs/browser';
 
@@ -44,7 +44,7 @@ const Contact = () => {
           company: formData.company,
           service: formData.service,
           message: formData.message,
-          to_email: 'noryxadigital@gmail.com'
+          to_email: 'mentinoxsolutions@gmail.com'
         }
       );
       
@@ -59,7 +59,7 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Error sending email:', error);
-      setErrorMsg('Failed to send message. Please try emailing us directly at noryxadigital@gmail.com.');
+      setErrorMsg('Failed to send message. Please try emailing us directly at mentinoxsolutions@gmail.com.');
     } finally {
       setIsSubmitting(false);
     }
@@ -69,26 +69,30 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'noryxadigital@gmail.com',
-      link: 'mailto:noryxadigital@gmail.com',
+      content: 'mentinoxsolutions@gmail.com',
+      link: 'mailto:mentinoxsolutions@gmail.com',
+      isWhatsApp: false,
     },
     {
       icon: Phone,
-      title: 'Call Us',
+      title: 'Call Us (Primary)',
       content: '+92 330 9999149',
       link: 'tel:+923309999149',
+      isWhatsApp: false,
     },
     {
-      icon: MapPin,
-      title: 'Visit Us',
-      content: 'Pakistan',
-      link: '#',
+      icon: Phone,
+      title: 'Direct Line',
+      content: '+92 321 5204240',
+      link: 'tel:+923215204240',
+      isWhatsApp: false,
     },
     {
-      icon: Clock,
-      title: 'Working Hours',
-      content: 'Mon - Fri: 9:00 AM - 6:00 PM',
-      link: '#',
+      icon: MessageCircle,
+      title: 'WhatsApp Chat',
+      content: 'Instant 24/7 Response',
+      link: 'https://wa.me/923309999149',
+      isWhatsApp: true,
     },
   ];
 
@@ -124,16 +128,35 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
+            <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-6">
               Contact Us
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] mb-6">
-              Let&apos;s Start a <span className="text-[#12AAD1]">Conversation</span>
+              Let&apos;s Start a <span className="text-[#1CA88C]">Conversation</span>
             </h1>
-            <p className="text-lg text-[#A3B0B7]">
+            <p className="text-lg text-[#64748B] mb-8">
               Have a project in mind? We&apos;d love to hear from you. Send us a message 
               and we&apos;ll respond as soon as possible.
             </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="https://wa.me/923309999149"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-bold rounded-full shadow-lg shadow-[#25D366]/20 hover:-translate-y-0.5 transition-all"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Chat on WhatsApp (+92 330 9999149)</span>
+              </a>
+              <a
+                href="tel:+923215204240"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 text-sm font-semibold rounded-full border border-slate-200 shadow-md hover:-translate-y-0.5 transition-all"
+              >
+                <Phone className="w-4 h-4 text-[#1CA88C]" />
+                <span>Call Direct: +92 321 5204240</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -152,13 +175,23 @@ const Contact = () => {
               <a
                 key={index}
                 href={info.link}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow group"
+                target={info.isWhatsApp ? "_blank" : undefined}
+                rel={info.isWhatsApp ? "noopener noreferrer" : undefined}
+                className={`rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group ${
+                  info.isWhatsApp
+                    ? 'bg-[#0B3B2C] text-white hover:bg-[#124B38]'
+                    : 'bg-white rounded-2xl'
+                }`}
               >
-                <div className="w-12 h-12 bg-[#12AAD1]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#12AAD1] transition-colors">
-                  <info.icon className="w-6 h-6 text-[#12AAD1] group-hover:text-white transition-colors" />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
+                  info.isWhatsApp
+                    ? 'bg-[#25D366] text-white'
+                    : 'bg-[#1CA88C]/10 text-[#1CA88C] group-hover:bg-[#1CA88C] group-hover:text-white'
+                }`}>
+                  <info.icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-[#0B1214] mb-1">{info.title}</h3>
-                <p className="text-sm text-[#A3B0B7]">{info.content}</p>
+                <h3 className={`font-semibold mb-1 ${info.isWhatsApp ? 'text-white' : 'text-[#0B1214]'}`}>{info.title}</h3>
+                <p className={`text-sm ${info.isWhatsApp ? 'text-emerald-200 font-medium' : 'text-[#64748B]'}`}>{info.content}</p>
               </a>
             ))}
           </motion.div>
@@ -179,7 +212,7 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-[#0B1214] mb-6">
                 Send Us a Message
               </h2>
-              <p className="text-[#A3B0B7] mb-8">
+              <p className="text-[#64748B] mb-8">
                 Fill out the form below and we&apos;ll get back to you within 24 hours.
               </p>
 
@@ -210,7 +243,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1CA88C] transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -224,7 +257,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1CA88C] transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -240,7 +273,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1CA88C] transition-colors"
                         placeholder="(123) 456-7890"
                       />
                     </div>
@@ -253,7 +286,7 @@ const Contact = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1CA88C] transition-colors"
                         placeholder="Your Company"
                       />
                     </div>
@@ -267,7 +300,7 @@ const Contact = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1CA88C] transition-colors"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -288,7 +321,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#12AAD1] transition-colors resize-none"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1CA88C] transition-colors resize-none"
                       placeholder="Tell us about your project..."
                     />
                   </div>
@@ -327,18 +360,18 @@ const Contact = () => {
               {/* Map Placeholder */}
               <div className="surface-panel h-80 flex items-center justify-center">
                 <div className="text-center">
-                  <MapPin className="w-12 h-12 text-[#12AAD1] mx-auto mb-4" />
-                  <p className="text-[#A3B0B7]">Interactive Map</p>
-                  <p className="text-sm text-[#A3B0B7]">123 Digital Street, New York, NY 10001</p>
+                  <MapPin className="w-12 h-12 text-[#1CA88C] mx-auto mb-4" />
+                  <p className="text-[#64748B]">Interactive Map</p>
+                  <p className="text-sm text-[#64748B]">123 Digital Street, New York, NY 10001</p>
                 </div>
               </div>
 
               {/* Social Links */}
               <div className="surface-panel p-8">
-                <h3 className="text-xl font-bold text-white mb-4">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">
                   Connect With Us
                 </h3>
-                <p className="text-[#A3B0B7] mb-6">
+                <p className="text-[#64748B] mb-6">
                   Follow us on social media for the latest updates, insights, and digital marketing tips.
                 </p>
                 <div className="flex gap-3">
@@ -347,9 +380,9 @@ const Contact = () => {
                       key={index}
                       href={social.href}
                       aria-label={social.label}
-                      className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:bg-[#12AAD1] hover:text-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 group"
+                      className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:bg-[#1CA88C] hover:text-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 group"
                     >
-                      <social.icon className="w-5 h-5 text-[#12AAD1] group-hover:text-white transition-colors" />
+                      <social.icon className="w-5 h-5 text-[#1CA88C] group-hover:text-white transition-colors" />
                     </a>
                   ))}
                 </div>
@@ -372,19 +405,37 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Prefer to Talk Directly?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Schedule a free consultation call with one of our experts.
             </p>
-            <a
-              href="tel:+923309999149"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#06B6D4] text-[#0B1214] font-bold rounded-lg hover:bg-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
-            >
-              <Phone className="w-5 h-5" />
-              Call Us Now
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="https://wa.me/923309999149"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Chat on WhatsApp (0330 9999149)</span>
+              </a>
+              <a
+                href="tel:+923309999149"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#0B1518] text-white font-bold rounded-xl hover:bg-[#16272C] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                <Phone className="w-5 h-5" />
+                <span>+92 330 9999149</span>
+              </a>
+              <a
+                href="tel:+923215204240"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                <Phone className="w-5 h-5 text-[#1CA88C]" />
+                <span>+92 321 5204240</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

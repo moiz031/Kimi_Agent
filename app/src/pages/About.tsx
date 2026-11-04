@@ -112,14 +112,14 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-6">
                 About Us
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1214] leading-tight mb-6">
-                We&apos;re a Team of Digital <span className="text-[#12AAD1]">Experts</span>
+                We&apos;re a Team of Digital <span className="text-[#1CA88C]">Experts</span>
               </h1>
-              <p className="text-lg text-[#A3B0B7] mb-8 leading-relaxed">
-                Founded in 2014, Noryxa Digital Agency has grown from a small startup to a 
+              <p className="text-lg text-[#64748B] mb-8 leading-relaxed">
+                Founded in 2014, Mentinox Solutions has grown from a small startup to a 
                 full-service digital marketing agency. We&apos;ve helped hundreds of businesses 
                 across various industries achieve their digital goals and drive measurable growth.
               </p>
@@ -147,12 +147,12 @@ const About = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#12AAD1] rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#1CA88C] rounded-full flex items-center justify-center">
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-[#0B1214]">10+</p>
-                    <p className="text-sm text-[#A3B0B7]">Years of Excellence</p>
+                    <p className="text-sm text-[#64748B]">Years of Excellence</p>
                   </div>
                 </div>
               </div>
@@ -162,7 +162,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#0B1214]">
+      <section className="py-16 bg-[#FAF9F6]">
         <div className="container-custom">
           <motion.div
             variants={containerVariants}
@@ -212,13 +212,13 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="order-1 lg:order-2"
             >
-              <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-6">
                 Our Story
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
                 From Startup to Industry Leader
               </h2>
-              <div className="space-y-4 text-[#A3B0B7]">
+              <div className="space-y-4 text-[#64748B]">
                 <p>
                   What started as a small team of passionate marketers has evolved into a 
                   full-service digital agency with over 50 experts across multiple disciplines. 
@@ -252,13 +252,13 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-4">
               Our Values
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               What We Stand For
             </h2>
-            <p className="text-lg text-[#A3B0B7] max-w-2xl mx-auto">
+            <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
               Our core values guide everything we do
             </p>
           </motion.div>
@@ -276,11 +276,11 @@ const About = () => {
                 variants={itemVariants}
                 className="bg-white rounded-2xl p-8 text-center card-hover"
               >
-                <div className="w-16 h-16 bg-[#12AAD1]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-[#12AAD1]" />
+                <div className="w-16 h-16 bg-[#1CA88C]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-8 h-8 text-[#1CA88C]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0B1214] mb-3">{value.title}</h3>
-                <p className="text-[#A3B0B7]">{value.description}</p>
+                <p className="text-[#64748B]">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -297,13 +297,13 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-4">
               Our Team
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1214] mb-4">
               Meet Our Experts
             </h2>
-            <p className="text-lg text-[#A3B0B7] max-w-2xl mx-auto">
+            <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
               The talented people behind our success
             </p>
           </motion.div>
@@ -334,7 +334,7 @@ const About = () => {
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-[#0B1214]">{member.name}</h3>
-                <p className="text-[#12AAD1] text-sm">{member.role}</p>
+                <p className="text-[#1CA88C] text-sm">{member.role}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -351,13 +351,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-6">
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0B1214] mb-6">
-                The Noryxa Difference
+                The Mentinox Difference
               </h2>
-              <p className="text-[#A3B0B7] mb-8">
+              <p className="text-[#64748B] mb-8">
                 We combine creativity with data-driven strategies to deliver exceptional results 
                 for our clients. Here&apos;s what sets us apart:
               </p>
@@ -372,8 +372,8 @@ const About = () => {
                   '24/7 support and maintenance',
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#12AAD1] flex-shrink-0" />
-                    <span className="text-[#A3B0B7]">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-[#1CA88C] flex-shrink-0" />
+                    <span className="text-[#64748B]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -387,24 +387,24 @@ const About = () => {
               className="grid grid-cols-2 gap-6"
             >
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                <Users className="w-10 h-10 text-[#12AAD1] mx-auto mb-4" />
+                <Users className="w-10 h-10 text-[#1CA88C] mx-auto mb-4" />
                 <p className="text-3xl font-bold text-[#0B1214]">50+</p>
-                <p className="text-sm text-[#A3B0B7]">Team Members</p>
+                <p className="text-sm text-[#64748B]">Team Members</p>
               </div>
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg mt-8">
-                <TrendingUp className="w-10 h-10 text-[#12AAD1] mx-auto mb-4" />
+                <TrendingUp className="w-10 h-10 text-[#1CA88C] mx-auto mb-4" />
                 <p className="text-3xl font-bold text-[#0B1214]">300%</p>
-                <p className="text-sm text-[#A3B0B7]">Avg. ROI</p>
+                <p className="text-sm text-[#64748B]">Avg. ROI</p>
               </div>
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                <Award className="w-10 h-10 text-[#12AAD1] mx-auto mb-4" />
+                <Award className="w-10 h-10 text-[#1CA88C] mx-auto mb-4" />
                 <p className="text-3xl font-bold text-[#0B1214]">25+</p>
-                <p className="text-sm text-[#A3B0B7]">Industry Awards</p>
+                <p className="text-sm text-[#64748B]">Industry Awards</p>
               </div>
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg mt-8">
-                <CheckCircle className="w-10 h-10 text-[#12AAD1] mx-auto mb-4" />
+                <CheckCircle className="w-10 h-10 text-[#1CA88C] mx-auto mb-4" />
                 <p className="text-3xl font-bold text-[#0B1214]">100%</p>
-                <p className="text-sm text-[#A3B0B7]">Client Retention</p>
+                <p className="text-sm text-[#64748B]">Client Retention</p>
               </div>
             </motion.div>
           </div>
@@ -421,7 +421,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Ready to Start Your Journey?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">

@@ -62,7 +62,7 @@ const technicalStandards = [
 
 const TrustBadges = () => {
   return (
-    <section className="py-20 bg-[#0B1214] border-t border-white/5 relative overflow-hidden">
+    <section className="py-20 bg-[#FAF9F6] border-t border-slate-200 relative overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -71,14 +71,14 @@ const TrustBadges = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#12AAD1]/10 text-[#12AAD1] text-sm font-semibold rounded-full mb-4 border border-[#12AAD1]/20">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#1CA88C]/10 text-[#1CA88C] text-sm font-semibold rounded-full mb-4 border border-[#1CA88C]/20">
             <Shield className="w-4 h-4" />
             Honest Standards & Execution
           </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
             Defensible Commitments, Modern Technology
           </h2>
-          <p className="text-[#A3B0B7] text-sm md:text-base max-w-xl mx-auto">
+          <p className="text-[#64748B] text-sm md:text-base max-w-xl mx-auto">
             We operate with transparent engineering, clear response guarantees, and 100% client asset ownership.
           </p>
         </motion.div>
@@ -97,9 +97,9 @@ const TrustBadges = () => {
             {[...capabilities, ...capabilities].map((item, index) => (
               <div
                 key={index}
-                className="px-5 py-3 rounded-xl border border-[#CBD1D8]/20 bg-[#101B1D] font-medium text-xs tracking-wider uppercase text-[#CBD1D8] hover:text-[#12AAD1] hover:border-[#12AAD1]/50 hover:bg-[#12AAD1]/5 transition-all duration-300 cursor-default flex items-center gap-2.5 whitespace-nowrap"
+                className="px-5 py-3 rounded-xl border border-[#CBD1D8]/20 bg-white font-medium text-xs tracking-wider uppercase text-[#CBD1D8] hover:text-[#1CA88C] hover:border-[#1CA88C]/50 hover:bg-[#1CA88C]/5 transition-all duration-300 cursor-default flex items-center gap-2.5 whitespace-nowrap"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#12AAD1]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1CA88C]" />
                 {item}
               </div>
             ))}
@@ -113,9 +113,9 @@ const TrustBadges = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-[#CBD1D8]/20 bg-[#101B1D] p-6 sm:p-8 hover:border-[#CBD1D8]/40 transition-colors"
+            className="rounded-2xl border border-[#CBD1D8]/20 bg-white p-6 sm:p-8 hover:border-[#CBD1D8]/40 transition-colors"
           >
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+            <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
               <span className="w-10 h-10 rounded-xl bg-[#CBD1D8]/10 border border-[#CBD1D8]/25 flex items-center justify-center">
                 <Shield className="w-5 h-5 text-[#CBD1D8]" />
               </span>
@@ -125,13 +125,13 @@ const TrustBadges = () => {
               {agencyCommitments.map((item, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-xl bg-[#0B1214] border border-white/5 hover:border-[#CBD1D8]/25 transition-colors"
+                  className="p-4 rounded-xl bg-[#FAF9F6] border border-slate-200 hover:border-[#CBD1D8]/25 transition-colors"
                 >
                   <div className="flex items-center gap-2.5 mb-1">
                     <item.icon className="w-4 h-4 text-[#CBD1D8]" />
                     <span className="font-semibold text-sm text-white">{item.title}</span>
                   </div>
-                  <p className="text-xs text-[#A3B0B7] pl-6.5 leading-relaxed">{item.detail}</p>
+                  <p className="text-xs text-[#64748B] pl-6.5 leading-relaxed">{item.detail}</p>
                 </div>
               ))}
             </div>
@@ -142,11 +142,11 @@ const TrustBadges = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-[#12AAD1]/20 bg-[#101B1D] p-6 sm:p-8 hover:border-[#12AAD1]/40 transition-colors"
+            className="rounded-2xl border border-[#1CA88C]/20 bg-white p-6 sm:p-8 hover:border-[#1CA88C]/40 transition-colors"
           >
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-xl bg-[#12AAD1]/10 border border-[#12AAD1]/25 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-[#12AAD1]" />
+            <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-xl bg-[#1CA88C]/10 border border-[#1CA88C]/25 flex items-center justify-center">
+                <Zap className="w-5 h-5 text-[#1CA88C]" />
               </span>
               Technical Delivery Standards
             </h3>
@@ -154,13 +154,13 @@ const TrustBadges = () => {
               {technicalStandards.map((item, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-xl bg-[#0B1214] border border-white/5 hover:border-[#12AAD1]/25 transition-colors"
+                  className="p-4 rounded-xl bg-[#FAF9F6] border border-slate-200 hover:border-[#1CA88C]/25 transition-colors"
                 >
                   <div className="flex items-center gap-2.5 mb-1">
-                    <item.icon className="w-4 h-4 text-[#12AAD1]" />
+                    <item.icon className="w-4 h-4 text-[#1CA88C]" />
                     <span className="font-semibold text-sm text-white">{item.title}</span>
                   </div>
-                  <p className="text-xs text-[#A3B0B7] pl-6.5 leading-relaxed">{item.detail}</p>
+                  <p className="text-xs text-[#64748B] pl-6.5 leading-relaxed">{item.detail}</p>
                 </div>
               ))}
             </div>
@@ -196,7 +196,7 @@ const TrustBadges = () => {
             ].map((stack, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2 rounded-lg border border-white/5 bg-[#101B1D]/70 text-xs font-mono tracking-wider text-[#A3B0B7] hover:text-[#12AAD1] hover:border-[#12AAD1]/30 transition-all duration-300"
+                className="px-4 py-2 rounded-lg border border-slate-200 bg-white/70 text-xs font-mono tracking-wider text-[#64748B] hover:text-[#1CA88C] hover:border-[#1CA88C]/30 transition-all duration-300"
               >
                 {stack}
               </span>
